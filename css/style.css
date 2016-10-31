@@ -44,7 +44,12 @@ body {
 }
 
 .colorYellow:hover{
-	border-bottom: 5px solid #e1e512;
+	border-bottom: 5px solid #27ba3d;
+}
+
+#footer{
+	background-color:black;
+	height:10vh;
 }
 
 #header{
@@ -55,7 +60,7 @@ body {
 	top:0px;
 	left:0px;
 	right:0px;
-	height:11%;
+	height:100px;
 	padding-right:50px;
 	position:fixed;
 }
@@ -76,6 +81,12 @@ body {
 .kardTop{
 	background:rgb(68,117,116);
 	height:10%;
+}
+
+.logo{
+	font-family: 'Skranji', cursive;	
+	float:left;
+	font-size:48px;
 }
 
 .mainContent{
