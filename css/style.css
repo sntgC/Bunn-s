@@ -81,7 +81,7 @@ body {
 	height:100px;
 	padding-right:50px;
 	position:fixed;
-	z-index:2;
+	z-index:20;
 }
 
 #header li{
@@ -93,7 +93,14 @@ body {
 	height:325px;
 	background: #5bc0be;
 	display:inline-block;
-	margin: 100px 50px 0px 50px;
+	margin: 50px 50px 0px 50px;
+}
+
+.kardRow{
+	display:table-row;
+	right:0px;
+	left:0px;
+	width:100%;
 }
 
 .kardTop{
@@ -138,7 +145,7 @@ body {
 
 #menuMainContent{
 	position:relative;
-	top:-10vh;
+	display:table;
 }
 
 .navTitle{
@@ -150,12 +157,23 @@ body {
 	font-size:48px;
 }
 
-.navTitle:hover{
-	/*border-bottom: 5px solid rgb(68,117,116);*/
-	/*border-bottom: 5px solid #e24226;*/
-	/*border-bottom: 5px solid #2694e2;*/
-	/*border-bottom: 5px solid #7126e2;*/
-	/*border-bottom: 5px solid #e1e512;*/
+.navTitle{
+	color:white;
+	text-decoration:none;
+	list-style-type:none;
+	float:right;
+	margin-left:10px;
+	margin-right:10px;
+	font-size:48px;
+}
+
+.navTitleMenu{
+	background-color:red;
+	padding-left:10px;
+	padding-right:10px;
+	font-size:4vh;
+	position:relative;
+	margin-bottom:0px;
 }
 
 .noSelect{
@@ -165,4 +183,14 @@ body {
    -ms-user-select: none;
    user-select: none;
    cursor: default;
+}
+
+.tabContainer{
+	position:absolute;
+	height:10vh;
+	bottom:0px;
+	width:100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
 }
