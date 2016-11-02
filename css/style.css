@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
- 
+
  a{
 	 text-decoration:none;
 	 color:white;
@@ -16,7 +16,7 @@
  a:visited{
 	 text-decoration:none;
  }
- 
+
  .about{
 	 /*background-color:#d44343;*/
 	 background-color:#dfdfdf;
@@ -29,9 +29,9 @@
 	 float:left;
 	 flex:1;
  }
- 
+
 body {
-	font-family: 'Averia Sans Libre', cursive;	
+	font-family: 'Averia Sans Libre', cursive;
 	margin:0px;
 	overflow-x:hidden;
 	height:100%;
@@ -64,15 +64,16 @@ body {
 }
 
 #footer{
-	background-color:black;
-	height:10vh;
-	color:gray;
+    background-color:#5d88ea;
+	height:30px;
+	color:black;
+    text-align: center;
 }
 
 #header{
 	/*background-color:#5bc0be;*/
 	/*background-color:rgba(91, 192, 190,0);*/
-	background-color:rgba(255, 89, 0,0);
+	background-color:rgba(255, 89, 0, 0);
 	position:absolute;
 	top:0px;
 	left:0px;
@@ -84,7 +85,6 @@ body {
 }
 
 #header li{
-	
 	vertical-align:middle;
 }
 
@@ -102,9 +102,13 @@ body {
 }
 
 .logo{
-	font-family: 'Skranji', cursive;	
+	font-family: 'Skranji', cursive;
 	float:left;
 	font-size:48px;
+}
+
+.logo a:hover{
+    color: #5d88ea;
 }
 
 .mainContent{
@@ -138,7 +142,6 @@ body {
 }
 
 .navTitle{
-	
 	color:white;
 	text-decoration:none;
 	list-style-type:none;
