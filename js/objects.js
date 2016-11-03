@@ -1,4 +1,5 @@
-var menuObjApp={row:[
+var menuObjApp={type:"appetizer",
+							row:[
 							{entry:[
 								{name:"Appetizers", image:"assets/city.jpg"},
 								{name:"b", image:"assets/city.jpg"},
@@ -15,7 +16,8 @@ var menuObjApp={row:[
 								{name:"c", image:"assets/city.jpg"}
 							]}
 						]};
-var menuObjEnt={row:[
+var menuObjEnt={type:"entree",
+							row:[
 							{entry:[
 								{name:"Entree", image:"assets/city.jpg"},
 								{name:"b", image:"assets/city.jpg"},
@@ -32,7 +34,8 @@ var menuObjEnt={row:[
 								{name:"c", image:"assets/city.jpg"}
 							]}
 						]};
-var menuObjDes={row:[
+var menuObjDes={type:"dessert",
+							row:[
 							{entry:[
 								{name:"Dessert", image:"assets/city.jpg"},
 								{name:"b", image:"assets/city.jpg"},
@@ -49,7 +52,8 @@ var menuObjDes={row:[
 								{name:"c", image:"assets/city.jpg"}
 							]}
 						]};
-var menuObjDri={row:[
+var menuObjDri={type:"drink",
+							row:[
 							{entry:[
 								{name:"Drinks", image:"assets/city.jpg"},
 								{name:"b", image:"assets/city.jpg"},
@@ -66,4 +70,4 @@ var menuObjDri={row:[
 								{name:"c", image:"assets/city.jpg"}
 							]}
 						]};		
-var menuObj=[menuObjApp,menuObjEnt, menuObjDes, menuObjDri]						
+var menuObj={choices:[menuObjApp,menuObjEnt, menuObjDes, menuObjDri]};		

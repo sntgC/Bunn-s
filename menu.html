@@ -17,6 +17,8 @@
 	<script src="js/animations.js"></script>
 	
 	<script id="menu-template" type="text/x-handlebars-template">
+		{{#each choices}}
+		<div id='{{type}}' class="menuContainer">
 		{{#each row}}
 		<div class="kardRow">
 			{{#each entry}}
@@ -27,6 +29,8 @@
 			</div>
 			</div>
 			{{/each}}
+		</div>
+		{{/each}}
 		</div>
 		{{/each}}
 	</script>
@@ -47,10 +51,10 @@
 	</div>
 	<div class="tabContainer">
 	<ul style="vertical-align:bottom;margin-bottom:0px;">
-		<li class="navTitle navTitleMenu noSelect"><a href="javascript:switchMenu(3)">Drinks</a></li>
-		<li class="navTitle navTitleMenu noSelect"><a href="javascript:switchMenu(2)">Desserts</a></li>
-		<li class="navTitle navTitleMenu noSelect"><a href="javascript:switchMenu(1)">Entrées</a></li>
-		<li class="navTitle navTitleMenu noSelect"><a href="javascript:switchMenu(0)">Appetizers</a></li>
+		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(3)">Drinks</a></li>
+		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(2)">Desserts</a></li>
+		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(1)">Entrées</a></li>
+		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(0)">Appetizers</a></li>
 	</ul>
 	</div>
 	<div class="mainContent" id="menuMainContent">

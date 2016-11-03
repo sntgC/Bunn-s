@@ -35,7 +35,7 @@ body {
 	margin:0px;
 	overflow-x:hidden;
 	height:100%;
-	background:#e0fffe;
+	background:#efefef;
 }
 
 #background{
@@ -97,7 +97,8 @@ body {
 }
 
 .kardBottom{
-	background:rgb(68,117,116);
+	/*background:rgb(68,117,116);*/
+	background-color: white;
 	height:25%;
 	position:relative;
 	bottom:0px;
@@ -132,7 +133,7 @@ body {
 }
 
 .mainContent{
-	background:#e0fffe;
+	background:#efefef;
 	text-align:center;
 	z-index:1;
 	display:flex;
@@ -154,6 +155,11 @@ body {
 #mapFrame{
 	height:80%;
 	width:60%;
+}
+
+.menuContainer{
+	display:table;
+	background:#efefef;
 }
 
 #menuMainContent{

@@ -6,7 +6,7 @@ window.onload = function(){
 	var source   = $("#menu-template").html();
 	console.log(source);
 	template = Handlebars.compile(source);
-	document.getElementById("menuMainContent").innerHTML=template(menuObj[0]);
+	document.getElementById("menuMainContent").innerHTML=template(menuObj);
 }
 
 function navBarScroll(){
@@ -19,14 +19,16 @@ function navBarScroll(){
     }
 }
 
-function scroll(){
+function scroll(menuID){
 	$('html, body').animate({
-								scrollTop: $("#menuMainContent").offset().top-100
-								}, 800, function(){
+								scrollTop: $("#"+menuObj.choices[menuID].type).offset().top-90
+								}, 800*Math.cbrt(menuID+1), function(){
 	});
 }
 
 function switchMenu(menuID){
-	document.getElementById("menuMainContent").innerHTML=template(menuObj[menuID]);
+	/*document.getElementById("menuMainContent").innerHTML=template(menuObj[menuID]);
 	scroll();
+	DEPRECATED
+	*/
 }
