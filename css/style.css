@@ -96,16 +96,19 @@ body {
 	margin: 50px 50px 0px 50px;
 }
 
+.kardBottom{
+	background:rgb(68,117,116);
+	height:25%;
+	position:relative;
+	bottom:0px;
+	top:-15%;
+}
+
 .kardRow{
 	display:table-row;
 	right:0px;
 	left:0px;
 	width:100%;
-}
-
-.kardTop{
-	background:rgb(68,117,116);
-	height:10%;
 }
 
 .logoClear{
@@ -156,6 +159,7 @@ body {
 #menuMainContent{
 	position:relative;
 	display:table;
+	padding-bottom:50px;
 }
 
 .navTitle{
