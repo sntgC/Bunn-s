@@ -108,13 +108,23 @@ body {
 	height:10%;
 }
 
-.logo{
+.logoClear{
 	font-family: 'Skranji', cursive;
 	float:left;
 	font-size:48px;
 }
 
-.logo a:hover{
+.logoClear a:hover{
+    color: #efd139;
+}
+
+.logoSolid{
+	font-family: 'Skranji', cursive;
+	float:left;
+	font-size:48px;
+}
+
+.logoSolid a:hover{
     color: #5d88ea;
 }
 
@@ -168,14 +178,23 @@ body {
 }
 
 .navTitleMenu{
-	background-color:red;
+	background-color:#efd139;
 	padding-left:10px;
 	padding-right:10px;
 	font-size:4vh;
 	position:relative;
 	margin-bottom:0px;
+	padding-bottom:5px;
 }
 
+.navTitleMenu a:hover{
+	background-color:white;
+	color:#efd139;
+}
+
+.navTitleMenu:hover{
+	background-color:white;
+}
 .noSelect{
    -moz-user-select: none;
    -khtml-user-select: none;
