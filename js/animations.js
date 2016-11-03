@@ -1,12 +1,12 @@
 var template;
 
-window.onscroll = function() {navBarScroll()};
+window.onscroll = function() {navBarScroll();};
 
-window.onload = function(){	
+window.onload = function(){
 	var source   = $("#menu-template").html();
 	template = Handlebars.compile(source);
 	document.getElementById("menuMainContent").innerHTML=template(menuObj);
-}
+};
 
 function navBarScroll(){
 	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
