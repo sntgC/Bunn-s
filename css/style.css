@@ -152,9 +152,14 @@ body {
 	flex:1;
 }
 
+.map h2{
+    margin: 0;
+    margin-bottom: 5px;
+}
+
 #mapFrame{
-	height:80%;
-	width:60%;
+	height:90%;
+	width:90%;
 }
 
 .menuContainer{
