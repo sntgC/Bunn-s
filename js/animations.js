@@ -4,7 +4,6 @@ window.onscroll = function() {navBarScroll()};
 
 window.onload = function(){	
 	var source   = $("#menu-template").html();
-	console.log(source);
 	template = Handlebars.compile(source);
 	document.getElementById("menuMainContent").innerHTML=template(menuObj);
 }

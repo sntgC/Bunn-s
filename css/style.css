@@ -99,10 +99,10 @@ body {
 .kardBottom{
 	/*background:rgb(68,117,116);*/
 	background-color: white;
-	height:25%;
+	height:35%;
 	position:relative;
 	bottom:0px;
-	top:-15%;
+	top:-25%;
 }
 
 .kardRow{
@@ -110,6 +110,11 @@ body {
 	right:0px;
 	left:0px;
 	width:100%;
+}
+
+.kardText{
+	margin-top:0px;
+	margin-bottom:0px;
 }
 
 .logoClear{
