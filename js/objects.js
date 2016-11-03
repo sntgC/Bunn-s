@@ -12,7 +12,7 @@
 	String description - A 140 character description of the course
 */
 
-var menuObjApp={type:"appetizer",
+var menuObjApp={type:"Appetizers",
 							row:[
 							{entry:[
 								{name:"Appetizers", image:"assets/city.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."},
@@ -30,7 +30,7 @@ var menuObjApp={type:"appetizer",
 								{name:"c", image:"assets/city.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."}
 							]}
 						]};
-var menuObjEnt={type:"entree",
+var menuObjEnt={type:"Entrées",
 							row:[
 							{entry:[
 								{name:"Entree", image:"assets/city.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."},
@@ -48,7 +48,7 @@ var menuObjEnt={type:"entree",
 								{name:"c", image:"assets/city.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."}
 							]}
 						]};
-var menuObjDes={type:"dessert",
+var menuObjDes={type:"Desserts",
 							row:[
 							{entry:[
 								{name:"Dessert", image:"assets/city.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."},
@@ -66,7 +66,7 @@ var menuObjDes={type:"dessert",
 								{name:"c", image:"assets/city.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."}
 							]}
 						]};
-var menuObjDri={type:"drink",
+var menuObjDri={type:"Drinks",
 							row:[
 							{entry:[
 								{name:"Drinks", image:"assets/city.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."},
