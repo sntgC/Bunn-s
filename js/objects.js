@@ -21,7 +21,7 @@ var menuObjApp={type:"Appetizers",
 							]},
 							{entry:[
 								{name:"a", image:"assets/city.jpg", price:"$$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."},
-								{name:"d", image:"assets/burger.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."},
+								{name:"Baby Got Bunn's", image:"assets/burger.jpg", price:"$", description:"A succulent chunk of meat slammed between two artisan buns topped with organic onions and tomatoes, creamy American cheese, and crispy bacon."},
 								{name:"c", image:"assets/city.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."}
 							]},
 							{entry:[

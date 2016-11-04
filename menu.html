@@ -20,14 +20,14 @@
 	<script id="menu-template" type="text/x-handlebars-template">
 		{{#each choices}}
 		<div id='{{type}}' class="menuContainer">
-		<p style="font-size:4vh;margin-bottom:0px;font-family:'Skranji',cursive;">{{type}}</p>
+		<p style="font-size:4vh;margin-bottom:0px;font-family:'Skranji',cursive;color:#960000;"><span style="border-bottom:5px solid;">{{type}}</span></p>
 		{{#each row}}
 		<div class="kardRow">
 			{{#each entry}}
 			<div class="kard">
 			<img src='{{image}}' style="height:90%;width:100%;">
 			<div class="kardBottom">
-			<p class="kardText textBold" style="text-align:left;padding-left:5%;">{{name}}<span style="float:right;margin-right:5%;">{{price}}</span></p>
+			<p class="kardText textBold" style="text-align:left;">{{name}}<span style="float:right;">{{price}}</span></p>
 			<p class="kardText">{{description}}</p>
 			</div>
 			</div>

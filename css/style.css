@@ -35,7 +35,7 @@ body {
 	margin:0px;
 	overflow-x:hidden;
 	height:100%;
-	background:#efefef;
+	background:#fffbe8;
 }
 
 #background{
@@ -115,7 +115,7 @@ body {
 
 .kard{
 	width: 25%;
-	height:325px;
+	height:38vh;
 	background: #5bc0be;
 	display:inline-block;
 	margin: 50px 50px 0px 50px;
@@ -123,10 +123,12 @@ body {
 
 .kardBottom{
 	/*background:rgb(68,117,116);*/
-	background-color: white;
+	background-color: #960000;
+	color:white;
 	height:35%;
 	position:relative;
 	bottom:0px;
+	padding-bottom:2%;
 	top:-25%;
 }
 
@@ -140,6 +142,8 @@ body {
 .kardText{
 	margin-top:0px;
 	margin-bottom:0px;
+	padding-left:4%;
+	padding-right:4%;
 }
 
 .logoClear{
@@ -163,7 +167,7 @@ body {
 }
 
 .mainContent{
-	background:#efefef;
+	background:#fffbe8;
 	text-align:center;
 	z-index:1;
 	display:flex;
@@ -194,7 +198,7 @@ body {
 
 .menuContainer{
 	display:table;
-	background:#efefef;
+	background:#fffbe8;
 }
 
 #menuMainContent{
