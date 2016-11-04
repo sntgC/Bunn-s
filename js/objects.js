@@ -1,6 +1,6 @@
 /*
 	menuObj format:
-	
+
 	String type -The course of the food
 	Array row - An array of entry objects
 	Object entry - An array of food objects
@@ -15,7 +15,7 @@
 var menuObjApp={type:"Appetizers",
 							row:[
 							{entry:[
-								{name:"Appetizers", image:"assets/city.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."},
+								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
 								{name:"b", image:"assets/city.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."},
 								{name:"c", image:"assets/city.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."}
 							]},
@@ -39,7 +39,7 @@ var menuObjEnt={type:"Entrées",
 							]},
 							{entry:[
 								{name:"a", image:"assets/city.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."},
-								{name:"d", image:"assets/burger.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."},
+								{name:"Baby Got Bunn's", image:"assets/burger.jpg", price:"$", description:"A succulent chunk of meat slammed between two artisan buns topped with organic onions and tomatoes, creamy American cheese, and crispy bacon."},
 								{name:"c", image:"assets/city.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."}
 							]},
 							{entry:[
@@ -83,5 +83,5 @@ var menuObjDri={type:"Drinks",
 								{name:"d", image:"assets/burger.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."},
 								{name:"c", image:"assets/city.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."}
 							]}
-						]};		
-var menuObj={choices:[menuObjApp,menuObjEnt, menuObjDes, menuObjDri]};		
+						]};
+var menuObj={choices:[menuObjApp,menuObjEnt, menuObjDes, menuObjDri]};

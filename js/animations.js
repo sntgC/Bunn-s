@@ -1,6 +1,8 @@
 var template;
+var slideInterval;
 
 $(document).ready(function(){
+	//Animation of the back-to-top button
 	var offset = 300;
 	var duration = 750;
 	$(window).on('scroll',function(){
@@ -8,7 +10,7 @@ $(document).ready(function(){
 			$('.back-to-top').fadeIn(duration);
 		}
 		else{
-			$('.back-to-top').fadeOut(duration);
+			$('.back-to-top').fadeOut(250);
 		}
 	});
 	$(".back-to-top").on('click',function(event){
@@ -16,6 +18,8 @@ $(document).ready(function(){
 		$('html, body').animate({scrollTop : 0}, duration);
 		return false;
 	});
+	//Automated timed slide for the slideshow on the index page
+	slideInterval = window.setInterval(nextSlide,8000);
 });
 
 window.onscroll = function() {navBarScroll();};
@@ -34,6 +38,15 @@ function navBarScroll(){
 		document.getElementById("header").style.background = "rgba(255, 89, 0,0)";
 		document.getElementById("headerLogo").className = "navTitle noSelect logoClear";
     }
+}
+
+var currentSlideIndex = 0;
+var lastSlideIndex = 1;
+function nextSlide(){
+	if(currentSlideIndex == lastSlideIndex){
+		currentSlideIndex = -1;
+	}
+	slideTo('homePageContainer', ++currentSlideIndex, true);
 }
 
 function scroll(menuID){
