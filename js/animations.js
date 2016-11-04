@@ -1,5 +1,23 @@
 var template;
 
+$(document).ready(function(){
+	var offset = 300;
+	var duration = 750;
+	$(window).on('scroll',function(){
+		if($(this).scrollTop() > offset){
+			$('.back-to-top').fadeIn(duration);
+		}
+		else{
+			$('.back-to-top').fadeOut(duration);
+		}
+	});
+	$(".back-to-top").on('click',function(event){
+		event.preventDefault();
+		$('html, body').animate({scrollTop : 0}, duration);
+		return false;
+	});
+});
+
 window.onscroll = function() {navBarScroll();};
 
 window.onload = function(){
