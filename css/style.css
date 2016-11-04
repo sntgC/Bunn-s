@@ -30,6 +30,20 @@
 	 flex:1;
  }
 
+ .board{
+	 background-color:rgba(0,0,0,.25);
+	 height:70vh;
+	 width:70%;
+	 position:absolute;
+	 top:15vh;
+	 left:15%;
+	 right:15%;
+	 z-index:4;
+	 overflow-x:hidden;
+	 overflow-y:hidden;
+	 max-height:70vh;
+ }
+ 
 body {
 	font-family: 'Averia Sans Libre', cursive;
 	margin:0px;
@@ -114,7 +128,7 @@ body {
 }
 
 .kard{
-	width: 25%;
+	width: 27%;
 	height:38vh;
 	background: #5bc0be;
 	display:inline-block;
@@ -129,6 +143,7 @@ body {
 	position:relative;
 	bottom:0px;
 	padding-bottom:2%;
+	padding-top:2%;
 	top:-25%;
 }
 
@@ -141,7 +156,7 @@ body {
 
 .kardText{
 	margin-top:0px;
-	margin-bottom:0px;
+	margin-bottom:2%;
 	padding-left:4%;
 	padding-right:4%;
 }
@@ -251,6 +266,49 @@ body {
    -ms-user-select: none;
    user-select: none;
    cursor: default;
+}
+
+.slide{
+	height:100%;
+	width:100%;
+	display:inline-block;
+	margin:0px;
+	padding:0px;
+	font-size:4vh;
+	z-index:2;
+}
+
+.sBActive{
+	background:#e24226;
+}
+
+.sBInactive{
+	background-color:#efd139
+}
+
+.slideButton{
+	border-radius:50%;
+	display:inline-block;
+	height:1.5vmin;
+	width:1.5vmin;
+	z-index:5;
+}
+
+.slideButtonContainer{
+	height:4%;
+	position:absolute;
+	bottom:2%;
+	width:100%;
+	text-align:center;
+}
+
+.slideContainer{
+	 white-space:nowrap;
+	 height:100%;
+	 width:100%;
+	 position:relative;
+	 font-size:0px;
+	 left:0%;
 }
 
 .tabContainer{

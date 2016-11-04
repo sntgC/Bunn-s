@@ -43,6 +43,23 @@ function scroll(menuID){
 	});
 }
 
+function slideTo(containerID, slideIndex, animate){
+	if(animate){
+		if(slideIndex<document.getElementsByClassName("slide").length){
+			var buttons=document.getElementsByClassName("slideButton");
+			for(i=0;i<buttons.length;i++)
+				if(i!=slideIndex)
+					buttons[i].className="slideButton sBInactive";
+				else
+					buttons[i].className="slideButton sBActive";
+			$('#'+containerID).animate({
+								left: ""+(slideIndex*-100)+"%"
+								}, 800, function(){
+			});
+		}
+	}
+}
+
 function switchMenu(menuID){
 	/*document.getElementById("menuMainContent").innerHTML=template(menuObj[menuID]);
 	scroll();

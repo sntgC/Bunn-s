@@ -19,7 +19,7 @@
 
 	<script id="menu-template" type="text/x-handlebars-template">
 		{{#each choices}}
-		<div id='{{type}}' class="menuContainer">
+		<div id='{{type}}' class="menuContainer noSelect">
 		<p style="font-size:4vh;margin-bottom:0px;font-family:'Skranji',cursive;color:#960000;"><span style="border-bottom:5px solid;">{{type}}</span></p>
 		{{#each row}}
 		<div class="kardRow">
@@ -27,8 +27,8 @@
 			<div class="kard">
 			<img src='{{image}}' style="height:90%;width:100%;">
 			<div class="kardBottom">
-			<p class="kardText textBold" style="text-align:left;">{{name}}<span style="float:right;">{{price}}</span></p>
-			<p class="kardText">{{description}}</p>
+			<p class="kardText textBold" style="text-align:left;font-size:2.5vh;">{{name}}<span style="float:right;">{{price}}</span></p>
+			<p class="kardText" style="text-align:left;font-size:2vh;">{{description}}</p>
 			</div>
 			</div>
 			{{/each}}
