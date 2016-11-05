@@ -1,5 +1,7 @@
 var template;
 var slideInterval;
+var currentSlideIndex = 0;
+var lastSlideIndex = 1;
 
 $(document).ready(function(){
 	//Animation of the back-to-top button
@@ -19,7 +21,8 @@ $(document).ready(function(){
 		return false;
 	});
 	//Automated timed slide for the slideshow on the index page
-	slideInterval = window.setInterval(nextSlide,8000);
+	lastSlideIndex=document.getElementsByClassName("slide").length-1;
+	slideInterval = window.setInterval(nextSlide,3000);
 });
 
 window.onscroll = function() {navBarScroll();};
@@ -40,8 +43,6 @@ function navBarScroll(){
     }
 }
 
-var currentSlideIndex = 0;
-var lastSlideIndex = 1;
 function nextSlide(){
 	if(currentSlideIndex == lastSlideIndex){
 		currentSlideIndex = -1;
@@ -57,6 +58,7 @@ function scroll(menuID){
 }
 
 function slideTo(containerID, slideIndex, animate){
+	currentSlideIndex=slideIndex;
 	if(animate){
 		if(slideIndex<document.getElementsByClassName("slide").length){
 			var buttons=document.getElementsByClassName("slideButton");
@@ -65,6 +67,8 @@ function slideTo(containerID, slideIndex, animate){
 					buttons[i].className="slideButton sBInactive";
 				else
 					buttons[i].className="slideButton sBActive";
+			clearInterval(slideInterval);
+			slideInterval = setInterval(nextSlide, 3000);
 			$('#'+containerID).animate({
 								left: ""+(slideIndex*-100)+"%"
 								}, 800, function(){
