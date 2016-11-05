@@ -129,10 +129,11 @@ body {
 
 .kard{
 	width: 27%;
-	height:38vh;
+	height:42vh;
 	background: #5bc0be;
 	display:inline-block;
 	margin: 50px 50px 0px 50px;
+	overflow:hidden;
 }
 
 .kardBottom{

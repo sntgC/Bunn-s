@@ -22,7 +22,7 @@ $(document).ready(function(){
 	});
 	//Automated timed slide for the slideshow on the index page
 	lastSlideIndex=document.getElementsByClassName("slide").length-1;
-	slideInterval = window.setInterval(nextSlide,3000);
+	slideInterval = window.setInterval(nextSlide,8000);
 });
 
 window.onscroll = function() {navBarScroll();};
@@ -68,7 +68,7 @@ function slideTo(containerID, slideIndex, animate){
 				else
 					buttons[i].className="slideButton sBActive";
 			clearInterval(slideInterval);
-			slideInterval = setInterval(nextSlide, 3000);
+			slideInterval = setInterval(nextSlide, 8000);
 			$('#'+containerID).animate({
 								left: ""+(slideIndex*-100)+"%"
 								}, 800, function(){
