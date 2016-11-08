@@ -29,6 +29,7 @@ window.onscroll = function() {navBarScroll();};
 
 document.addEventListener('keydown', function(event) {
     if(event.keyCode == 37) {
+		previousSlide();
     }
     else if(event.keyCode == 39) {
         nextSlide();
@@ -64,6 +65,13 @@ function nextSlide(){
 	slideTo('homePageContainer', ++currentSlideIndex, true);
 }
 
+function previousSlide(){
+	if(currentSlideIndex === 0){
+		currentSlideIndex = lastSlideIndex+1;
+	}
+	slideTo('homePageContainer', --currentSlideIndex, true);
+}
+
 function scroll(menuID){
 	$('html, body').animate({
 								scrollTop: $("#"+menuObj.choices[menuID].type).offset().top-90
@@ -89,11 +97,4 @@ function slideTo(containerID, slideIndex, animate){
 			});
 		}
 	}
-}
-
-function switchMenu(menuID){
-	/*document.getElementById("menuMainContent").innerHTML=template(menuObj[menuID]);
-	scroll();
-	DEPRECATED
-	*/
 }
