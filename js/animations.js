@@ -27,6 +27,14 @@ $(document).ready(function(){
 
 window.onscroll = function() {navBarScroll();};
 
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 37) {
+    }
+    else if(event.keyCode == 39) {
+        nextSlide();
+    }
+});
+
 window.onload = function(){
 	var source   = $("#menu-template").html();
 	template = Handlebars.compile(source);
@@ -37,9 +45,15 @@ function navBarScroll(){
 	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
 		document.getElementById("header").style.background="#efd139";
 		document.getElementById("headerLogo").className = "navTitle noSelect logoSolid";
+		if(window.location.href=="http://localhost/fbla/"){
+			document.getElementById("headerLogo").style.opacity=1;
+		}
     } else {
 		document.getElementById("header").style.background = "rgba(255, 89, 0,0)";
 		document.getElementById("headerLogo").className = "navTitle noSelect logoClear";
+		if(window.location.href=="http://localhost/fbla/"){
+			document.getElementById("headerLogo").style.opacity=0;
+		}
     }
 }
 
