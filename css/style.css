@@ -109,6 +109,13 @@ body {
     text-align: center;
 }
 
+.fullPageContent{
+	display:block;
+	overflow:hidden;
+	height:100vh;
+	width:100vw;
+}
+
 #header{
 	/*background-color:#5bc0be;*/
 	/*background-color:rgba(91, 192, 190,0);*/
