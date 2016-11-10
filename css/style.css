@@ -107,13 +107,14 @@ body {
 	height:30px;
 	color:black;
     text-align: center;
+	z-index:22;
 }
 
 .fullPageContent{
 	display:block;
 	overflow:hidden;
 	height:100vh;
-	width:100vw;
+	width:100%;
 }
 
 #header{
@@ -274,6 +275,29 @@ body {
    -ms-user-select: none;
    user-select: none;
    cursor: default;
+}
+
+.partyBox{
+	height:85%;
+	width:90%;
+	background:red;
+	position:relative;
+	left:5%;
+	top:7.5%;
+	display:table;
+}
+
+#partyPackageDisplay{
+	width:20vw;
+	height: calc(100vh - 100px);
+	background:red;
+	right:0px;
+	top:100px;
+	z-index:-1;
+}
+
+.partyRow{
+	display:table-row;
 }
 
 .slide{
