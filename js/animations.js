@@ -43,14 +43,38 @@ window.onload = function(){
 };
 
 function navBarScroll(){
+	var logo=document.getElementById("header");
+	var logoWhite=document.getElementById("headerWhite");
+	var navs=document.getElementsByClassName("navTitle");
+	var links=document.getElementsByTagName("a");
 	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-		document.getElementById("header").style.background="#efd139";
+		if(logo!=null)
+			logo.style.background="#efd139";
+		if(logoWhite!=null){
+			logoWhite.style.background="#efefef";
+			for(i=0;i<navs.length;i++){
+				navs[i].style.color="#efd139";
+			}
+			for(i=0;i<links.length;i++){
+				links[i].style.color="#efd139";
+			}
+		}
 		document.getElementById("headerLogo").className = "navTitle noSelect logoSolid";
 		if(window.location.href=="http://localhost/fbla/"){
 			document.getElementById("headerLogo").style.opacity=1;
 		}
     } else {
-		document.getElementById("header").style.background = "rgba(255, 89, 0,0)";
+		if(logo!=null)
+			logo.style.background = "rgba(255, 89, 0,0)";
+		if(logoWhite!=null){
+			logoWhite.style.background = "rgba(255, 89, 0,0)";
+			for(i=0;i<navs.length;i++){
+				navs[i].style.color="white";
+			}
+			for(i=0;i<links.length;i++){
+				links[i].style.color="white";
+			}
+		}
 		document.getElementById("headerLogo").className = "navTitle noSelect logoClear";
 		if(window.location.href=="http://localhost/fbla/"){
 			document.getElementById("headerLogo").style.opacity=0;

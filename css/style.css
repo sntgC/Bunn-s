@@ -147,6 +147,20 @@ body {
 	z-index:20;
 }
 
+#headerWhite{
+	/*background-color:#5bc0be;*/
+	/*background-color:rgba(91, 192, 190,0);*/
+	background-color:rgba(255, 89, 0, 0);
+	position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	height:100px;
+	padding-right:50px;
+	position:fixed;
+	z-index:20;
+}
+
 #header li{
 	vertical-align:middle;
 }
@@ -306,7 +320,7 @@ body {
 #partyPackageDisplay{
 	width:20vw;
 	height: calc(100vh - 100px);
-	background:#27ba3d;
+	background:#dedede;
 	right:0px;
 	top:100px;
 	z-index:-1;
