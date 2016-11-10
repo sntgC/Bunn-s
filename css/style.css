@@ -306,7 +306,7 @@ body {
 #partyPackageDisplay{
 	width:20vw;
 	height: calc(100vh - 100px);
-	background:red;
+	background:#27ba3d;
 	right:0px;
 	top:100px;
 	z-index:-1;
