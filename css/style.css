@@ -43,7 +43,7 @@
 	 overflow-y:hidden;
 	 max-height:70vh;
  }
- 
+
 body {
 	font-family: 'Averia Sans Libre', cursive;
 	margin:0px;
@@ -67,9 +67,9 @@ body {
     padding: 0;
     position: fixed;
     bottom: 15px;
-    right: 15px;
-    width: 50px;
-    height: 50px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
     z-index: 100;
     display: none;
     text-decoration: none;
@@ -83,10 +83,14 @@ body {
 }
 
 .back-to-top i{
-    font-size: 45px;
+    font-size: 35px;
 }
 
 .colorBlue:hover{
+	border-bottom: 5px solid #2694e2
+}
+
+.colorBlue.underline{
 	border-bottom: 5px solid #2694e2
 }
 
@@ -94,11 +98,23 @@ body {
 	border-bottom: 5px solid #7126e2;
 }
 
+.colorPurple.underline{
+	border-bottom: 5px solid #7126e2;
+}
+
 .colorRed:hover{
 	border-bottom: 5px solid #e24226;
 }
 
+.colorRed.underline{
+	border-bottom: 5px solid #e24226;
+}
+
 .colorYellow:hover{
+	border-bottom: 5px solid #27ba3d;
+}
+
+.colorYellow.underline{
 	border-bottom: 5px solid #27ba3d;
 }
 
