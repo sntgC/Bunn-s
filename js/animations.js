@@ -103,9 +103,9 @@ function scroll(menuID){
 	});
 }
 
-function slideTo(containerID, slideIndex, animate){
+function slideTo(containerID, slideIndex, buttoned){
 	currentSlideIndex=slideIndex;
-	if(animate){
+	if(buttoned){
 		if(slideIndex<document.getElementsByClassName("slide").length){
 			var buttons=document.getElementsByClassName("slideButton");
 			for(i=0;i<buttons.length;i++)
@@ -120,5 +120,33 @@ function slideTo(containerID, slideIndex, animate){
 								}, 800, function(){
 			});
 		}
+	}else{
+		if(slideIndex<document.getElementsByClassName("slide").length){
+			$('#'+containerID).animate({
+								left: ""+(slideIndex*-100)+"%"
+								}, 400, function(){
+			});
+		}
+	}
+}
+
+function slideToDir(containerID, dir, transitionTime){
+	var left = document.getElementById(containerID).style.left;
+	var curIndex=0;
+	var slideCnt=document.getElementById(containerID).children.length;
+	if(left!=0){//Do not change this, left is a string and i need to keep this as a == rather than === for this to work
+		var shift=parseInt(left.substring(0,left.indexOf("%")));
+		curIndex=shift/-100;
+	}
+	if(dir==="left"){
+		if(curIndex == 0){
+			curIndex=slideCnt;
+		}
+		slideTo(containerID, curIndex-1, false);
+	}else if(dir==="right"){
+		if(curIndex == slideCnt-1){
+			curIndex=-1;
+		}
+		slideTo(containerID, curIndex+1, false);
 	}
 }
