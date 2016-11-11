@@ -49,7 +49,7 @@ body {
 	margin:0px;
 	overflow-x:hidden;
 	height:100%;
-	background:#fffbe8;
+	background:#fefefe;
 }
 
 #background{
@@ -252,7 +252,7 @@ body {
 
 .menuContainer{
 	display:table;
-	background:#fffbe8;
+	background:#fefefe;
 }
 
 #menuMainContent{
@@ -281,13 +281,17 @@ body {
 }
 
 .navTitleMenu{
-	background-color:#efd139;
+	background-color:#efefef;
 	padding-left:10px;
 	padding-right:10px;
 	font-size:4vh;
 	position:relative;
 	margin-bottom:0px;
 	padding-bottom:5px;
+}
+
+.navTitleMenu a{
+	color:#efd139;
 }
 
 .navTitleMenu a:hover{
@@ -307,24 +311,44 @@ body {
    cursor: default;
 }
 
+.partyArrowLeft{
+	width: 0; 
+	height: 0; 
+	border-top: 5vmin solid transparent;
+	border-bottom: 5vmin solid transparent; 
+	border-right:5vmin solid white; 
+	margin-top:12.5vmin;
+	opacity:0.85;
+}
+.partyArrowRight{
+	width: 0; 
+	height: 0; 
+	border-top: 5vmin solid transparent;
+	border-bottom: 5vmin solid transparent; 
+	border-left:5vmin solid white; 
+	margin-top:12.5vmin;
+	opacity:0.85;
+}
+
 .partyBoxSmall{
 	height:35vmin;
 	width:35vmin;
 	margin-top:9vmin;
 	background:white;
-	opacity:0.25;
 	display:inline-block;
 	text-align:center;
+	overflow:hidden;
 }
 
 .partyBoxThin{
 	height:35vmin;
-	width:6.25vmin;
+	width:5vmin;
 	margin-top:9vmin;
-	background:white;
-	opacity:0.25;
 	display:inline-block;
+	opacity:0.25;
 	text-align:center;
+	margin-left:2vmin;
+	margin-right:2vmin;
 }
 
 .partyContainer{

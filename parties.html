@@ -46,11 +46,11 @@
 <body style="font-size:0px">
 	<div id="headerWhite" style="font-size:16px">
 		<ul>
-			<li class="navTitle noSelect colorRed">PROMOS</li>
-			<li class="navTitle noSelect colorBlue underline">PARTIES</li>
-			<li class="navTitle noSelect colorYellow"><a href="menu">FOOD</a></li>
-			<li class="navTitle noSelect colorPurple"><a href="activities">ACTIVITIES</a></li>
-			<li class="navTitle noSelect logoClear" style="float:left"  id="headerLogo"><a href="index">BUNN'S</a></li>
+			<li class="navTitle noSelect colorRed makeYellow">PROMOS</li>
+			<li class="navTitle noSelect colorBlue underline makeYellow">PARTIES</li>
+			<li class="navTitle noSelect colorYellow"><a href="menu" class="makeYellow">FOOD</a></li>
+			<li class="navTitle noSelect colorPurple"><a href="activities" class="makeYellow">ACTIVITIES</a></li>
+			<li class="navTitle noSelect logoClear" style="float:left"  id="headerLogo"><a href="index" class="makeYellow">BUNN'S</a></li>
 		</ul>
 	</div>
 	<div id="background">
@@ -62,9 +62,24 @@
 				<div class="partyContainer">
 					<p class="textEmphasized"><span class="textUnderlined">Themes</span></p>
 					<p style="text-align:center;font-size:3vh;">Dozens of themes to select from!</p>
-					<div class="partyBoxThin"></div>
-					<div class="partyBoxSmall"></div>
-					<div class="partyBoxThin"></div>
+					<div class="partyBoxThin">
+						<a onclick="javascript:slideTo('partyThemeContainer',0,true)">
+						<div class="partyArrowLeft">
+						</div>
+						</a>
+					</div>
+					<div class="partyBoxSmall">
+						<div class="slideContainer" id="partyThemeContainer">
+							<div class="slide" style="background:black">
+							</div>
+							<div class="slide" style="background:white">
+							</div>
+						</div>
+					</div>
+					<div class="partyBoxThin">
+						<a onclick="javascript:slideTo('partyThemeContainer',1,true)"><div class="partyArrowRight">
+						</div></a>
+					</div>
 				</div>
 			</div>
 			<div class="partyRow" style="background:#2694e2">

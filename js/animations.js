@@ -46,7 +46,7 @@ function navBarScroll(){
 	var logo=document.getElementById("header");
 	var logoWhite=document.getElementById("headerWhite");
 	var navs=document.getElementsByClassName("navTitle");
-	var links=document.getElementsByTagName("a");
+	var links=document.getElementsByClassName("makeYellow");
 	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
 		if(logo!==null)
 			logo.style.background="#efd139";
