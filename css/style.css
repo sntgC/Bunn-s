@@ -87,11 +87,11 @@ body {
 }
 
 .colorBlue:hover{
-	border-bottom: 5px solid #2694e2
+	border-bottom: 5px solid #2694e2;
 }
 
 .colorBlue.underline{
-	border-bottom: 5px solid #2694e2
+	border-bottom: 5px solid #2694e2;
 }
 
 .colorPurple:hover{
@@ -343,14 +343,14 @@ body {
 }
 
 .sBInactive{
-	background-color:#efd139
+	background-color:#5d88ea;
 }
 
 .slideButton{
 	border-radius:50%;
 	display:inline-block;
-	height:1.5vmin;
-	width:1.5vmin;
+	height:2vmin;
+	width:2vmin;
 	z-index:5;
 }
 

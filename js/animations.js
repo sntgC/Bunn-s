@@ -48,9 +48,9 @@ function navBarScroll(){
 	var navs=document.getElementsByClassName("navTitle");
 	var links=document.getElementsByTagName("a");
 	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-		if(logo!=null)
+		if(logo!==null)
 			logo.style.background="#efd139";
-		if(logoWhite!=null){
+		if(logoWhite!==null){
 			logoWhite.style.background="#efefef";
 			for(i=0;i<navs.length;i++){
 				navs[i].style.color="#efd139";
@@ -64,9 +64,9 @@ function navBarScroll(){
 			document.getElementById("headerLogo").style.opacity=1;
 		}
     } else {
-		if(logo!=null)
+		if(logo!==null)
 			logo.style.background = "rgba(255, 89, 0,0)";
-		if(logoWhite!=null){
+		if(logoWhite!==null){
 			logoWhite.style.background = "rgba(255, 89, 0,0)";
 			for(i=0;i<navs.length;i++){
 				navs[i].style.color="white";
