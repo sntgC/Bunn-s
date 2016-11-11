@@ -129,7 +129,7 @@ body {
 .fullPageContent{
 	display:block;
 	overflow:hidden;
-	height:100vh;
+	height:150vh;
 	width:100%;
 }
 
@@ -307,14 +307,9 @@ body {
    cursor: default;
 }
 
-.partyBox{
-	height:85%;
-	width:90%;
-	background:red;
-	position:relative;
-	left:5%;
-	top:7.5%;
-	display:table;
+.partyContainer{
+	height:100%;
+	width:100%;
 }
 
 #partyPackageDisplay{
@@ -328,6 +323,9 @@ body {
 
 .partyRow{
 	display:table-row;
+	font-size:3vh;
+	height:50%;
+	color:white;
 }
 
 .slide{

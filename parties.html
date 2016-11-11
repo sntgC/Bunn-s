@@ -15,7 +15,11 @@
 	<script src="js/animations.js"></script>
 	<script>
 		$(document).ready(function () {
-			var fixmeTop = $('#customPackageStart').offset().top-100;
+			var fixmeTop = $('#customPackageStart').offset().top - 100;
+
+			$(window).resize(function () {
+				fixmeTop = $('#customPackageStart').offset().top - 100;
+			});
 
 			$(window).scroll(function () {
 
@@ -23,13 +27,13 @@
 
 				if (currentScroll >= fixmeTop) {
 					$('#partyPackageDisplay').css({
-						position:'fixed',
-						right:'-21px'
+						position : 'fixed',
+						right : '-21px'
 					});
 				} else {
 					$('#partyPackageDisplay').css({
 						position : 'static',
-						right:'0px;'
+						right : '0px;'
 					});
 				}
 
@@ -49,15 +53,37 @@
 			<li class="navTitle noSelect logoClear" style="float:left"  id="headerLogo"><a href="index">BUNN'S</a></li>
 		</ul>
 	</div>
-	<div class="fullPageContent" style="background:black"></div>
+	<div id="background">
+	<img src="assets/party.jpg">
+	</div>
 	<div style="display:inline-block;width:80vw">
 	<div class="fullPageContent" id="customPackageStart" style="background:white;display:table;">
-			<div class="partyRow" style="background:#7D049F">a</div>
-			<div class="partyRow" style="background:#2694e2">a</div>
+			<div class="partyRow" style="background:#7D049F">
+				<div class="partyContainer">
+					<p style="font-size:4vh;margin-bottom:0px;font-family:'Skranji',cursive;color:white;text-align:center;"><span style="border-bottom:5px solid;">Themes</span></p>
+					<p style="text-align:center;font-size:3vh;">Dozens of themes to select from!</p>
+				</div>
+			</div>
+			<div class="partyRow" style="background:#2694e2">
+				<div class="partyContainer">
+					<p style="font-size:4vh;margin-bottom:0px;font-family:'Skranji',cursive;color:white;text-align:center;"><span style="border-bottom:5px solid;">Food</span></p>
+					<p style="text-align:center;font-size:3vh;">Food for fun</p>
+				</div>
+			</div>
 	</div>
 	<div class="fullPageContent" style="background:white;display:table;">
-			<div class="partyRow" style="background:#27ba3d">a</div>
-			<div class="partyRow" style="background:#7D049F">a</div>
+			<div class="partyRow" style="background:#27ba3d">
+				<div class="partyContainer">
+					<p style="font-size:4vh;margin-bottom:0px;font-family:'Skranji',cursive;color:white;text-align:center;"><span style="border-bottom:5px solid;">Goodies</span></p>
+					<p style="text-align:center;font-size:3vh;">Give them something to remember!</p>
+				</div>
+			</div>
+			<div class="partyRow" style="background:#7D049F">
+				<div class="partyContainer">
+					<p style="font-size:4vh;margin-bottom:0px;font-family:'Skranji',cursive;color:white;text-align:center;"><span style="border-bottom:5px solid;">Activities</span></p>
+					<p style="text-align:center;font-size:3vh;">Keep them entertained!</p>
+				</div>
+			</div>
 	</div>
 	</div>
 	<div style="display:inline-block;background:blue;width:20vw;font-size:16px;top:100vh;bottom:0px;position:absolute;height:200vh;z-index:-2">
