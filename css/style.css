@@ -16,7 +16,7 @@
  a:visited{
 	 text-decoration:none;
  }
-
+ 
  .about{
 	 /*background-color:#d44343;*/
 	 background-color:#dfdfdf;
@@ -307,9 +307,30 @@ body {
    cursor: default;
 }
 
+.partyBoxSmall{
+	height:35vmin;
+	width:35vmin;
+	margin-top:9vmin;
+	background:white;
+	opacity:0.25;
+	display:inline-block;
+	text-align:center;
+}
+
+.partyBoxThin{
+	height:35vmin;
+	width:6.25vmin;
+	margin-top:9vmin;
+	background:white;
+	opacity:0.25;
+	display:inline-block;
+	text-align:center;
+}
+
 .partyContainer{
 	height:100%;
 	width:100%;
+	text-align:center;
 }
 
 #partyPackageDisplay{
@@ -383,4 +404,16 @@ body {
 
 .textBold{
 	font-weight:bold;
+}
+
+.textEmphasized{
+	font-size:4vh;
+	margin-bottom:0px;
+	font-family:'Skranji',cursive;
+	color:white;
+	text-align:center;
+}
+
+.textUnderlined{
+	border-bottom:5px solid;
 }
