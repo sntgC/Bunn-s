@@ -16,7 +16,7 @@
  a:visited{
 	 text-decoration:none;
  }
- 
+
  .about{
 	 /*background-color:#d44343;*/
 	 background-color:#dfdfdf;
@@ -216,10 +216,6 @@ body {
 	font-size:48px;
 }
 
-.logoSolid a:hover{
-    color: #5d88ea;
-}
-
 .mainContent{
 	background:#fffbe8;
 	text-align:center;
@@ -312,20 +308,20 @@ body {
 }
 
 .partyArrowLeft{
-	width: 0; 
-	height: 0; 
+	width: 0;
+	height: 0;
 	border-top: 5vmin solid transparent;
-	border-bottom: 5vmin solid transparent; 
-	border-right:5vmin solid white; 
+	border-bottom: 5vmin solid transparent;
+	border-right:5vmin solid white;
 	margin-top:12.5vmin;
 	opacity:0.85;
 }
 .partyArrowRight{
-	width: 0; 
-	height: 0; 
+	width: 0;
+	height: 0;
 	border-top: 5vmin solid transparent;
-	border-bottom: 5vmin solid transparent; 
-	border-left:5vmin solid white; 
+	border-bottom: 5vmin solid transparent;
+	border-left:5vmin solid white;
 	margin-top:12.5vmin;
 	opacity:0.85;
 }

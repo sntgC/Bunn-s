@@ -60,6 +60,12 @@ function navBarScroll(){
 			}
 		}
 		document.getElementById("headerLogo").className = "navTitle noSelect logoSolid";
+		$("#headerLogo a").mouseover(function(){
+			$(this).css('color','#5d88ea');
+		});
+		$("#headerLogo a").mouseout(function(){
+			$(this).css('color','#efd139');
+		});
 		if(window.location.href=="http://localhost/fbla/"){
 			document.getElementById("headerLogo").style.opacity=1;
 		}
@@ -76,6 +82,12 @@ function navBarScroll(){
 			}
 		}
 		document.getElementById("headerLogo").className = "navTitle noSelect logoClear";
+		$("#headerLogo a").mouseover(function(){
+			$(this).css('color','#efd139');
+		});
+		$("#headerLogo a").mouseout(function(){
+			$(this).css('color','white');
+		});
 		if(window.location.href=="http://localhost/fbla/"){
 			document.getElementById("headerLogo").style.opacity=0;
 		}
