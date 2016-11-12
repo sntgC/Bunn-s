@@ -121,7 +121,7 @@ function slideTo(containerID, slideIndex, buttoned){
 			});
 		}
 	}else{
-		if(slideIndex<document.getElementsByClassName("slide").length){
+		if(slideIndex<document.getElementById(containerID).children.length){
 			$('#'+containerID).animate({
 								left: ""+(slideIndex*-100)+"%"
 								}, 400, function(){

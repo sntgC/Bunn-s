@@ -58,7 +58,7 @@
 	</div>
 	<div style="display:inline-block;width:80vw">
 	<div class="fullPageContent" id="customPackageStart" style="background:white;display:table;">
-			<div class="partyRow" style="background:#7D049F">
+			<div class="partyRow" style="background:#7D049F;background-image:url('assets/iconPirate.png');background-repeat:no-repeat;background-position:left bottom;">
 				<div class="partyContainer">
 					<p class="textEmphasized"><span class="textUnderlined">Themes</span></p>
 					<p style="text-align:center;font-size:3vh;">Dozens of themes to select from!</p>
@@ -70,11 +70,14 @@
 					</div>
 					<div class="partyBoxSmall">
 						<div class="slideContainer" id="partyThemeContainer">
-							<div class="slide" style="background:black">
-							</div>
 							<div class="slide" style="background:white">
+							<img src="assets/iconPirate.png">
+							</div>
+							<div class="slide" style="background:black">
+							<p>Mermaid</p>
 							</div>
 							<div class="slide" style="background:red">
+							<p>Communist Revolution</p>
 							</div>
 						</div>
 					</div>
@@ -88,6 +91,26 @@
 				<div class="partyContainer">
 					<p  class="textEmphasized"><span class="textUnderlined">Food</span></p>
 					<p style="text-align:center;font-size:3vh;">Food for fun</p>
+					<div class="partyBoxThin">
+						<a onclick="javascript:slideToDir('partyFoodContainer','left',400)">
+						<div class="partyArrowLeft">
+						</div>
+						</a>
+					</div>
+					<div class="partyBoxSmall">
+						<div class="slideContainer" id="partyFoodContainer">
+							<div class="slide" style="background:black">
+							</div>
+							<div class="slide" style="background:white">
+							</div>
+							<div class="slide" style="background:red">
+							</div>
+						</div>
+					</div>
+					<div class="partyBoxThin">
+						<a onclick="javascript:slideToDir('partyFoodContainer','right',400)"><div class="partyArrowRight">
+						</div></a>
+					</div>
 				</div>
 			</div>
 	</div>
