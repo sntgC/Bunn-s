@@ -119,9 +119,9 @@ body {
 }
 
 #footer{
-    background-color:#5d88ea;
+    background-color:#878787;
 	height:30px;
-	color:black;
+	color:white;
     text-align: center;
 	z-index:22;
 }
@@ -340,7 +340,7 @@ body {
 	height:30vmin;
 	width:30vmin;
 	margin:1.75vmin;
-	background:white;
+	background:black;
 	display:inline-block;
 	text-align:center;
 	overflow:hidden;
@@ -351,7 +351,11 @@ body {
 .partyBoxTiny img{
 	height:100%;
 	width:100%;
-	
+	opacity:.15;
+}
+
+img.selected{
+	opacity:1;
 }
 
 .partyBoxTiny h2{
@@ -359,6 +363,10 @@ body {
 	top:-17vh;
 	margin:0px;
 	background:rgba(0,0,0,0.75);
+}
+
+h2.selected{
+	background:rgba(39, 186, 61,.75);
 }
 
 .partyBoxThin{

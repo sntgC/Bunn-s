@@ -3,26 +3,30 @@ var slideInterval;
 var currentSlideIndex = 0;
 var lastSlideIndex = 1;
 
-$(document).ready(function(){
+$(document).ready(function () {
 	//Animation of the back-to-top button
 	var offset = 300;
 	var duration = 750;
-	$(window).on('scroll',function(){
-		if($(this).scrollTop() > offset){
+	$(window).on('scroll', function () {
+		if ($(this).scrollTop() > offset) {
 			$('.back-to-top').fadeIn(duration);
-		}
-		else{
+		} else {
 			$('.back-to-top').fadeOut(250);
 		}
 	});
-	$(".back-to-top").on('click',function(event){
+	$("img").click(function (event) {
+		$(event.target.parentNode.firstChild).toggleClass("selected");
+	});
+	$(".back-to-top").on('click', function (event) {
 		event.preventDefault();
-		$('html, body').animate({scrollTop : 0}, duration);
+		$('html, body').animate({
+			scrollTop : 0
+		}, duration);
 		return false;
 	});
 	//Automated timed slide for the slideshow on the index page
-	lastSlideIndex=document.getElementsByClassName("slide").length-1;
-	slideInterval = window.setInterval(nextSlide,8000);
+	lastSlideIndex = document.getElementsByClassName("slide").length - 1;
+	slideInterval = window.setInterval(nextSlide, 8000);
 });
 
 window.onscroll = function() {navBarScroll();};
