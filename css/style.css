@@ -336,6 +336,16 @@ body {
 	overflow:hidden;
 }
 
+.partyBoxTiny{
+	height:30vmin;
+	width:30vmin;
+	margin:1.75vmin;
+	background:white;
+	display:inline-block;
+	text-align:center;
+	overflow:hidden;
+}
+
 .partyBoxThin{
 	height:35vmin;
 	width:5vmin;
