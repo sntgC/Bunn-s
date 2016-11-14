@@ -344,6 +344,21 @@ body {
 	display:inline-block;
 	text-align:center;
 	overflow:hidden;
+	border-radius:1vmin;
+	font-size:2vh;
+}
+
+.partyBoxTiny img{
+	height:100%;
+	width:100%;
+	
+}
+
+.partyBoxTiny h2{
+	position:relative;
+	top:-17vh;
+	margin:0px;
+	background:rgba(0,0,0,0.75);
 }
 
 .partyBoxThin{
