@@ -348,6 +348,31 @@ body {
 	font-size:2vh;
 }
 
+.partyBoxTinyGoodies{
+	height:30vmin;
+	width:30vmin;
+	margin:2.75vmin;
+	background:black;
+	display:inline-block;
+	text-align:center;
+	overflow:hidden;
+	border-radius:1vmin;
+	font-size:2vh;
+}
+
+.partyBoxTinyGoodies h2{
+	position:relative;
+	top:-17vh;
+	margin:0px;
+	background:rgba(0,0,0,0.75);
+}
+
+.partyBoxTinyGoodies img{
+	height:100%;
+	width:100%;
+	opacity:.15;
+}
+
 .partyBoxTiny img{
 	height:100%;
 	width:100%;

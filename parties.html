@@ -43,7 +43,7 @@
 	</script>
 </head>
 
-<body style="font-size:0px" class="noSelect">
+<body style="font-size:0px;background:#dedede;" class="noSelect">
 	<div id="headerWhite" style="font-size:16px">
 		<ul>
 			<li class="navTitle noSelect colorRed"><a href="promos" class="makeYellow">PROMOS</a></li>
@@ -85,6 +85,7 @@
 						<a onclick="javascript:slideToDir('partyThemeContainer','right',400)"><div class="partyArrowRight">
 						</div></a>
 					</div>
+					<p>Theme description here</p>
 				</div>
 			</div>
 			<div class="partyRow" style="background:#2694e2">
@@ -111,6 +112,7 @@
 						<a onclick="javascript:slideToDir('partyFoodContainer','right',400)"><div class="partyArrowRight">
 						</div></a>
 					</div>
+					<p>Food description here</p>
 				</div>
 			</div>
 	</div>
@@ -119,7 +121,14 @@
 				<div class="partyContainer">
 					<p  class="textEmphasized"><span class="textUnderlined">Goodies</span></p>
 					<p style="text-align:center;font-size:3vh;">Give them something to remember!</p>
-					 <input type="range" name="points" id="points" value="50" min="0" max="100">
+					<div style="padding:5vmin;padding-top:0px;">
+					<div class="partyBoxTinyGoodies"><img src="assets/poolActivityIcon.jpg"><h2 class="noSelect">Small</h2></div>
+					<div class="partyBoxTinyGoodies"><img src="assets/bowlingActivityIcon.jpg" class="selected"><h2 class="noSelect">Medium</h2></div>
+					<div class="partyBoxTinyGoodies"><img src="assets/arcadeActivityIcon.jpg"><h2 class="noSelect">Large</h2></div>
+					</div>
+					<div style="padding:2vmin;">
+					<input type="range" name="points" id="points" value="50" min="0" max="100">
+					</div>
 				</div>
 			</div>
 			<div class="partyRow" style="background:#7D049F">

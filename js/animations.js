@@ -17,6 +17,14 @@ $(document).ready(function () {
 	$(".partyBoxTiny").click(function (event) {
 		$(event.target.parentNode.firstChild).toggleClass("selected");
 	});
+	$(".partyBoxTinyGoodies").click(function (event) {
+		var divs=document.getElementsByClassName("partyBoxTinyGoodies");
+		for(i=0;i<divs.length;i++){
+			if($(divs[i].firstChild).hasClass("selected"))
+				$(divs[i].firstChild).toggleClass("selected");
+		}
+		$(event.target.parentNode.firstChild).toggleClass("selected");
+	});
 	$(".back-to-top").on('click', function (event) {
 		event.preventDefault();
 		$('html, body').animate({
