@@ -14,7 +14,7 @@ $(document).ready(function () {
 			$('.back-to-top').fadeOut(250);
 		}
 	});
-	$("img").click(function (event) {
+	$(".partyBoxTiny").click(function (event) {
 		$(event.target.parentNode.firstChild).toggleClass("selected");
 	});
 	$(".back-to-top").on('click', function (event) {
