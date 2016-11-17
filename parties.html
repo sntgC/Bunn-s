@@ -11,8 +11,12 @@
 	<link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/copyPasteCode.css">
+	<link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="js/animations.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
 	<script>
 		$(document).ready(function () {
 			var fixmeTop = $('#customPackageStart').offset().top - 100;
@@ -20,7 +24,9 @@
 			$(window).resize(function () {
 				fixmeTop = $('#customPackageStart').offset().top - 100;
 			});
-
+			$(function () {
+				$("#slider").slider();
+			});
 			$(window).scroll(function () {
 
 				var currentScroll = $(window).scrollTop();
@@ -122,12 +128,13 @@
 					<p  class="textEmphasized"><span class="textUnderlined">Goodies</span></p>
 					<p style="text-align:center;font-size:3vh;">Give them something to remember!</p>
 					<div style="padding:5vmin;padding-top:0px;">
-					<div class="partyBoxTinyGoodies"><img src="assets/poolActivityIcon.jpg"><h2 class="noSelect">Small</h2></div>
-					<div class="partyBoxTinyGoodies"><img src="assets/bowlingActivityIcon.jpg" class="selected"><h2 class="noSelect">Medium</h2></div>
-					<div class="partyBoxTinyGoodies"><img src="assets/arcadeActivityIcon.jpg"><h2 class="noSelect">Large</h2></div>
+					<div class="partyBoxTinyGoodies"><img draggable=false src="assets/poolActivityIcon.jpg"><h2 class="noSelect">Small</h2></div>
+					<div class="partyBoxTinyGoodies"><img draggable=false src="assets/bowlingActivityIcon.jpg" class="selected"><h2 class="noSelect">Medium</h2></div>
+					<div class="partyBoxTinyGoodies"><img draggable=false src="assets/arcadeActivityIcon.jpg"><h2 class="noSelect">Large</h2></div>
 					</div>
 					<div style="padding:2vmin;">
-					<input type="range" name="points" id="points" value="50" min="0" max="100">
+					<div id="slider"></div>
+					<!--<input type="range" name="points" id="points" value="50" min="0" max="100">-->
 					</div>
 				</div>
 			</div>
@@ -136,14 +143,14 @@
 					<p  class="textEmphasized"><span class="textUnderlined">Activities</span></p>
 					<p style="text-align:center;font-size:3vh;">Keep them entertained!</p>
 					<div style="padding:5vmin;padding-top:0px;">
-					<div class="partyBoxTiny"><img src="assets/poolActivityIcon.jpg"> <h2 class="noSelect">Pool</h2></div>
-					<div class="partyBoxTiny"><img src="assets/bowlingActivityIcon.jpg"><h2 class="noSelect">Bowling</h2></div>
-					<div class="partyBoxTiny"><img src="assets/arcadeActivityIcon.jpg"><h2 class="noSelect">Arcade</h2></div>
-					<div class="partyBoxTiny"><img src="assets/airhockeyActivityIcon.jpg"><h2 class="noSelect">Air Hockey</h2></div>
-					<div class="partyBoxTiny"><img src="assets/pingpongActivityIcon.jpg"><h2 class="noSelect">Ping Pong</h2></div>
-					<div class="partyBoxTiny"><img src="assets/vrActivityIcon.jpg"><h2 class="noSelect">Virtual Reality</h2></div>
-					<div class="partyBoxTiny"><img src="assets/lasertagActivityIcon.jpg"><h2 class="noSelect">Laser Tag</h2></div>
-					<div class="partyBoxTiny"><img src="assets/playgroundActivityIcon.jpg"><h2 class="noSelect">Jungle Gym</h2></div>
+					<div class="partyBoxTiny"><img draggable=false src="assets/poolActivityIcon.jpg"> <h2 class="noSelect">Pool</h2></div>
+					<div class="partyBoxTiny"><img draggable=false src="assets/bowlingActivityIcon.jpg"><h2 class="noSelect">Bowling</h2></div>
+					<div class="partyBoxTiny"><img draggable=false src="assets/arcadeActivityIcon.jpg"><h2 class="noSelect">Arcade</h2></div>
+					<div class="partyBoxTiny"><img draggable=false src="assets/airhockeyActivityIcon.jpg"><h2 class="noSelect">Air Hockey</h2></div>
+					<div class="partyBoxTiny"><img draggable=false src="assets/pingpongActivityIcon.jpg"><h2 class="noSelect">Ping Pong</h2></div>
+					<div class="partyBoxTiny"><img draggable=false src="assets/vrActivityIcon.jpg"><h2 class="noSelect">Virtual Reality</h2></div>
+					<div class="partyBoxTiny"><img draggable=false src="assets/lasertagActivityIcon.jpg"><h2 class="noSelect">Laser Tag</h2></div>
+					<div class="partyBoxTiny"><img draggable=false src="assets/playgroundActivityIcon.jpg"><h2 class="noSelect">Jungle Gym</h2></div>
 					</div>
 				</div>
 			</div>
