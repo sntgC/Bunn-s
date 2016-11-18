@@ -25,10 +25,24 @@ $(document).ready(function () {
 		}
 		$(event.target.parentNode.firstChild).toggleClass("selected");
 	});
+
+	// create a simple instance
+	// by default, it only adds horizontal recognizers
+	var mc = new Hammer(document.getElementById('homePageContainer'));
+
+	// listen to events...
+	mc.on("panleft", function (ev) {
+		nextSlide();
+		console.log("left");
+	});
+	mc.on("panright", function (ev) {
+		previousSlide();
+		console.log("left");
+	});
 	$(".back-to-top").on('click', function (event) {
 		event.preventDefault();
 		$('html, body').animate({
-			scrollTop : 0
+			scrollTop: 0
 		}, duration);
 		return false;
 	});
