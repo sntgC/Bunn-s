@@ -25,26 +25,26 @@ $(document).ready(function () {
 		}
 		$(event.target.parentNode.firstChild).toggleClass("selected");
 	});
+	var slideContainers=document.getElementsByClassName("slideContainer");
+	for (i = 0; i < slideContainers.length; i++) {
+		// create a simple instance
+		// by default, it only adds horizontal recognizers
+		var mc = new Hammer(slideContainers[i]);
 
-	// create a simple instance
-	// by default, it only adds horizontal recognizers
-	var mc = new Hammer(document.getElementById('homePageContainer'));
-
-	// listen to events...
-	mc.on("panleft", function (ev) {
-		nextSlide();
-		console.log("left");
-	});
-	mc.on("panright", function (ev) {
-		previousSlide();
-		console.log("left");
-	});
+		// listen to events...
+		mc.on("swipeleft", function (ev) {
+			nextSlide(true);
+		});
+		mc.on("swiperight", function (ev) {
+			previousSlide(true);
+		});
+	}
 	$(".back-to-top").on('click', function (event) {
-		event.preventDefault();
-		$('html, body').animate({
-			scrollTop: 0
-		}, duration);
-		return false;
+			event.preventDefault();
+			$('html, body').animate({
+				scrollTop: 0
+			}, duration);
+			return false;
 	});
 	//Automated timed slide for the slideshow on the index page
 	lastSlideIndex = document.getElementsByClassName("slide").length - 1;
@@ -55,10 +55,10 @@ window.onscroll = function() {navBarScroll();};
 
 document.addEventListener('keydown', function(event) {
     if(event.keyCode == 37) {
-		previousSlide();
+		previousSlide(false);
     }
     else if(event.keyCode == 39) {
-        nextSlide();
+        nextSlide(false);
     }
 });
 
@@ -120,18 +120,30 @@ function navBarScroll(){
     }
 }
 
-function nextSlide(){
+function nextSlide(preventWrapping){
+	if (!preventWrapping){
 	if(currentSlideIndex == lastSlideIndex){
 		currentSlideIndex = -1;
 	}
-	slideTo('homePageContainer', ++currentSlideIndex, true);
+		slideTo('homePageContainer', ++currentSlideIndex, true);
+	}else{
+		if(currentSlideIndex<lastSlideIndex){
+			slideTo('homePageContainer', ++currentSlideIndex, true);
+		}
+	}
 }
 
-function previousSlide(){
-	if(currentSlideIndex === 0){
-		currentSlideIndex = lastSlideIndex+1;
+function previousSlide(preventWrapping){
+	if (!preventWrapping){
+		if (currentSlideIndex === 0) {
+			currentSlideIndex = lastSlideIndex + 1;
+		}
+		slideTo('homePageContainer', --currentSlideIndex, true);
+	}else{
+		if(currentSlideIndex>0){
+			slideTo('homePageContainer', --currentSlideIndex, true);
+		}
 	}
-	slideTo('homePageContainer', --currentSlideIndex, true);
 }
 
 function scroll(menuID){
