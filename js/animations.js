@@ -55,10 +55,10 @@ window.onscroll = function() {navBarScroll();};
 
 document.addEventListener('keydown', function(event) {
     if(event.keyCode == 37) {
-		previousSlide(false);
+		previousSlide(true);
     }
     else if(event.keyCode == 39) {
-        nextSlide(false);
+        nextSlide(true);
     }
 });
 
@@ -199,4 +199,10 @@ function slideToDir(containerID, dir, transitionTime){
 		}
 		slideTo(containerID, curIndex+1, false);
 	}
+}
+
+function getSlideIndex(containerID){
+	var left = document.getElementById(containerID).style.left;
+	var shift=parseInt(left.substring(0,left.indexOf("%")));
+	return shift/-100;
 }

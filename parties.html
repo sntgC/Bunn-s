@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="css/jquery-ui.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="js/animations.js"></script>
+	<script src="js/objects.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 	<script>
@@ -27,6 +28,26 @@
 			});
 			$(function () {
 				$("#slider").slider();
+			});
+			$("#themeArrowLeft").on('click',function(){
+				slideToDir('partyThemeContainer','left',400);
+				var slideIndex=(getSlideIndex('partyThemeContainer')+3-1)%3;//Change to slide count;
+				$('#themeRow').css({
+						'background-image':"url("+partyThemeSlides[slideIndex]+")"
+					});
+			});
+			$("#themeArrowRight").on('click',function(){
+				slideToDir('partyThemeContainer','right',400);
+				var slideIndex=(getSlideIndex('partyThemeContainer')+3+1)%3;//Change to slide count;
+				$('#themeRow').css({
+						'background-image':"url("+partyThemeSlides[slideIndex]+")"
+					});
+			});
+			$("#foodArrowLeft").on('click',function(){
+				slideToDir('partyFoodContainer','left',400);
+			});
+			$("#foodArrowRight").on('click',function(){
+				slideToDir('partyFoodContainer','right',400);
 			});
 			$(window).scroll(function () {
 
@@ -65,15 +86,13 @@
 	</div>
 	<div style="display:inline-block;width:80vw">
 	<div class="fullPageContent" id="customPackageStart" style="background:white;display:table;">
-			<div class="partyRow" style="background:#7D049F;background-image:url('assets/iconPirate.png');background-repeat:no-repeat;background-position:left bottom;">
+			<div class="partyRow" style="background:#7D049F;background-image:url('assets/iconPirate.png');background-repeat:no-repeat;background-position:left bottom;" id="themeRow">
 				<div class="partyContainer">
 					<p class="textEmphasized"><span class="textUnderlined">Themes</span></p>
 					<p style="text-align:center;font-size:3vh;">Dozens of themes to select from!</p>
 					<div class="partyBoxThin">
-						<a onclick="javascript:slideToDir('partyThemeContainer','left',400)">
-						<div class="partyArrowLeft">
+						<div class="partyArrowLeft" id="themeArrowLeft">
 						</div>
-						</a>
 					</div>
 					<div class="partyBoxSmall">
 						<div class="slideContainer" id="partyThemeContainer">
@@ -89,8 +108,8 @@
 						</div>
 					</div>
 					<div class="partyBoxThin">
-						<a onclick="javascript:slideToDir('partyThemeContainer','right',400)"><div class="partyArrowRight">
-						</div></a>
+						<div class="partyArrowRight" id="themeArrowRight">
+						</div>
 					</div>
 					<p>Theme description here</p>
 				</div>
@@ -100,10 +119,8 @@
 					<p  class="textEmphasized"><span class="textUnderlined">Food</span></p>
 					<p style="text-align:center;font-size:3vh;">Food for fun</p>
 					<div class="partyBoxThin">
-						<a onclick="javascript:slideToDir('partyFoodContainer','left',400)">
-						<div class="partyArrowLeft">
+						<div class="partyArrowLeft" id="foodArrowLeft">
 						</div>
-						</a>
 					</div>
 					<div class="partyBoxSmall">
 						<div class="slideContainer" id="partyFoodContainer">
@@ -116,8 +133,8 @@
 						</div>
 					</div>
 					<div class="partyBoxThin">
-						<a onclick="javascript:slideToDir('partyFoodContainer','right',400)"><div class="partyArrowRight">
-						</div></a>
+						<div class="partyArrowRight" id="foodArrowRight">
+						</div>
 					</div>
 					<p>Food description here</p>
 				</div>

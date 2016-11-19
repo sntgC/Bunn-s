@@ -85,3 +85,4 @@ var menuObjDri={type:"Drinks",
 							]}
 						]};
 var menuObj={choices:[menuObjApp,menuObjEnt, menuObjDes, menuObjDri]};
+var partyThemeSlides=["assets/iconPirate.png","assets/iconPirate.jpg","assets/iconPirate.png"];
