@@ -17,12 +17,19 @@
         function interpretRequest($conn){
             switch ($this->requestVerb) {
                 case "POST":
-                    if(preg_match("/users\//",$this->requestString)){
+                    // users/ endpoint
+                    if(preg_match("/\Ausers\/\z/", $this->requestString)){
                         $model = new UsersModel();
-                        $model->email = $_POST["email"];
-                        $model->password = $_POST["password"];
-                        $model->create($conn);
-                        http_response_code(200);
+                        if(isset($_POST["email"]) && isset($_POST["password"])){
+                            $model->email = $_POST["email"];
+                            $model->password = $_POST["password"];
+                            $model->create($conn);
+                        }
+                        else{
+                            http_response_code(400);
+                            echo json_encode("Required parameters email and/or password not received");
+                            exit();
+                        }
                     }
                     break;
                 default:

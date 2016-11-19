@@ -22,19 +22,11 @@
                 $controller = new Users($request, $requestString, $requestVerb);
                 break;
             default:
-                http_response_code(400);
+                http_response_code(404);
                 break;
         }
     }
     else {
-        http_response_code(400);
-    }
-
-    function inRequest($needle){
-        global $request;
-        if(in_array($needle, $request)){
-            return true;
-        }
-        return false;
+        http_response_code(404);
     }
 ?>
