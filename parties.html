@@ -85,7 +85,7 @@
 	<div id="background">
 	<img src="assets/party.jpg">
 	</div>
-	<div style="display:inline-block;width:80vw">
+	<div style="display:inline-block;width:80vw;box-shadow:10px 0px 10px 0px rgba(0,0,0,0.26);">
 	<div class="fullPageContent" id="customPackageStart" style="background:white;display:table;">
 			<div class="partyRow" style="background:#7D049F;background-image:url('assets/iconPirate.png');background-repeat:no-repeat;background-position:left bottom;" id="themeRow">
 				<div class="partyContainer">
@@ -115,10 +115,12 @@
 					<p>Theme description here</p>
 				</div>
 			</div>
+			<div class="fullPageContent" style="background:white;display:table;height:0;">
 			<div class="partyRow" style="background:#2694e2">
+				<div style="display:table-cell;">
 				<div class="partyContainer">
 					<p  class="textEmphasized"><span class="textUnderlined">Food</span></p>
-					<p style="text-align:center;font-size:3vh;">Food for fun</p>
+					<p style="text-align:center;font-size:3vh;">Food for fun!</p>
 					<div class="partyBoxThin">
 						<div class="partyArrowLeft" id="foodArrowLeft">
 						</div>
@@ -138,9 +140,39 @@
 						</div>
 					</div>
 					<p>Food description here</p>
+			</div>
+					
+					</div>
+					<div style="display:table-cell;">
+				<div class="partyContainer">
+					<p  class="textEmphasized"><span class="textUnderlined">Cake</span></p>
+					<p style="text-align:center;font-size:3vh;">Let them eat cake!</p>
+					<div class="partyBoxThin">
+						<div class="partyArrowLeft" id="foodArrowLeft">
+						</div>
+					</div>
+					<div class="partyBoxSmall">
+						<div class="slideContainer" id="partyFoodContainer">
+							<div class="slide" style="background:black">
+							</div>
+							<div class="slide" style="background:white">
+							</div>
+							<div class="slide" style="background:red">
+							</div>
+						</div>
+					</div>
+					<div class="partyBoxThin">
+						<div class="partyArrowRight" id="foodArrowRight">
+						</div>
+					</div>
+					<p>Cake description here</p>
+					<p>Include an inscription: <br><input type="text" name="fname"></p>
+			</div>
+					
+					</div>
 				</div>
 			</div>
-	</div>
+			</div>
 	<div class="fullPageContent" style="background:white;display:table;">
 			<div class="partyRow" style="background:#27ba3d">
 				<div class="partyContainer">
@@ -178,7 +210,7 @@
 			</div>
 	</div>
 	</div>
-	<div style="display:inline-block;background:#dedede;width:20vw;font-size:16px;top:100vh;bottom:0px;position:absolute;height:200vh;z-index:-2">
+	<div style="display:inline-block;background:#dedede;width:20vw;font-size:16px;top:100vh;bottom:0px;position:absolute;height:200vh;z-index:-2;padding:0px;">
 		<div id="partyPackageDisplay">
 			<p class="textEmphasized"><span class="textUnderlined">Your Party</span></p>
 		</div>

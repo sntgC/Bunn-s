@@ -78,6 +78,7 @@ function navBarScroll(){
 			logo.style.background="#efd139";
 		if(logoWhite!==null){
 			logoWhite.style.background="#efefef";
+			logoWhite.style.boxShadow="0 4px 8px 0 rgba(0,0,0,0.4269)";
 			for(i=0;i<navs.length;i++){
 				navs[i].style.color="#efd139";
 			}
@@ -100,6 +101,7 @@ function navBarScroll(){
 			logo.style.background = "rgba(255, 89, 0,0)";
 		if(logoWhite!==null){
 			logoWhite.style.background = "rgba(255, 89, 0,0)";
+			logoWhite.style.boxShadow="none";
 			for(i=0;i<navs.length;i++){
 				navs[i].style.color="white";
 			}

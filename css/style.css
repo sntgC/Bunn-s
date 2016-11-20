@@ -159,6 +159,7 @@ body {
 	padding-right:50px;
 	position:fixed;
 	z-index:20;
+	box-shadow: none;
 }
 
 #header li{
