@@ -83,6 +83,30 @@
             http_response_code(201);
         }
 
+        function retrieve($conn){
+            if($this->id === null){
+                $sql = "SELECT * FROM users";
+                $result = $conn->query($sql);
+                $rows = array();
+                while($r = $result->fetch_assoc()) {
+                    $rows[] = $r;
+                }
+                http_response_code(200);
+                echo json_encode($rows);
+            }
+            else{
+                $sql = "SELECT * FROM users WHERE id='$this->id'";
+                $result = $conn->query($sql);
+                if($result->num_rows == 1){
+                    http_response_code(200);
+                    echo json_encode($result->fetch_assoc());
+                }
+                else if($result->num_rows == 0){
+                    http_response_code(404);
+                    echo json_encode("No user found with that ID");
+                }
+            }
+        }
     }
 
 ?>

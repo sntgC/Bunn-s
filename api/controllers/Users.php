@@ -16,6 +16,7 @@
 
         function interpretRequest($conn){
             switch ($this->requestVerb) {
+                //Create action
                 case "POST":
                     // users/ endpoint
                     if(preg_match("/\Ausers\/\z/", $this->requestString)){
@@ -30,6 +31,31 @@
                             echo json_encode("Required parameters email and/or password not received");
                             exit();
                         }
+                    }
+                    //No endpoint located with the given request
+                    else{
+                        http_response_code(400);
+                        exit();
+                    }
+                    break;
+                //Retrieve action
+                case "GET":
+                    //Limit call access and return data later for all below endpoints
+                    // users/ endpoint
+                    if(preg_match("/\Ausers\/\z/", $this->requestString)){
+                        $model = new UsersModel();
+                        $model->retrieve($conn);
+                    }
+                    // users/{id}/ endpoint
+                    elseif(preg_match("/\Ausers\/\w{7}\/\z/", $this->requestString)){
+                        $model = new UsersModel();
+                        $model->id = $this->requestArray[1];
+                        $model->retrieve($conn);
+                    }
+                    //No endpoint located with the given request
+                    else{
+                        http_response_code(400);
+                        exit();
                     }
                     break;
                 default:
