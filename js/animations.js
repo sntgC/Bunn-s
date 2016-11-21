@@ -158,6 +158,7 @@ function slideTo(containerID, slideIndex, buttoned){
 }
 
 function slideToDir(containerID, dir, transitionTime){
+	console.log(containerID);
 	var left = document.getElementById(containerID).style.left;
 	var curIndex=0;
 	var slideCnt=document.getElementById(containerID).children.length;
@@ -186,4 +187,8 @@ function getSlideIndex(containerID){
 
 function getSlideCount(containerID){
 	return document.getElementById(containerID).children.length;
+}
+
+function setParagraphText(paragraphID, text){
+	document.getElementById(paragraphID).innerHTML=text;
 }

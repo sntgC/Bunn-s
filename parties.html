@@ -23,47 +23,42 @@
 	<script>
 		$(document).ready(function () {
 			//Variables
-			var themeSlideCnt=getSlideCount('partyThemeContainer');
+			var slideCnts=[];
+			var nameRoots=["Theme","Food","Cake"];
 		
-			//Creates jQuery UI Slider
-			$(function () {
-				$("#slider").slider();
-			});
-			
 			//Template loading
 			var source = $("#slideContainer-template").html();
 			slideTemplate = Handlebars.compile(source);
-			document.getElementById("partyThemeContainer").innerHTML = slideTemplate(partyObj.sections[0]);
-			document.getElementById("partyFoodContainer").innerHTML = slideTemplate(partyObj.sections[1]);
-			document.getElementById("partyCakeContainer").innerHTML = slideTemplate(partyObj.sections[2]);
-			
+			for(t=0;t<nameRoots.length;t++){
+				document.getElementById("party"+nameRoots[t]+"Container").innerHTML = slideTemplate(partyObj.sections[t]);
+				setParagraphText(nameRoots[t].toLowerCase()+"DescriptionDisplay",partyObj.sections[t].options[0].description);
+				slideCnts[t]=getSlideCount("party"+nameRoots[t]+"Container");
+			}
 			//Event binding
-			$("#themeArrowLeft").on('click',function(){
-				slideToDir('partyThemeContainer','left',400);
-				var slideIndex=(getSlideIndex('partyThemeContainer')+themeSlideCnt-1)%themeSlideCnt;
-				$('#themeRow').css({
-						'background-image':"url("+partyThemeSlides[slideIndex]+")"
-					});
-			});
-			$("#themeArrowRight").on('click',function(){
-				slideToDir('partyThemeContainer','right',400);
-				var slideIndex=(getSlideIndex('partyThemeContainer')+themeSlideCnt+1)%themeSlideCnt;
-				$('#themeRow').css({
-						'background-image':"url("+partyThemeSlides[slideIndex]+")"
-					});
-			});
-			$("#foodArrowLeft").on('click',function(){
-				slideToDir('partyFoodContainer','left',400);
-			});
-			$("#foodArrowRight").on('click',function(){
-				slideToDir('partyFoodContainer','right',400);
-			});
-			$("#cakeArrowLeft").on('click',function(){
-				slideToDir('partyCakeContainer','left',400);
-			});
-			$("#cakeArrowRight").on('click',function(){
-				slideToDir('partyCakeContainer','right',400);
-			});
+			function arrowHandler(root, direction, add, slideCount, func, index) {
+				$("#" + root.toLowerCase() + "Arrow" + direction).on('click', function () {
+					slideToDir("party" + root + "Container", direction.toLowerCase(), 400);
+					var slideIndex = (getSlideIndex("party" + root + "Container") + slideCount + add) % slideCount;
+					func(slideIndex);
+					setParagraphText(root.toLowerCase() + "DescriptionDisplay", partyObj.sections[index].options[slideIndex].description);
+				});
+			}
+			for(t=0;t<nameRoots.length;t++){
+				for(l=0;l<2;l++){
+					var dir="Left";
+					var add=-1;
+					if(l==0){
+						dir="Right";
+						add=1;
+					}
+					var themeBackgroundChange=function(sIndex){$('#themeRow').css({
+						'background-image':"url("+partyObj.sections[0].options[sIndex].backgroundImage+")"
+					});};
+					if(t!=0)
+						themeBackgroundChange=function(sIndex){};
+					arrowHandler(nameRoots[t],dir,add,slideCnts[t],themeBackgroundChange, t);
+				}
+			}
 			$(".partyBoxTiny").on('click',function (event) {
 				$(event.target.parentNode.firstChild).toggleClass("selected");
 			});
@@ -74,6 +69,11 @@
 						$(divs[i].firstChild).toggleClass("selected");
 				}
 				$(event.target.parentNode.firstChild).toggleClass("selected");
+			});
+		
+			//Creates jQuery UI Slider
+			$(function () {
+				$("#slider").slider();
 			});
 			
 			//Party Package Div Fixed on scroll
@@ -124,7 +124,7 @@
 	<img src="assets/party.jpg">
 	</div>
 	<div style="display:inline-block;width:80vw;box-shadow:10px 0px 10px 0px rgba(0,0,0,0.26);">
-	<div class="fullPageContent" id="customPackageStart" style="background:white;display:table;">
+	<div class="fullPageContent" id="customPackageStart" style="background:#2694e2;display:table;">
 			<div class="partyRow" style="background:#7D049F;background-image:url('assets/iconPirate.png');background-repeat:no-repeat;background-position:left bottom;" id="themeRow">
 				<div class="partyContainer">
 					<p class="textEmphasized"><span class="textUnderlined">Themes</span></p>
@@ -143,7 +143,7 @@
 					<p id="themeDescriptionDisplay">Theme description here</p>
 				</div>
 			</div>
-			<div class="fullPageContent" style="background:white;display:table;height:0;">
+			<div class="fullPageContent" style="background:#2694e2;display:table;height:0;">
 			<div class="partyRow" style="background:#2694e2">
 				<div style="display:table-cell;">
 				<div class="partyContainer">
@@ -160,7 +160,7 @@
 						<div class="partyArrowRight" id="foodArrowRight">
 						</div>
 					</div>
-					<p>Food description here</p>
+					<p id="foodDescriptionDisplay">Food description here</p>
 			</div>
 					
 					</div>
@@ -179,7 +179,7 @@
 						<div class="partyArrowRight" id="cakeArrowRight">
 						</div>
 					</div>
-					<p>Cake description here</p>
+					<p id="cakeDescriptionDisplay">Cake description here</p>
 					<p>Include an inscription: <br><input type="text" name="fname"></p>
 			</div>
 					

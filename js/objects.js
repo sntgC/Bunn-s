@@ -92,11 +92,13 @@ var partyObjTheme={name:"Themes",
 									{
 									name:"Pirate",
 									image:"assets/iconPirate.png",
+									backgroundImage:"assets/iconPirate.png",
 									description:"Avast ye mateys! Sail the high seas as your parents sail these great prices!"
 									},
 									{
 									name:"Mermaid",
 									image:"assets/iconPirate.png",
+									backgroundImage:"assets/iconPirate.png",
 									description:"Does something smell fishy? It's your new tail!"
 									}
 								]};
@@ -108,12 +110,12 @@ var partyObjLunch={name:"Lunch",
 									{
 									name:"Pirate",
 									image:"assets/iconPirate.png",
-									description:"Avast ye mateys! Sail the high seas as your parents sail these great prices!"
+									description:""
 									},
 									{
 									name:"Mermaid",
 									image:"assets/iconPirate.png",
-									description:"Does something smell fishy? It's your new tail!"
+									description:""
 									}
 								]};
 var partyObjCake={name:"Cake",
@@ -124,12 +126,12 @@ var partyObjCake={name:"Cake",
 									{
 									name:"Pirate",
 									image:"assets/iconPirate.png",
-									description:"Avast ye mateys! Sail the high seas as your parents sail these great prices!"
+									description:""
 									},
 									{
 									name:"Mermaid",
 									image:"assets/iconPirate.png",
-									description:"Does something smell fishy? It's your new tail!"
+									description:""
 									}
 								]};								
 var menuObj={choices:[menuObjApp,menuObjEnt, menuObjDes, menuObjDri]};
