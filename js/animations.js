@@ -1,3 +1,4 @@
+
 var template;
 var slideInterval;
 var currentSlideIndex = 0;
@@ -14,23 +15,10 @@ $(document).ready(function () {
 			$('.back-to-top').fadeOut(250);
 		}
 	});
-	$(".partyBoxTiny").click(function (event) {
-		$(event.target.parentNode.firstChild).toggleClass("selected");
-	});
-	$(".partyBoxTinyGoodies").click(function (event) {
-		var divs=document.getElementsByClassName("partyBoxTinyGoodies");
-		for(i=0;i<divs.length;i++){
-			if($(divs[i].firstChild).hasClass("selected"))
-				$(divs[i].firstChild).toggleClass("selected");
-		}
-		$(event.target.parentNode.firstChild).toggleClass("selected");
-	});
+	//Adds swipe capability to front page
 	var slideContainers=document.getElementsByClassName("slideContainer");
 	for (i = 0; i < slideContainers.length; i++) {
-		// create a simple instance
-		// by default, it only adds horizontal recognizers
 		var mc = new Hammer(slideContainers[i]);
-
 		// listen to events...
 		mc.on("swipeleft", function (ev) {
 			nextSlide(true);
@@ -61,12 +49,6 @@ document.addEventListener('keydown', function(event) {
         nextSlide(true);
     }
 });
-
-window.onload = function(){
-	var source   = $("#menu-template").html();
-	template = Handlebars.compile(source);
-	document.getElementById("menuMainContent").innerHTML=template(menuObj);
-};
 
 function navBarScroll(){
 	var logo=document.getElementById("header");
@@ -148,13 +130,6 @@ function previousSlide(preventWrapping){
 	}
 }
 
-function scroll(menuID){
-	$('html, body').animate({
-								scrollTop: $("#"+menuObj.choices[menuID].type).offset().top-90
-								}, 800*Math.cbrt(menuID+1), function(){
-	});
-}
-
 function slideTo(containerID, slideIndex, buttoned){
 	currentSlideIndex=slideIndex;
 	if(buttoned){
@@ -207,4 +182,8 @@ function getSlideIndex(containerID){
 	var left = document.getElementById(containerID).style.left;
 	var shift=parseInt(left.substring(0,left.indexOf("%")));
 	return shift/-100;
+}
+
+function getSlideCount(containerID){
+	return document.getElementById(containerID).children.length;
 }

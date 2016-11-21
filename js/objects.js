@@ -84,5 +84,54 @@ var menuObjDri={type:"Drinks",
 								{name:"c", image:"assets/city.jpg", price:"$", description:"Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam ultrices erat nec quam rutrum elementum. Ut quis ipsum consequat massa lobortis."}
 							]}
 						]};
+var partyObjTheme={name:"Themes",
+								displayType:"sliderSelec",
+								description:"Dozens of themes to select from!",
+								elementIDNameRoot:"theme",
+								options:[
+									{
+									name:"Pirate",
+									image:"assets/iconPirate.png",
+									description:"Avast ye mateys! Sail the high seas as your parents sail these great prices!"
+									},
+									{
+									name:"Mermaid",
+									image:"assets/iconPirate.png",
+									description:"Does something smell fishy? It's your new tail!"
+									}
+								]};
+var partyObjLunch={name:"Lunch",
+								displayType:"sliderSelec",
+								description:"Food for fun!",
+								elementIDNameRoot:"food",
+								options:[
+									{
+									name:"Pirate",
+									image:"assets/iconPirate.png",
+									description:"Avast ye mateys! Sail the high seas as your parents sail these great prices!"
+									},
+									{
+									name:"Mermaid",
+									image:"assets/iconPirate.png",
+									description:"Does something smell fishy? It's your new tail!"
+									}
+								]};
+var partyObjCake={name:"Cake",
+								displayType:"sliderSelec",
+								description:"Let them eat cake!",
+								elementIDNameRoot:"cake",
+								options:[
+									{
+									name:"Pirate",
+									image:"assets/iconPirate.png",
+									description:"Avast ye mateys! Sail the high seas as your parents sail these great prices!"
+									},
+									{
+									name:"Mermaid",
+									image:"assets/iconPirate.png",
+									description:"Does something smell fishy? It's your new tail!"
+									}
+								]};								
 var menuObj={choices:[menuObjApp,menuObjEnt, menuObjDes, menuObjDri]};
 var partyThemeSlides=["assets/iconPirate.png","assets/iconPirate.jpg","assets/iconPirate.png"];
+var partyObj={sections:[partyObjTheme,partyObjLunch,partyObjCake]};

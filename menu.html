@@ -16,7 +16,18 @@
 	<script src="libs/handlebars.min-latest.js"></script>
 	<script src="js/objects.js"></script>
 	<script src="js/animations.js"></script>
-
+	<script>
+		window.onload = function () {
+			var source = $("#menu-template").html();
+			template = Handlebars.compile(source);
+			document.getElementById("menuMainContent").innerHTML = template(menuObj);
+		};
+		function scroll(menuID) {
+			$('html, body').animate({
+				scrollTop: $("#" + menuObj.choices[menuID].type).offset().top - 90
+			}, 800 * Math.cbrt(menuID + 1), function () {});
+		}
+	</script>
 	<script id="menu-template" type="text/x-handlebars-template">
 		{{#each choices}}
 		<div id='{{type}}' class="menuContainer noSelect">

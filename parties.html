@@ -15,31 +15,39 @@
 	<link rel="stylesheet" href="css/jquery-ui.theme.min.css">
 	<link rel="stylesheet" href="css/jquery-ui.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="libs/handlebars.min-latest.js"></script>
 	<script src="js/animations.js"></script>
 	<script src="js/objects.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 	<script>
-		//Move to external JS file when possible
 		$(document).ready(function () {
-			var fixmeTop = $('#customPackageStart').offset().top - 100;
-
-			$(window).resize(function () {
-				fixmeTop = $('#customPackageStart').offset().top - 100;
-			});
+			//Variables
+			var themeSlideCnt=getSlideCount('partyThemeContainer');
+		
+			//Creates jQuery UI Slider
 			$(function () {
 				$("#slider").slider();
 			});
+			
+			//Template loading
+			var source = $("#slideContainer-template").html();
+			slideTemplate = Handlebars.compile(source);
+			document.getElementById("partyThemeContainer").innerHTML = slideTemplate(partyObj.sections[0]);
+			document.getElementById("partyFoodContainer").innerHTML = slideTemplate(partyObj.sections[1]);
+			document.getElementById("partyCakeContainer").innerHTML = slideTemplate(partyObj.sections[2]);
+			
+			//Event binding
 			$("#themeArrowLeft").on('click',function(){
 				slideToDir('partyThemeContainer','left',400);
-				var slideIndex=(getSlideIndex('partyThemeContainer')+3-1)%3;//Change to slide count;
+				var slideIndex=(getSlideIndex('partyThemeContainer')+themeSlideCnt-1)%themeSlideCnt;
 				$('#themeRow').css({
 						'background-image':"url("+partyThemeSlides[slideIndex]+")"
 					});
 			});
 			$("#themeArrowRight").on('click',function(){
 				slideToDir('partyThemeContainer','right',400);
-				var slideIndex=(getSlideIndex('partyThemeContainer')+3+1)%3;//Change to slide count;
+				var slideIndex=(getSlideIndex('partyThemeContainer')+themeSlideCnt+1)%themeSlideCnt;
 				$('#themeRow').css({
 						'background-image':"url("+partyThemeSlides[slideIndex]+")"
 					});
@@ -50,11 +58,28 @@
 			$("#foodArrowRight").on('click',function(){
 				slideToDir('partyFoodContainer','right',400);
 			});
+			$("#cakeArrowLeft").on('click',function(){
+				slideToDir('partyCakeContainer','left',400);
+			});
+			$("#cakeArrowRight").on('click',function(){
+				slideToDir('partyCakeContainer','right',400);
+			});
+			$(".partyBoxTiny").on('click',function (event) {
+				$(event.target.parentNode.firstChild).toggleClass("selected");
+			});
+			$(".partyBoxTinyGoodies").on('click',function (event) {
+				var divs = document.getElementsByClassName("partyBoxTinyGoodies");
+				for (i = 0; i < divs.length; i++) {
+					if ($(divs[i].firstChild).hasClass("selected"))
+						$(divs[i].firstChild).toggleClass("selected");
+				}
+				$(event.target.parentNode.firstChild).toggleClass("selected");
+			});
+			
+			//Party Package Div Fixed on scroll
 			$(window).scroll(function () {
-
 				var currentScroll = $(window).scrollTop();
-
-				if (currentScroll >= fixmeTop) {
+				if (currentScroll >= fixedPartyDisplayDivTop) {
 					$('#partyPackageDisplay').css({
 						position : 'fixed',
 						right : '-21px'
@@ -65,21 +90,34 @@
 						right : '0px;'
 					});
 				}
+			});
+			
+			//Fixes resizing issue for fixed div
+			var fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - 100;
 
+			$(window).resize(function () {
+				fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - 100;
 			});
 		});
 
+	</script>
+	<script id="slideContainer-template" type="text/x-handlebars-template">
+		{{#each options}}
+		<div class="slide">
+		<img src='{{image}}'>
+		</div>
+		{{/each}}
 	</script>
 </head>
 
 <body style="font-size:0px;background:#dedede;" class="noSelect">
 	<div id="headerWhite" style="font-size:16px">
 		<ul>
-			<li class="navTitle noSelect colorRed"><a href="promos" class="makeYellow">PROMOS</a></li>
-			<li class="navTitle noSelect colorBlue underline makeYellow">PARTIES</li>
-			<li class="navTitle noSelect colorYellow"><a href="menu" class="makeYellow">FOOD</a></li>
-			<li class="navTitle noSelect colorPurple"><a href="activities" class="makeYellow">ACTIVITIES</a></li>
-			<li class="navTitle noSelect logoClear" style="float:left"  id="headerLogo"><a href="index" class="makeYellow">BUNN'S</a></li>
+			<li class="navTitle colorRed"><a href="promos" class="makeYellow">PROMOS</a></li>
+			<li class="navTitle colorBlue underline makeYellow">PARTIES</li>
+			<li class="navTitle colorYellow"><a href="menu" class="makeYellow">FOOD</a></li>
+			<li class="navTitle colorPurple"><a href="activities" class="makeYellow">ACTIVITIES</a></li>
+			<li class="navTitle logoClear" style="float:left"  id="headerLogo"><a href="index" class="makeYellow">BUNN'S</a></li>
 		</ul>
 	</div>
 	<div id="background">
@@ -96,23 +134,13 @@
 						</div>
 					</div>
 					<div class="partyBoxSmall">
-						<div class="slideContainer" id="partyThemeContainer">
-							<div class="slide" style="background:white">
-							<img src="assets/iconPirate.png">
-							</div>
-							<div class="slide" style="background:black">
-							<p>Mermaid</p>
-							</div>
-							<div class="slide" style="background:red">
-							<p>Communist Revolution</p>
-							</div>
-						</div>
+						<div class="slideContainer" id="partyThemeContainer"></div>
 					</div>
 					<div class="partyBoxThin">
 						<div class="partyArrowRight" id="themeArrowRight">
 						</div>
 					</div>
-					<p>Theme description here</p>
+					<p id="themeDescriptionDisplay">Theme description here</p>
 				</div>
 			</div>
 			<div class="fullPageContent" style="background:white;display:table;height:0;">
@@ -126,14 +154,7 @@
 						</div>
 					</div>
 					<div class="partyBoxSmall">
-						<div class="slideContainer" id="partyFoodContainer">
-							<div class="slide" style="background:black">
-							</div>
-							<div class="slide" style="background:white">
-							</div>
-							<div class="slide" style="background:red">
-							</div>
-						</div>
+						<div class="slideContainer" id="partyFoodContainer"></div>
 					</div>
 					<div class="partyBoxThin">
 						<div class="partyArrowRight" id="foodArrowRight">
@@ -148,21 +169,14 @@
 					<p  class="textEmphasized"><span class="textUnderlined">Cake</span></p>
 					<p style="text-align:center;font-size:3vh;">Let them eat cake!</p>
 					<div class="partyBoxThin">
-						<div class="partyArrowLeft" id="foodArrowLeft">
+						<div class="partyArrowLeft" id="cakeArrowLeft">
 						</div>
 					</div>
 					<div class="partyBoxSmall">
-						<div class="slideContainer" id="partyFoodContainer">
-							<div class="slide" style="background:black">
-							</div>
-							<div class="slide" style="background:white">
-							</div>
-							<div class="slide" style="background:red">
-							</div>
-						</div>
+						<div class="slideContainer" id="partyCakeContainer"></div>
 					</div>
 					<div class="partyBoxThin">
-						<div class="partyArrowRight" id="foodArrowRight">
+						<div class="partyArrowRight" id="cakeArrowRight">
 						</div>
 					</div>
 					<p>Cake description here</p>
@@ -188,7 +202,6 @@
 					<div style="padding:5vmin;">
 					<div id="slider"></div>
 					</div>
-					<!--<input type="range" name="points" id="points" value="50" min="0" max="100">-->
 					</div>
 				</div>
 			</div>
