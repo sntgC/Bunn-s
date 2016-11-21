@@ -45,12 +45,8 @@
 			}
 			for(t=0;t<nameRoots.length;t++){
 				for(l=0;l<2;l++){
-					var dir="Left";
-					var add=-1;
-					if(l==0){
-						dir="Right";
-						add=1;
-					}
+					var dir= (l==0? "Right":"Left");
+					var add= (l==0? 1:-1);
 					var themeBackgroundChange=function(sIndex){$('#themeRow').css({
 						'background-image':"url("+partyObj.sections[0].options[sIndex].backgroundImage+")"
 					});};

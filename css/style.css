@@ -331,10 +331,11 @@ body {
 	height:35vmin;
 	width:35vmin;
 	margin-top:9vmin;
-	background:white;
+	background:rgba(255,255,255,.5);
 	display:inline-block;
 	text-align:center;
 	overflow:hidden;
+	border-radius:1vmin;
 }
 
 .partyBoxTiny{

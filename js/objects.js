@@ -97,9 +97,15 @@ var partyObjTheme={name:"Themes",
 									},
 									{
 									name:"Mermaid",
-									image:"assets/iconPirate.png",
-									backgroundImage:"assets/iconPirate.png",
+									image:"assets/iconMermaid.png",
+									backgroundImage:"assets/iconMermaid.png",
 									description:"Does something smell fishy? It's your new tail!"
+									},
+									{
+									name:"Sharks",
+									image:"assets/iconShark.png",
+									backgroundImage:"assets/backgroundIconShark.png",
+									description:"It's Shark Week every week"
 									}
 								]};
 var partyObjLunch={name:"Lunch",
