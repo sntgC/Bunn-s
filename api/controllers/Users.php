@@ -58,6 +58,18 @@
                         exit();
                     }
                     break;
+                //Update action
+                case "PUT":
+                    // users/{id}/ endpoint
+                    if(preg_match("/\Ausers\/\w{7}\/\z/", $this->requestString)){
+                        echo "Idk";
+                        parse_str(file_get_contents("php://input"),$_PUT);
+                        $model = new UsersModel();
+                        if(isset($_PUT["email"])){
+                            echo "Received";
+                        }
+                    }
+                    break;
                 default:
                     http_response_code(400);
                     break;

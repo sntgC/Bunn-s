@@ -5,6 +5,7 @@
         public $id = null;
         public $email = null;
         public $password = null;
+        public $points = null;
 
         function generateID(){
     		$charList1 = "abcdefghijklmnopqrstuvwxyz";
@@ -106,6 +107,10 @@
                     echo json_encode("No user found with that ID");
                 }
             }
+        }
+
+        function update($conn){
+            
         }
     }
 
