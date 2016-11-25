@@ -158,7 +158,6 @@ function slideTo(containerID, slideIndex, buttoned){
 }
 
 function slideToDir(containerID, dir, transitionTime){
-	console.log(containerID);
 	var left = document.getElementById(containerID).style.left;
 	var curIndex=0;
 	var slideCnt=document.getElementById(containerID).children.length;
@@ -182,6 +181,8 @@ function slideToDir(containerID, dir, transitionTime){
 function getSlideIndex(containerID){
 	var left = document.getElementById(containerID).style.left;
 	var shift=parseInt(left.substring(0,left.indexOf("%")));
+	if(isNaN(shift))
+		shift=-0;
 	return shift/-100;
 }
 

@@ -102,6 +102,30 @@ var partyObjTheme={name:"Themes",
 									description:"Does something smell fishy? It's your new tail!"
 									},
 									{
+									name:"Tropical",
+									image:"assets/iconTropical.png",
+									backgroundImage:"assets/backgroundIconTropical.png",
+									description:"Long tide, no sea"
+									},
+									{
+									name:"Deep",
+									image:"assets/iconTropical.png",
+									backgroundImage:"assets/backgroundIconTropical.png",
+									description:"Long tide, no sea"
+									},
+									{
+									name:"Atlantis",
+									image:"assets/iconTropical.png",
+									backgroundImage:"assets/backgroundIconTropical.png",
+									description:"Long tide, no sea"
+									},
+									{
+									name:"Marine Animals",
+									image:"assets/iconTropical.png",
+									backgroundImage:"assets/backgroundIconTropical.png",
+									description:"Long tide, no sea"
+									},
+									{
 									name:"Sharks",
 									image:"assets/iconShark.png",
 									backgroundImage:"assets/backgroundIconShark.png",

@@ -95,6 +95,25 @@
 				fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - 100;
 			});
 		});
+		
+		function getPartySelections(){
+			var GPSSlides=document.getElementsByClassName("slideContainer");
+			var GoodiesBoxes=document.getElementsByClassName("partyBoxTinyGoodies");
+			var ActivitiesBoxes=document.getElementsByClassName("partyBoxTiny");
+			var ret={};
+			ret.theme=getSlideIndex($(GPSSlides[0]).attr("id"));
+			ret.food={lunch:getSlideIndex($(GPSSlides[1]).attr("id")),cake:getSlideIndex($(GPSSlides[2]).attr("id")),cakeName:document.getElementById("cakeName").value}
+			ret.activities=[];
+			for(c=0;c<GoodiesBoxes.length;c++){
+				if($(GoodiesBoxes[c]).children().first().hasClass("selected"))
+					ret.goodies=$(GoodiesBoxes[c]).attr("id");
+			}
+			for(c=0;c<ActivitiesBoxes.length;c++){
+				if($(ActivitiesBoxes[c]).children().first().hasClass("selected"))
+					ret.activities.push($(ActivitiesBoxes[c]).children().first().attr("src"));
+			}
+			return ret;
+		}
 
 	</script>
 	<script id="slideContainer-template" type="text/x-handlebars-template">
@@ -176,7 +195,7 @@
 						</div>
 					</div>
 					<p id="cakeDescriptionDisplay">Cake description here</p>
-					<p>Include an inscription: <br><input type="text" name="fname"></p>
+					<p>Include an inscription: <br><input type="text" id="cakeName"></p>
 			</div>
 					
 					</div>
@@ -189,9 +208,9 @@
 					<p  class="textEmphasized"><span class="textUnderlined">Goodies</span></p>
 					<p style="text-align:center;font-size:3vh;">Give them something to remember!</p>
 					<div style="padding:5vmin;padding-top:0px;">
-					<div class="partyBoxTinyGoodies"><img draggable=false src="assets/poolActivityIcon.jpg"><h2 class="noSelect">Small</h2></div>
-					<div class="partyBoxTinyGoodies"><img draggable=false src="assets/bowlingActivityIcon.jpg" class="selected"><h2 class="noSelect">Medium</h2></div>
-					<div class="partyBoxTinyGoodies"><img draggable=false src="assets/arcadeActivityIcon.jpg"><h2 class="noSelect">Large</h2></div>
+					<div class="partyBoxTinyGoodies" id="goodiesSma"><img draggable=false src="assets/poolActivityIcon.jpg"><h2 class="noSelect">Small</h2></div>
+					<div class="partyBoxTinyGoodies" id="goodiesMed"><img draggable=false src="assets/bowlingActivityIcon.jpg" class="selected"><h2 class="noSelect">Medium</h2></div>
+					<div class="partyBoxTinyGoodies" id="goodiesLar"><img draggable=false src="assets/arcadeActivityIcon.jpg"><h2 class="noSelect">Large</h2></div>
 					</div>
 					<div style="width:75%;display:inline-block;">
 					<small style="margin-bottom:2vh;">Move the slider to change the amount of tokens received per child.</small>
