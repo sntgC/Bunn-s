@@ -1,0 +1,298 @@
+body{
+	background:#dedede;
+}
+
+#customPackageStart{
+	display:inline-flex;
+	width:77vw;
+	box-shadow:10px 0px 10px 0px rgba(0,0,0,0.26);
+	flex-flow:column nowrap;
+}
+
+.partyArrowLeft{
+	width: 0;
+	height: 0;
+	border-top: 5vmin solid transparent;
+	border-bottom: 5vmin solid transparent;
+	border-right:5vmin solid white;
+	margin-top:12.5vmin;
+	opacity:0.85;
+}
+.partyArrowRight{
+	width: 0;
+	height: 0;
+	border-top: 5vmin solid transparent;
+	border-bottom: 5vmin solid transparent;
+	border-left:5vmin solid white;
+	margin-top:12.5vmin;
+	opacity:0.85;
+}
+
+.partyBoxSmall{
+	height:35vmin;
+	width:35vmin;
+	margin-top:9vmin;
+	background:rgba(255,255,255,.5);
+	display:inline-block;
+	text-align:center;
+	overflow:hidden;
+	border-radius:1vmin;
+}
+
+.partyBoxTiny{
+	height:30vmin;
+	width:30vmin;
+	margin:1.75vmin;
+	background:black;
+	display:inline-block;
+	text-align:center;
+	overflow:hidden;
+	border-radius:1vmin;
+	font-size:2vh;
+}
+
+.partyBoxTinyGoodies{
+	height:30vmin;
+	width:30vmin;
+	margin:2.75vmin;
+	background:black;
+	display:inline-block;
+	text-align:center;
+	overflow:hidden;
+	border-radius:1vmin;
+	font-size:2vh;
+}
+
+.partyBoxTinyGoodies h2{
+	position:relative;
+	top:-17vh;
+	margin:0px;
+	background:rgba(0,0,0,0.75);
+}
+
+.partyBoxTinyGoodies img{
+	height:100%;
+	width:100%;
+	opacity:.15;
+}
+
+.partyBoxTiny img{
+	height:100%;
+	width:100%;
+	opacity:.15;
+}
+
+img.selected{
+	opacity:1;
+}
+
+.partyBoxTiny h2{
+	position:relative;
+	top:-17vh;
+	margin:0px;
+	background:rgba(0,0,0,0.75);
+}
+
+h2.selected{
+	background:rgba(39, 186, 61,.75);
+}
+
+.partyBoxThin{
+	height:35vmin;
+	width:5vmin;
+	margin-top:9vmin;
+	display:inline-block;
+	opacity:0.25;
+	text-align:center;
+	margin-left:2vmin;
+	margin-right:2vmin;
+}
+
+.partyContainer{
+	height:100%;
+	width:100%;
+	text-align:center;
+}
+
+#partyPackage{
+	width:23vw;
+	height: calc(100vh - 100px);
+	background:#dedede;
+	right:0px;
+	top:100px;
+	z-index:-1;
+	margin:0px;
+	text-align:center;
+}
+
+.partyPackageColorBlue{
+	background:#efd139;
+	color:white;
+}
+
+#partyPackageDisplay{
+	margin-top:2.5vh;
+	height:calc(75vh - 100px);
+	width:100%;
+	display:flex;
+	flex-flow: column wrap;
+	align-items:stretch;
+	justify-content:space-around;
+	font-size:3vmin;
+}
+
+.partyPackageFlexRow{
+	display:flex;
+	flex-flow:row nowrap;
+}
+
+#partyPackageGoodiesDesc{
+	flex-grow:3;
+	margin-left:.25vw;
+}
+
+#partyPackageFood{
+	flex-grow:5;
+}
+
+#partyPackageLunch{
+	margin-right:.25vw;
+	max-width:12vw;
+	flex-basis:12vw;
+	width:12vw;
+}
+
+#partyPackageCake{
+	margin-left:.25vw;
+	display:flex;
+	flex-flow:column nowrap;
+}
+
+#partyPackageCakePic{
+	flex-grow:5;
+	margin-bottom:.25vw;
+}
+
+#partyPackageCakeInsc{
+	margin-top:.25vw;
+	flex-flow:row wrap;
+	font-size:1.5vmin;
+}
+
+#partyPackageActivities{
+	flex-grow:3;
+	display:flex;
+	flex-flow:column wrap;
+}
+
+.partyPackageActItem{
+	margin:0 .25vw;
+}
+
+.partyPackageActRow{
+	margin:.25vw 0;
+	align-items:stretch;
+}
+
+#partyPackageInfo{
+	justify-content:space-around;
+}
+
+.partyPackageInfoItem{
+	margin:0vw .5vw;
+	width:25%;
+}
+
+.partyRow{
+	display:flex;
+	flex-flow:row wrap;
+	font-size:3vh;
+	color:white;
+	flex-grow:1;
+	box-shadow: inset 0px -21px 50px -10px rgba(18,18,18,0.35);
+}
+
+.partyPackageImage{
+	padding:0px;
+	background:none;
+	background-size: cover;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+#partyPackageThemeName{
+	flex-grow:3;
+	margin-right:.25vw;
+}
+
+#partyPackageThemePic{
+	margin-left:.25vw;
+	min-width:3vw;
+}
+
+#partyPackageGoodiesTicket{
+	margin-right:.25vw;
+}
+
+#partySidebar{
+	display:inline-block;
+	background:#dedede;
+	width:23vw;
+	font-size:16px;
+	top:100vh;
+	bottom:0px;
+	position:absolute;
+	height:200vh;
+	z-index:-2;
+	padding:0px;
+}
+
+#activitiesRow{
+	 background:#7D049F;
+}
+
+#activityContainer{
+	padding:5vmin;
+	padding-top:0px;
+	display:flex;
+	flex-flow:row wrap;
+	justify-content:center;
+}
+
+#foodRow{
+	background:#2694e2; 
+}
+
+.foodContainer{
+	flex-grow:1;
+	flex-basis:50%;
+}
+
+#goodiesRow{
+	background:#27ba3d;
+}
+
+#sliderContainer{
+	 width:75%;
+	 display:inline-flex;
+	 flex-flow:column nowrap;
+	 justify-content:center;
+}
+#sliderContainer:first-child{
+	 margin-bottom:2vh;
+}
+#sliderContainer:last-child{
+	 padding:5vmin;
+}
+
+#themeRow{
+	background:#7D049F;
+	background-image: url(../assets/iconPirate.png);
+	background-repeat:no-repeat;
+	background-position:left bottom;
+	background-size: contain;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}

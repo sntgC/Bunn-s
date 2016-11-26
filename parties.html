@@ -11,23 +11,14 @@
 	<link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/copyPasteCode.css">
-	<link rel="stylesheet" href="css/jquery-ui.theme.min.css">
 	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/parties.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="libs/handlebars.min-latest.js"></script>
 	<script src="js/animations.js"></script>
 	<script src="js/objects.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-	<style>
-		body{
-			overflow-y:scroll;
-		}
-		::-webkit-scrollbar { 
-			display: none; 
-		}
-	</style>
 	<script>
 		var partyPackageTemplate;
 		$(document).ready(function () {
@@ -86,21 +77,22 @@
 			});
 			
 			//Party Package Div Fixed on scroll
-			$(window).scroll(function () {
+			function fixPartyPackage() {
 				var currentScroll = $(window).scrollTop();
 				if (currentScroll >= fixedPartyDisplayDivTop) {
 					$('#partyPackage').css({
-						position : 'fixed',
-						right : '-'+getScrollBarWidth()+'px',
-						width:'23vw'
+						position: 'fixed',
+						right: '-' + getScrollBarWidth() + 'px',
+						width: '23vw'
 					});
 				} else {
 					$('#partyPackage').css({
-						position : 'static',
-						right : '0px'
+						position: 'static',
+						right: '0px'
 					});
 				}
-			});
+			}
+			$(window).scroll(fixPartyPackage);
 			
 			//Fixes resizing issue for fixed div
 			var fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - 100;
@@ -110,6 +102,7 @@
 			});
 			
 			loadPartyPackage(getPartySelections);
+			fixPartyPackage();
 		});
 		
 		function loadPartyPackage(func){
@@ -118,7 +111,6 @@
 			}else{
 				document.getElementById("partyPackageDisplay").innerHTML = partyPackageTemplate(getPartySelections());
 			}
-			console.log("works");
 		}
 		
 		function getPartySelections(){
@@ -203,7 +195,7 @@
 	</script>
 </head>
 
-<body style="font-size:0px;background:#dedede;" class="noSelect">
+<body class="noSelect">
 	<div id="headerWhite" style="font-size:16px">
 		<ul>
 			<li class="navTitle colorRed"><a href="promos" class="makeYellow">PROMOS</a></li>
@@ -216,11 +208,11 @@
 	<div id="background">
 	<img src="assets/party.jpg">
 	</div>
-	<div id="customPackageStart" style="display:inline-flex;width:77vw;box-shadow:10px 0px 10px 0px rgba(0,0,0,0.26);flex-flow:column nowrap;">
-			<div class="partyRow" style="background:#7D049F;background-image:url('assets/iconPirate.png');background-repeat:no-repeat;background-position:left bottom;background-size: contain;" id="themeRow">
+	<div id="customPackageStart">
+			<div class="partyRow" id="themeRow">
 				<div class="partyContainer">
 					<p class="textEmphasized"><span class="textUnderlined">Themes</span></p>
-					<p style="text-align:center;font-size:3vh;">Dozens of themes to select from!</p>
+					<p>Dozens of themes to select from!</p>
 					<div class="partyBoxThin">
 						<div class="partyArrowLeft" id="themeArrowLeft">
 						</div>
@@ -235,11 +227,11 @@
 					<p id="themeDescriptionDisplay">Theme description here</p>
 				</div>
 			</div>
-			<div class="partyRow" style="background:#2694e2;">
-				<div style="flex-grow:1;flex-basis:50%;">
+			<div class="partyRow" id="foodRow">
+				<div class="foodContainer">
 				<div class="partyContainer">
 					<p  class="textEmphasized"><span class="textUnderlined">Food</span></p>
-					<p style="text-align:center;font-size:3vh;">Food for fun!</p>
+					<p>Food for fun!</p>
 					<div class="partyBoxThin">
 						<div class="partyArrowLeft" id="foodArrowLeft">
 						</div>
@@ -254,10 +246,10 @@
 					<p id="foodDescriptionDisplay">Food description here</p>
 				</div>
 				</div>
-				<div style="flex-grow:1;flex-basis:50%;">
+				<div class="foodContainer">
 				<div class="partyContainer">
 					<p  class="textEmphasized"><span class="textUnderlined">Cake</span></p>
-					<p style="text-align:center;font-size:3vh;">Let them eat cake!</p>
+					<p>Let them eat cake!</p>
 					<div class="partyBoxThin">
 						<div class="partyArrowLeft" id="cakeArrowLeft">
 						</div>
@@ -274,28 +266,28 @@
 				</div>
 				</div>
 			</div>
-			<div class="partyRow" style="background:#27ba3d">
+			<div class="partyRow" id="goodiesRow">
 				<div class="partyContainer">
 					<p  class="textEmphasized"><span class="textUnderlined">Goodies</span></p>
-					<p style="text-align:center;font-size:3vh;">Give them something to remember!</p>
-					<div style="padding:5vmin;padding-top:0px;">
+					<p>Give them something to remember!</p>
+					<div>
 					<div class="partyBoxTinyGoodies" id="goodiesSmall"><img draggable=false src="assets/poolActivityIcon.jpg"><h2 class="noSelect">Small</h2></div>
 					<div class="partyBoxTinyGoodies" id="goodiesMedium"><img draggable=false src="assets/bowlingActivityIcon.jpg" class="selected"><h2 class="noSelect">Medium</h2></div>
 					<div class="partyBoxTinyGoodies" id="goodiesLarge"><img draggable=false src="assets/arcadeActivityIcon.jpg"><h2 class="noSelect">Large</h2></div>
 					</div>
-					<div style="width:75%;display:inline-block;">
-					<small style="margin-bottom:2vh;">Move the slider to change the amount of tokens received per child.</small>
-					<div style="padding:5vmin;">
+					<div id="sliderContainer">
+					<p  class="textSmall">Move the slider to change the amount of tokens received per child.</p>
+					<div>
 					<div id="slider"></div>
 					</div>
 					</div>
 				</div>
 			</div>
-			<div class="partyRow" style="background:#7D049F">
+			<div class="partyRow" id="activitiesRow">
 				<div class="partyContainer">
 					<p  class="textEmphasized"><span class="textUnderlined">Activities</span></p>
-					<p style="text-align:center;font-size:3vh;">Keep them entertained!</p>
-					<div style="padding:5vmin;padding-top:0px;display:flex;flex-flow:row wrap;justify-content:center;">
+					<p >Keep them entertained!</p>
+					<div id="activityContainer">
 					<div class="partyBoxTiny"><img draggable=false src="assets/poolActivityIcon.jpg"> <h2 class="noSelect">Pool</h2></div>
 					<div class="partyBoxTiny"><img draggable=false src="assets/bowlingActivityIcon.jpg"><h2 class="noSelect">Bowling</h2></div>
 					<div class="partyBoxTiny"><img draggable=false src="assets/arcadeActivityIcon.jpg"><h2 class="noSelect">Arcade</h2></div>
@@ -308,14 +300,14 @@
 				</div>
 			</div>
 	</div>
-	<div style="display:inline-block;background:#dedede;width:23vw;font-size:16px;top:100vh;bottom:0px;position:absolute;height:200vh;z-index:-2;padding:0px;">
+	<div id="partySidebar">
 		<div id="partyPackage">
 			<p class="textEmphasized"><span class="textUnderlined">Your Party</span></p>
 			<div id="partyPackageDisplay">
 			</div>
 		</div>
 	</div>
-	<div id="footer" style="font-size:16px">
+	<div id="footer" class="textTiny">
 		© 2016 DemBois, Inc. All Rights Reserved.
 	</div>
 </body>
