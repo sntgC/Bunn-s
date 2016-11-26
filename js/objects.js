@@ -140,7 +140,7 @@ var partyObjLunch={name:"Lunch",
 									{
 									name:"Pirate",
 									image:"assets/iconPirate.png",
-									description:""
+									description:"Good Food"
 									},
 									{
 									name:"Mermaid",

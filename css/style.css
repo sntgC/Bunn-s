@@ -554,10 +554,11 @@ h2.selected{
 }
 
 .partyRow{
-	display:table-row;
+	display:flex;
+	flex-flow:row wrap;
 	font-size:3vh;
-	height:50%;
 	color:white;
+	flex-grow:1;
 }
 
 .slide{
