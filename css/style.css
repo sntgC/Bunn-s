@@ -427,13 +427,130 @@ h2.selected{
 	text-align:center;
 }
 
-#partyPackageDisplay{
-	width:20vw;
+#partyPackage{
+	width:23vw;
 	height: calc(100vh - 100px);
 	background:#dedede;
 	right:0px;
 	top:100px;
 	z-index:-1;
+	margin:0px;
+	text-align:center;
+}
+
+#partyPackageDisplay{
+	margin-top:2.5vh;
+	height:calc(75vh - 100px);
+	width:100%;
+	display:flex;
+	flex-flow: column wrap;
+	align-items:stretch;
+	justify-content:space-around;
+	font-size:3vmin;
+}
+
+.flexItem{
+	flex-grow:1;
+	margin:.25vw .5vw;
+}
+
+.growOne{
+	flex-grow:1;
+}
+
+.partyPackageColorBlue{
+	background:#efd139;
+	color:white;
+}
+
+.partyPackageFlexRow{
+	display:flex;
+	flex-flow:row nowrap;
+}
+
+.partyPackageImage{
+	padding:0px;
+	background:none;
+	background-size: cover;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+#partyPackageThemeName{
+	flex-grow:3;
+	margin-right:.25vw;
+}
+
+#partyPackageThemePic{
+	margin-left:.25vw;
+	min-width:3vw;
+}
+
+#partyPackageGoodiesTicket{
+	margin-right:.25vw;
+}
+
+.center{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+#partyPackageGoodiesDesc{
+	flex-grow:3;
+	margin-left:.25vw;
+}
+
+#partyPackageFood{
+	flex-grow:5;
+}
+
+#partyPackageLunch{
+	margin-right:.25vw;
+	max-width:12vw;
+	flex-basis:12vw;
+	width:12vw;
+}
+
+#partyPackageCake{
+	margin-left:.25vw;
+	display:flex;
+	flex-flow:column nowrap;
+}
+
+#partyPackageCakePic{
+	flex-grow:5;
+	margin-bottom:.25vw;
+}
+
+#partyPackageCakeInsc{
+	margin-top:.25vw;
+	flex-flow:row wrap;
+	font-size:1.5vmin;
+}
+
+#partyPackageActivities{
+	flex-grow:3;
+	display:flex;
+	flex-flow:column wrap;
+}
+
+.partyPackageActItem{
+	margin:0 .25vw;
+}
+
+.partyPackageActRow{
+	margin:.25vw 0;
+	align-items:stretch;
+}
+
+#partyPackageInfo{
+	justify-content:space-around;
+}
+
+.partyPackageInfoItem{
+	margin:0vw .5vw;
+	width:25%;
 }
 
 .partyRow{

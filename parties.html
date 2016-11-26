@@ -20,7 +20,16 @@
 	<script src="js/objects.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+	<style>
+		body{
+			overflow-y:scroll;
+		}
+		::-webkit-scrollbar { 
+			display: none; 
+		}
+	</style>
 	<script>
+		var partyPackageTemplate;
 		$(document).ready(function () {
 			//Variables
 			var slideCnts=[];
@@ -29,6 +38,8 @@
 			//Template loading
 			var source = $("#slideContainer-template").html();
 			slideTemplate = Handlebars.compile(source);
+			var pSource = $("#partyPackage-template").html();
+			partyPackageTemplate = Handlebars.compile(pSource);
 			for(t=0;t<nameRoots.length;t++){
 				document.getElementById("party"+nameRoots[t]+"Container").innerHTML = slideTemplate(partyObj.sections[t]);
 				setParagraphText(nameRoots[t].toLowerCase()+"DescriptionDisplay",partyObj.sections[t].options[0].description);
@@ -37,7 +48,7 @@
 			//Event binding
 			function arrowHandler(root, direction, add, slideCount, func, index) {
 				$("#" + root.toLowerCase() + "Arrow" + direction).on('click', function () {
-					slideToDir("party" + root + "Container", direction.toLowerCase(), 400);
+					slideToDir("party" + root + "Container", direction.toLowerCase(), 400, loadPartyPackage);
 					var slideIndex = (getSlideIndex("party" + root + "Container") + slideCount + add) % slideCount;
 					func(slideIndex);
 					setParagraphText(root.toLowerCase() + "DescriptionDisplay", partyObj.sections[index].options[slideIndex].description);
@@ -57,6 +68,7 @@
 			}
 			$(".partyBoxTiny").on('click',function (event) {
 				$(event.target.parentNode.firstChild).toggleClass("selected");
+				loadPartyPackage(getPartySelections);
 			});
 			$(".partyBoxTinyGoodies").on('click',function (event) {
 				var divs = document.getElementsByClassName("partyBoxTinyGoodies");
@@ -65,6 +77,7 @@
 						$(divs[i].firstChild).toggleClass("selected");
 				}
 				$(event.target.parentNode.firstChild).toggleClass("selected");
+				loadPartyPackage(getPartySelections);
 			});
 		
 			//Creates jQuery UI Slider
@@ -76,14 +89,15 @@
 			$(window).scroll(function () {
 				var currentScroll = $(window).scrollTop();
 				if (currentScroll >= fixedPartyDisplayDivTop) {
-					$('#partyPackageDisplay').css({
+					$('#partyPackage').css({
 						position : 'fixed',
-						right : '-21px'
+						right : '-'+getScrollBarWidth()+'px',
+						width:'23vw'
 					});
 				} else {
-					$('#partyPackageDisplay').css({
+					$('#partyPackage').css({
 						position : 'static',
-						right : '0px;'
+						right : '0px'
 					});
 				}
 			});
@@ -94,24 +108,51 @@
 			$(window).resize(function () {
 				fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - 100;
 			});
+			
+			loadPartyPackage(getPartySelections);
 		});
+		
+		function loadPartyPackage(func){
+			if(typeof func != 'undefined'){
+				document.getElementById("partyPackageDisplay").innerHTML = partyPackageTemplate(func());
+			}else{
+				document.getElementById("partyPackageDisplay").innerHTML = partyPackageTemplate(getPartySelections());
+			}
+			console.log("works");
+		}
 		
 		function getPartySelections(){
 			var GPSSlides=document.getElementsByClassName("slideContainer");
 			var GoodiesBoxes=document.getElementsByClassName("partyBoxTinyGoodies");
 			var ActivitiesBoxes=document.getElementsByClassName("partyBoxTiny");
 			var ret={};
-			ret.theme=getSlideIndex($(GPSSlides[0]).attr("id"));
-			ret.food={lunch:getSlideIndex($(GPSSlides[1]).attr("id")),cake:getSlideIndex($(GPSSlides[2]).attr("id")),cakeName:document.getElementById("cakeName").value}
-			ret.activities=[];
+			ret.theme=partyObj.sections[0].options[getSlideIndex($(GPSSlides[0]).attr("id"))];
+			var cakeString=document.getElementById("cakeName").value;
+			var shortCakeString=cakeString.substring(0,cakeString.length<16? cakeString.length:16);
+			if(cakeString.length>16)
+				shortCakeString+="...";
+			if(shortCakeString.length==0)
+				shortCakeString="No Inscription";
+			ret.food={lunch:partyObj.sections[1].options[getSlideIndex($(GPSSlides[1]).attr("id"))],
+							cake:partyObj.sections[2].options[getSlideIndex($(GPSSlides[2]).attr("id"))],
+							cakeName:cakeString,
+							cakeNameShort:shortCakeString};
+			ret.activities={rowOne:[],rowTwo:[]};
+			var g="";
 			for(c=0;c<GoodiesBoxes.length;c++){
 				if($(GoodiesBoxes[c]).children().first().hasClass("selected"))
-					ret.goodies=$(GoodiesBoxes[c]).attr("id");
+					g=$(GoodiesBoxes[c]).attr("id").substring(7);
 			}
+			ret.goodies={size:g,tickets:0};
 			for(c=0;c<ActivitiesBoxes.length;c++){
 				if($(ActivitiesBoxes[c]).children().first().hasClass("selected"))
-					ret.activities.push($(ActivitiesBoxes[c]).children().first().attr("src"));
+					if(ret.activities.rowOne.length<=ret.activities.rowTwo.length)
+						ret.activities.rowOne.push($(ActivitiesBoxes[c]).children().first().attr("src"));
+					else
+						ret.activities.rowTwo.push($(ActivitiesBoxes[c]).children().first().attr("src"));
 			}
+			ret.activities.drawOne=ret.activities.rowOne.length>0;
+			ret.activities.drawTwo=ret.activities.rowTwo.length>0;
 			return ret;
 		}
 
@@ -122,6 +163,43 @@
 		<img src='{{image}}'>
 		</div>
 		{{/each}}
+	</script>
+	<script id="partyPackage-template" type="text/x-handlebars-template">
+		<div class="flexItem partyPackageFlexRow" id="partyPackageTheme">
+		<div id="partyPackageThemeName" class="partyPackageColorBlue center">{{theme.name}}</div>
+		<div id="partyPackageThemePic" class="growOne partyPackageColorBlue partyPackageImage" style="background-image: url({{theme.image}})"></div>
+		</div>
+		<div class="flexItem partyPackageFlexRow" id="partyPackageFood">
+			<div id="partyPackageLunch" class="growOne partyPackageColorBlue partyPackageImage" style="background-image: url({{food.lunch.image}})"></div>
+			<div id="partyPackageCake" class="growOne">
+				<div id="partyPackageCakePic" class="partyPackageColorBlue partyPackageImage" style="background-image: url({{food.cake.image}})"></div>
+				<div id="partyPackageCakeInsc" class="growOne partyPackageColorBlue center">{{food.cakeNameShort}}</div>
+			</div>
+		</div>
+		<div class="flexItem partyPackageFlexRow" id="partyPackageGoodies">
+			<div id="partyPackageGoodiesTicket" class="growOne partyPackageColorBlue center">{{goodies.tickets}}</div>
+			<div id="partyPackageGoodiesDesc" class="partyPackageColorBlue center">{{goodies.size}}</div>
+		</div>
+			{{#if activities.drawOne}}
+				<div class="flexItem" id="partyPackageActivities">
+					<div class="partyPackageActRow growOne center">
+					{{#each activities.rowOne}}
+					<div class="partyPackageActItem growOne center partyPackageImage" style="background-image: url({{this}})"></div>
+					{{/each}}
+					</div>
+					{{#if activities.drawTwo}}
+					<div class="partyPackageActRow growOne center">
+					{{#each activities.rowTwo}}
+					<div class="partyPackageActItem growOne center partyPackageImage" style="background-image: url({{this}})"></div>
+					{{/each}}
+					</div>
+					{{/if}}
+				</div>
+			{{/if}}
+		<div class="flexItem partyPackageFlexRow" id="partyPackageInfo">
+			<div id="price" class="partyPackageInfoItem partyPackageColorBlue center">Price</div>
+			<div id="date" class="partyPackageInfoItem partyPackageColorBlue center">Date</div>
+		</div>
 	</script>
 </head>
 
@@ -138,7 +216,7 @@
 	<div id="background">
 	<img src="assets/party.jpg">
 	</div>
-	<div style="display:inline-block;width:80vw;box-shadow:10px 0px 10px 0px rgba(0,0,0,0.26);">
+	<div style="display:inline-block;width:77vw;box-shadow:10px 0px 10px 0px rgba(0,0,0,0.26);">
 	<div class="fullPageContent" id="customPackageStart" style="background:#2694e2;display:table;">
 			<div class="partyRow" style="background:#7D049F;background-image:url('assets/iconPirate.png');background-repeat:no-repeat;background-position:left bottom;" id="themeRow">
 				<div class="partyContainer">
@@ -195,7 +273,7 @@
 						</div>
 					</div>
 					<p id="cakeDescriptionDisplay">Cake description here</p>
-					<p>Include an inscription: <br><input type="text" id="cakeName"></p>
+					<p>Include an inscription: <br><input type="text" id="cakeName" oninput="loadPartyPackage()"></p>
 			</div>
 					
 					</div>
@@ -208,9 +286,9 @@
 					<p  class="textEmphasized"><span class="textUnderlined">Goodies</span></p>
 					<p style="text-align:center;font-size:3vh;">Give them something to remember!</p>
 					<div style="padding:5vmin;padding-top:0px;">
-					<div class="partyBoxTinyGoodies" id="goodiesSma"><img draggable=false src="assets/poolActivityIcon.jpg"><h2 class="noSelect">Small</h2></div>
-					<div class="partyBoxTinyGoodies" id="goodiesMed"><img draggable=false src="assets/bowlingActivityIcon.jpg" class="selected"><h2 class="noSelect">Medium</h2></div>
-					<div class="partyBoxTinyGoodies" id="goodiesLar"><img draggable=false src="assets/arcadeActivityIcon.jpg"><h2 class="noSelect">Large</h2></div>
+					<div class="partyBoxTinyGoodies" id="goodiesSmall"><img draggable=false src="assets/poolActivityIcon.jpg"><h2 class="noSelect">Small</h2></div>
+					<div class="partyBoxTinyGoodies" id="goodiesMedium"><img draggable=false src="assets/bowlingActivityIcon.jpg" class="selected"><h2 class="noSelect">Medium</h2></div>
+					<div class="partyBoxTinyGoodies" id="goodiesLarge"><img draggable=false src="assets/arcadeActivityIcon.jpg"><h2 class="noSelect">Large</h2></div>
 					</div>
 					<div style="width:75%;display:inline-block;">
 					<small style="margin-bottom:2vh;">Move the slider to change the amount of tokens received per child.</small>
@@ -238,9 +316,11 @@
 			</div>
 	</div>
 	</div>
-	<div style="display:inline-block;background:#dedede;width:20vw;font-size:16px;top:100vh;bottom:0px;position:absolute;height:200vh;z-index:-2;padding:0px;">
-		<div id="partyPackageDisplay">
+	<div style="display:inline-block;background:#dedede;width:23vw;font-size:16px;top:100vh;bottom:0px;position:absolute;height:200vh;z-index:-2;padding:0px;">
+		<div id="partyPackage">
 			<p class="textEmphasized"><span class="textUnderlined">Your Party</span></p>
+			<div id="partyPackageDisplay">
+			</div>
 		</div>
 	</div>
 	<div id="footer" style="font-size:16px">

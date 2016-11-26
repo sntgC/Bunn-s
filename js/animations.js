@@ -130,7 +130,7 @@ function previousSlide(preventWrapping){
 	}
 }
 
-function slideTo(containerID, slideIndex, buttoned){
+function slideTo(containerID, slideIndex, buttoned, callback){
 	currentSlideIndex=slideIndex;
 	if(buttoned){
 		if(slideIndex<document.getElementsByClassName("slide").length){
@@ -145,6 +145,7 @@ function slideTo(containerID, slideIndex, buttoned){
 			$('#'+containerID).animate({
 								left: ""+(slideIndex*-100)+"%"
 								}, 800, function(){
+									
 			});
 		}
 	}else{
@@ -152,12 +153,13 @@ function slideTo(containerID, slideIndex, buttoned){
 			$('#'+containerID).animate({
 								left: ""+(slideIndex*-100)+"%"
 								}, 400, function(){
+									callback();
 			});
 		}
 	}
 }
 
-function slideToDir(containerID, dir, transitionTime){
+function slideToDir(containerID, dir, transitionTime, callback){
 	var left = document.getElementById(containerID).style.left;
 	var curIndex=0;
 	var slideCnt=document.getElementById(containerID).children.length;
@@ -169,12 +171,12 @@ function slideToDir(containerID, dir, transitionTime){
 		if(curIndex == 0){
 			curIndex=slideCnt;
 		}
-		slideTo(containerID, curIndex-1, false);
+		slideTo(containerID, curIndex-1, false, callback);
 	}else if(dir==="right"){
 		if(curIndex == slideCnt-1){
 			curIndex=-1;
 		}
-		slideTo(containerID, curIndex+1, false);
+		slideTo(containerID, curIndex+1, false, callback);
 	}
 }
 
@@ -189,6 +191,13 @@ function getSlideIndex(containerID){
 function getSlideCount(containerID){
 	return document.getElementById(containerID).children.length;
 }
+
+function getScrollBarWidth () {
+    var $outer = $('<div>').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
+        widthWithScroll = $('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
+    $outer.remove();
+    return 100 - widthWithScroll;
+};
 
 function setParagraphText(paragraphID, text){
 	document.getElementById(paragraphID).innerHTML=text;
