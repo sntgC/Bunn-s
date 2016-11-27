@@ -73,7 +73,15 @@
 		
 			//Creates jQuery UI Slider
 			$(function () {
-				$("#slider").slider();
+				$("#slider").slider({
+					range: "min",
+					value: 0,
+					min: 0,
+					max: 50,
+					slide: function (event, ui) {
+						document.getElementById("partyPackageGoodiesTicket").innerHTML=ui.value;
+					}
+				});
 			});
 			
 			//Party Package Div Fixed on scroll
@@ -135,7 +143,13 @@
 				if($(GoodiesBoxes[c]).children().first().hasClass("selected"))
 					g=$(GoodiesBoxes[c]).attr("id").substring(7);
 			}
-			ret.goodies={size:g,tickets:0};
+			var ticketCount=0;
+			try{
+				ticketCount=$("#slider").slider("option","value");
+			}catch(e){
+				console.log(e);
+			}
+			ret.goodies={size:g,tickets:ticketCount};
 			for(c=0;c<ActivitiesBoxes.length;c++){
 				if($(ActivitiesBoxes[c]).children().first().hasClass("selected"))
 					if(ret.activities.rowOne.length<=ret.activities.rowTwo.length)
@@ -210,6 +224,7 @@
 	</div>
 	<div id="customPackageStart">
 			<div class="partyRow" id="themeRow">
+				<div class="tooltip">?<span class="tooltipContent textTiny">Themes give your party a fun spin. Every plate, cup, and invitation will be designed to adapt to the theme, and you'll even get a special keepsake.</span></div>
 				<div class="partyContainer">
 					<p class="textEmphasized"><span class="textUnderlined">Themes</span></p>
 					<p>Dozens of themes to select from!</p>
@@ -229,6 +244,7 @@
 			</div>
 			<div class="partyRow" id="foodRow">
 				<div class="foodContainer">
+				<div class="tooltip">?<span class="tooltipContent textTiny">Lunch packages give you a general idea of what your guests will eat. However, each guest gets to have some choice in their food without any additional cost.</span></div>
 				<div class="partyContainer">
 					<p  class="textEmphasized"><span class="textUnderlined">Food</span></p>
 					<p>Food for fun!</p>
@@ -247,6 +263,7 @@
 				</div>
 				</div>
 				<div class="foodContainer">
+				<div class="tooltip">?<span class="tooltipContent textTiny">Choose from a variety of cake options. You can also choose to add an inscription on the cake if you wish.</span></div>
 				<div class="partyContainer">
 					<p  class="textEmphasized"><span class="textUnderlined">Cake</span></p>
 					<p>Let them eat cake!</p>
@@ -267,6 +284,7 @@
 				</div>
 			</div>
 			<div class="partyRow" id="goodiesRow">
+				<div class="tooltip">?<span class="tooltipContent textTiny">Each increasing size of goodie bags contains the contents of the previous size with some additional treats. <br><i>Hover over each package to see its details.</i><br><br>Tokens are used to operate the arcade games.</span></div>
 				<div class="partyContainer">
 					<p  class="textEmphasized"><span class="textUnderlined">Goodies</span></p>
 					<p>Give them something to remember!</p>
@@ -284,6 +302,7 @@
 				</div>
 			</div>
 			<div class="partyRow" id="activitiesRow">
+				<div class="tooltip">?<span class="tooltipContent textTiny">The activities you select will be reserved for your party. However, if you choose not to reserve, you can still enjoy them if they are available.</span></div>
 				<div class="partyContainer">
 					<p  class="textEmphasized"><span class="textUnderlined">Activities</span></p>
 					<p >Keep them entertained!</p>

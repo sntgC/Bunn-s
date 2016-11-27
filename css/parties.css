@@ -210,6 +210,7 @@ h2.selected{
 	flex-flow:row wrap;
 	font-size:3vh;
 	color:white;
+	position:relative;
 	flex-grow:1;
 	box-shadow: inset 0px -21px 50px -10px rgba(18,18,18,0.35);
 }
@@ -270,6 +271,7 @@ h2.selected{
 .foodContainer{
 	flex-grow:1;
 	flex-basis:50%;
+	position:relative;
 }
 
 #goodiesRow{

@@ -422,3 +422,34 @@ input[type=text] {
 .textUnderlined{
 	border-bottom:5px solid;
 }
+
+.tooltip{
+	background:black;
+	display:inline-flex;
+	justify-content:center;
+	align-items:center;
+	border-radius:50%;
+	font-size:2.5vmin;
+	right:1.5vmin;
+	top:1.5vmin;
+	width:3vmin;
+	height:3vmin;
+	position:absolute;
+}
+
+.tooltip:hover .tooltipContent{
+	visibility:visible;
+}
+
+.tooltipContent{
+	visibility:hidden;
+	position:absolute;
+	right:0;
+	top:4vmin;
+	background:black;
+	width:10vw;
+	word-wrap:break-word;
+	border-radius:1vmin;
+	text-align:center;
+	padding:1vmin;
+}
