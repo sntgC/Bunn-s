@@ -149,6 +149,7 @@ h2.selected{
 #partyPackageGoodiesDesc{
 	flex-grow:3;
 	margin-left:.25vw;
+	background: #27ba3d;
 }
 
 #partyPackageFood{
@@ -177,6 +178,7 @@ h2.selected{
 	margin-top:.25vw;
 	flex-flow:row wrap;
 	font-size:1.5vmin;
+	background:#2694e2;
 }
 
 #partyPackageActivities{
@@ -223,6 +225,7 @@ h2.selected{
 #partyPackageThemeName{
 	flex-grow:3;
 	margin-right:.25vw;
+	background:#7D049F;
 }
 
 #partyPackageThemePic{
@@ -232,6 +235,7 @@ h2.selected{
 
 #partyPackageGoodiesTicket{
 	margin-right:.25vw;
+	background: #27ba3d;
 }
 
 #partySidebar{
