@@ -219,8 +219,14 @@
 			<li class="navTitle logoClear" style="float:left"  id="headerLogo"><a href="index" class="makeYellow">BUNN'S</a></li>
 		</ul>
 	</div>
-	<div id="background">
-	<img src="assets/party.jpg">
+	<div id="background" style="background-image: url(assets/party.jpg)">
+	
+	</div>
+	<div id="focus" style="position:fixed;left:0px;width:20vw;height:20vh;background:white;z-index:200;top:80vh;text-align:center;font-size:2vh;box-shadow: 40px -19px 30px -12px rgba(0,0,0,0.4);visibility:hidden;">
+	<a href="javascript:document.getElementById('focus').remove()"><div style="position:absolute;right:.5vw;top:.5vh;color:black">X</div></a>
+	<p>Welcome to the Bunn's focus group!</p>
+	<p>Please take a moment to browse this page and answer <a style="color:red" href="">this</a> survey when you are finished. Please stay only on this page.</p>
+	<p>If you close this dialog, refresh to get it back</p>
 	</div>
 	<div id="customPackageStart">
 			<div class="partyRow" id="themeRow">
@@ -243,7 +249,7 @@
 				</div>
 			</div>
 			<div class="partyRow" id="foodRow">
-				<div class="foodContainer">
+				<div class="foodContainer" id="lunchContainer">
 				<div class="tooltip">?<span class="tooltipContent textTiny">Lunch packages give you a general idea of what your guests will eat. However, each guest gets to have some choice in their food without any additional cost.</span></div>
 				<div class="partyContainer">
 					<p  class="textEmphasized"><span class="textUnderlined">Food</span></p>

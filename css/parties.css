@@ -272,6 +272,12 @@ h2.selected{
 	flex-grow:1;
 	flex-basis:50%;
 	position:relative;
+	background:#2694e2;
+	box-shadow: inset 0px -21px 50px -10px rgba(18,18,18,0.35);
+}
+
+#lunchContainer{
+	background:#0A84DB;
 }
 
 #goodiesRow{
