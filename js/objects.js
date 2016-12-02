@@ -99,37 +99,13 @@ var partyObjTheme={name:"Themes",
 									name:"Mermaid",
 									image:"assets/iconMermaid.png",
 									backgroundImage:"assets/iconMermaid.png",
-									description:"Does something smell fishy? It's your new tail!"
-									},
-									{
-									name:"Tropical",
-									image:"assets/iconTropical.png",
-									backgroundImage:"assets/backgroundIconTropical.png",
-									description:"Long tide, no sea"
-									},
-									{
-									name:"Deep",
-									image:"assets/iconTropical.png",
-									backgroundImage:"assets/backgroundIconTropical.png",
-									description:"Long tide, no sea"
-									},
-									{
-									name:"Atlantis",
-									image:"assets/iconTropical.png",
-									backgroundImage:"assets/backgroundIconTropical.png",
-									description:"Long tide, no sea"
-									},
-									{
-									name:"Marine Animals",
-									image:"assets/iconTropical.png",
-									backgroundImage:"assets/backgroundIconTropical.png",
-									description:"Long tide, no sea"
+									description:"You'll be the queen of the ocean!"
 									},
 									{
 									name:"Sharks",
 									image:"assets/iconShark.png",
 									backgroundImage:"assets/backgroundIconShark.png",
-									description:"It's Shark Week every week"
+									description:"It's Shark Week every week!"
 									}
 								]};
 var partyObjLunch={name:"Lunch",
@@ -139,13 +115,23 @@ var partyObjLunch={name:"Lunch",
 								options:[
 									{
 									name:"Pirate",
-									image:"assets/iconPirate.png",
-									description:"Good Food"
+									image:"assets/lunch1.jpeg",
+									description:"Pizza and Drink"
 									},
 									{
 									name:"Mermaid",
-									image:"assets/iconPirate.png",
-									description:""
+									image:"assets/lunch2.jpg",
+									description:"Hot Dog and Drink"
+									},
+									{
+									name:"Mermaid",
+									image:"assets/lunch3.jpg",
+									description:"Burger and Drink"
+									},
+									{
+									name:"Mermaid",
+									image:"assets/lunch4.jpg",
+									description:"Tacos and Drink"
 									}
 								]};
 var partyObjCake={name:"Cake",
@@ -155,13 +141,18 @@ var partyObjCake={name:"Cake",
 								options:[
 									{
 									name:"Pirate",
-									image:"assets/iconPirate.png",
-									description:""
+									image:"assets/cake1.jpeg",
+									description:"Specialty Chocolate Cake"
 									},
 									{
 									name:"Mermaid",
-									image:"assets/iconPirate.png",
-									description:""
+									image:"assets/cake3.jpg",
+									description:"Blackberry Marble Cake"
+									},
+									{
+									name:"Mermaid",
+									image:"assets/cake4.jpg",
+									description:"Hazelnut Cake"
 									}
 								]};								
 var menuObj={choices:[menuObjApp,menuObjEnt, menuObjDes, menuObjDri]};

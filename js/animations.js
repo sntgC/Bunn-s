@@ -150,7 +150,8 @@ function slideTo(containerID, slideIndex, buttoned, callback){
 		}
 	}else{
 		if(slideIndex<document.getElementById(containerID).children.length){
-			$('#'+containerID).animate({
+			console.log(slideIndex);
+			$('#'+containerID).stop(true,true).animate({
 								left: ""+(slideIndex*-100)+"%"
 								}, 400, function(){
 									callback();
@@ -165,7 +166,7 @@ function slideToDir(containerID, dir, transitionTime, callback){
 	var slideCnt=document.getElementById(containerID).children.length;
 	if(left!=0){//Do not change this, left is a string and i need to keep this as a == rather than === for this to work
 		var shift=parseInt(left.substring(0,left.indexOf("%")));
-		curIndex=shift/-100;
+		curIndex=Math.round(shift/-100);
 	}
 	if(dir==="left"){
 		if(curIndex == 0){
@@ -185,7 +186,7 @@ function getSlideIndex(containerID){
 	var shift=parseInt(left.substring(0,left.indexOf("%")));
 	if(isNaN(shift))
 		shift=-0;
-	return shift/-100;
+	return Math.round(shift/-100);
 }
 
 function getSlideCount(containerID){

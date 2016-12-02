@@ -178,7 +178,8 @@ h2.selected{
 	margin-top:.25vw;
 	flex-flow:row wrap;
 	font-size:1.5vmin;
-	background:#2694e2;
+	background:#E25339;
+	/*background:#E25339*/
 }
 
 #partyPackageActivities{
@@ -226,7 +227,7 @@ h2.selected{
 #partyPackageThemeName{
 	flex-grow:3;
 	margin-right:.25vw;
-	background:#7D049F;
+	background:#2694e2;
 }
 
 #partyPackageThemePic{
@@ -272,12 +273,14 @@ h2.selected{
 	flex-grow:1;
 	flex-basis:50%;
 	position:relative;
-	background:#2694e2;
+	background:#E25339;
+	/*background:#E25339*/
 	box-shadow: inset 0px -21px 50px -10px rgba(18,18,18,0.35);
 }
 
 #lunchContainer{
-	background:#0A84DB;
+	background:#E13617;
+	/*background:#E13617;*/
 }
 
 #goodiesRow{
@@ -298,7 +301,7 @@ h2.selected{
 }
 
 #themeRow{
-	background:#7D049F;
+	background:#2694e2;
 	background-image: url(../assets/iconPirate.png);
 	background-repeat:no-repeat;
 	background-position:left bottom;
