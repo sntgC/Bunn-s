@@ -103,10 +103,10 @@
 			$(window).scroll(fixPartyPackage);
 			
 			//Fixes resizing issue for fixed div
-			var fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - 100;
+			var fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - $("#headerWhite").height();
 
 			$(window).resize(function () {
-				fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - 100;
+				fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - $("#headerWhite").height();
 			});
 			
 			loadPartyPackage(getPartySelections);

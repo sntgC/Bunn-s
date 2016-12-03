@@ -119,10 +119,10 @@ h2.selected{
 
 #partyPackage{
 	width:23vw;
-	height: calc(100vh - 100px);
+	height: calc(100vh - 5.21vw);
 	background:#dedede;
 	right:0px;
-	top:100px;
+	top:5.21vw;
 	z-index:-1;
 	margin:0px;
 	text-align:center;
@@ -135,7 +135,7 @@ h2.selected{
 
 #partyPackageDisplay{
 	margin-top:2.5vh;
-	height:calc(75vh - 100px);
+	height:calc(75vh - 5.21vw);
 	width:100%;
 	display:flex;
 	flex-flow: column wrap;

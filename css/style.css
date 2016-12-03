@@ -147,10 +147,14 @@ body {
 	top:0px;
 	left:0px;
 	right:0px;
-	height:100px;
+	height:5.21vw;
 	padding-right:50px;
 	position:fixed;
 	z-index:20;
+}
+
+ul{
+	margin:0;
 }
 
 #headerWhite{
@@ -161,11 +165,13 @@ body {
 	top:0px;
 	left:0px;
 	right:0px;
-	height:100px;
+	height:5.21vw;
 	padding-right:50px;
 	position:fixed;
 	z-index:20;
 	box-shadow: none;
+	display:flex;
+	align-items:center;
 }
 
 #header li{
@@ -283,18 +289,9 @@ input[type=text] {
 	text-decoration:none;
 	list-style-type:none;
 	float:right;
-	margin-left:20px;
-	font-size:48px;
-}
-
-.navTitle{
-	color:white;
-	text-decoration:none;
-	list-style-type:none;
-	float:right;
 	margin-left:10px;
 	margin-right:10px;
-	font-size:48px;
+	font-size:2.5vw;
 }
 
 .navTitleMenu{
