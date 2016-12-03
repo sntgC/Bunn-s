@@ -12,26 +12,23 @@ body{
 .partyArrowLeft{
 	width: 0;
 	height: 0;
-	border-top: 5vmin solid transparent;
-	border-bottom: 5vmin solid transparent;
-	border-right:5vmin solid white;
-	margin-top:12.5vmin;
+	border-top: 2.45vw solid transparent;
+	border-bottom: 2.45vw solid transparent;
+	border-right:2.45vw solid white;
 	opacity:0.85;
 }
 .partyArrowRight{
 	width: 0;
 	height: 0;
-	border-top: 5vmin solid transparent;
-	border-bottom: 5vmin solid transparent;
-	border-left:5vmin solid white;
-	margin-top:12.5vmin;
+	border-top: 2.45vw solid transparent;
+	border-bottom: 2.45vw solid transparent;
+	border-left:2.45vw solid white;
 	opacity:0.85;
 }
 
 .partyBoxSmall{
-	height:35vmin;
-	width:35vmin;
-	margin-top:9vmin;
+	height:17.3vw;
+	width:17.3vw;
 	background:rgba(255,255,255,.5);
 	display:inline-block;
 	text-align:center;
@@ -39,9 +36,14 @@ body{
 	border-radius:1vmin;
 }
 
+.partyBoxContainer{
+	display:flex;
+	justify-content:center;
+}
+
 .partyBoxTiny{
-	height:30vmin;
-	width:30vmin;
+	height:14.82vw;
+	width:14.82vw;
 	margin:1.75vmin;
 	background:black;
 	display:inline-block;
@@ -52,8 +54,8 @@ body{
 }
 
 .partyBoxTinyGoodies{
-	height:30vmin;
-	width:30vmin;
+	height:14.82vw;
+	width:14.82vw;
 	margin:2.75vmin;
 	background:black;
 	display:inline-block;
@@ -65,9 +67,10 @@ body{
 
 .partyBoxTinyGoodies h2{
 	position:relative;
-	top:-17vh;
+	top:-8.41vw;
 	margin:0px;
 	background:rgba(0,0,0,0.75);
+	font-size:1.5vw;
 }
 
 .partyBoxTinyGoodies img{
@@ -88,9 +91,10 @@ img.selected{
 
 .partyBoxTiny h2{
 	position:relative;
-	top:-17vh;
+	top:-8.41vw;
 	margin:0px;
 	background:rgba(0,0,0,0.75);
+	font-size:1.5vw;
 }
 
 h2.selected{
@@ -98,12 +102,11 @@ h2.selected{
 }
 
 .partyBoxThin{
-	height:35vmin;
-	width:5vmin;
-	margin-top:9vmin;
-	display:inline-block;
+	height:17.3vw;
+	display:inline-flex;
+	flex-flow: column nowrap;
+	justify-content:center;
 	opacity:0.25;
-	text-align:center;
 	margin-left:2vmin;
 	margin-right:2vmin;
 }
@@ -297,7 +300,7 @@ h2.selected{
 	 margin-bottom:2vh;
 }
 #sliderContainer:last-child{
-	 padding:5vmin;
+	 padding-bottom:5vmin;
 }
 
 #themeRow{
