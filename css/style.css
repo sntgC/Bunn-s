@@ -172,6 +172,19 @@ ul{
 	box-shadow: none;
 	display:flex;
 	align-items:center;
+	flex-direction:row-reverse;
+}
+
+#headerHalfFirst{
+	justify-content:flex-end;
+	padding-left:1.5vw;
+}
+
+.headerHalf{
+	display:flex;
+	flex-grow:1;
+	justify-content:flex-start;
+	flex-flow:row-reverse;
 }
 
 #header li{

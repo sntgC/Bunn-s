@@ -310,7 +310,3 @@ h2.selected{
 	background-position:left bottom;
 	background-size: contain;
 }
-
-::-webkit-scrollbar {
-	display: none;
-}
