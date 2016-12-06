@@ -1,0 +1,16 @@
+.activityBackground{
+	color:white;
+	display:flex;
+	justify-content:flex-end;
+	align-items:center;
+}
+
+.activityTextDisplay{
+	background:rgba(0,0,0,.5);
+	padding: 0 .5vw;
+	width:61.67vw;
+}
+
+h2{
+	font-family:'Skranji',cursive;
+}

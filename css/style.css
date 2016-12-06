@@ -121,6 +121,10 @@ body {
 	border-bottom: 5px solid #27ba3d;
 }
 
+.crossMargin{
+	width:5vw;
+}
+
 #footer{
     background-color:#878787;
 	height:30px;
@@ -209,7 +213,7 @@ input[type=text] {
 	height:42vh;
 	background: #5bc0be;
 	display:inline-block;
-	margin: 50px 50px 0px 50px;
+	margin: 4vh 0px;
 	overflow:hidden;
 	border-radius:1vmin;
 }
@@ -227,7 +231,8 @@ input[type=text] {
 }
 
 .kardRow{
-	display:table-row;
+	display:flex;
+	justify-content:space-around;
 	right:0px;
 	left:0px;
 	width:100%;
@@ -287,7 +292,8 @@ input[type=text] {
 }
 
 .menuContainer{
-	display:table;
+	display:flex;
+	flex-direction:column;
 	background:#fefefe;
 }
 
