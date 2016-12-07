@@ -127,13 +127,48 @@ body {
 
 #footer{
     background-color:#878787;
-	height:30px;
+	height:auto;
 	color:white;
     text-align: center;
 	display:flex;
-	align-items:center;
+	flex-flow:row wrap;
+	align-items:stretch;
 	justify-content:center;
 	z-index:22;
+}
+
+.footerSection{
+	flex-grow:1;
+	display:flex;
+	justify-content: flex-start;
+	flex-flow:column;
+	font-family: "Segoe UI";
+	font-weight:lighter;
+	align-items:flex-start;
+	padding: 2vh .5vw;
+}
+
+.footerSection h3{
+	text-decoration:underline;
+	font-weight:lighter;
+	margin:0px;
+}
+
+.footerSection p{
+	margin:0;
+	flex-grow:0;
+}
+
+#footerLogo{
+	font-family: 'Skranji', cursive;
+	font-size:2.5vw;
+	padding-left:2vw;
+	justify-content:flex-start;
+}
+
+#footerMedia{
+	justify-content:flex-end;
+	align-items:flex-end;
 }
 
 .fullPageContent{
