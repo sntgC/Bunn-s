@@ -87,16 +87,24 @@
 			//Party Package Div Fixed on scroll
 			function fixPartyPackage() {
 				var currentScroll = $(window).scrollTop();
-				if (currentScroll >= fixedPartyDisplayDivTop) {
+				if (currentScroll >= fixedPartyDisplayDivTop&&currentScroll+$("#partyPackage").height()<=footerDivTop-$("#headerWhite").height()) {
 					$('#partyPackage').css({
 						position: 'fixed',
 						right: '-' + getScrollBarWidth() + 'px',
-						width: '23vw'
+						width: '23vw',
+						alignSelf:'auto'
 					});
-				} else {
+				} else if(currentScroll+$("#partyPackage").height() >footerDivTop-$("#headerWhite").height()){
 					$('#partyPackage').css({
 						position: 'static',
-						right: '0px'
+						right: '0px',
+						alignSelf:'flex-end'
+					});
+				}else {
+					$('#partyPackage').css({
+						position: 'static',
+						right: '0px',
+						alignSelf:'flex-start'
 					});
 				}
 			}
@@ -104,9 +112,11 @@
 			
 			//Fixes resizing issue for fixed div
 			var fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - $("#headerWhite").height();
+			var footerDivTop=$("#footer").offset().top;
 
 			$(window).resize(function () {
 				fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - $("#headerWhite").height();
+				footerDivTop=$("#footer").offset().top;
 			});
 			
 			loadPartyPackage(getPartySelections);
@@ -230,6 +240,7 @@
 	<p>Please take a moment to browse this page and answer <a target="_blank" style="color:red" href="https://drive.google.com/open?id=1QGG8ydR0VHJBeRcQVMaR9wp1EvC1u0q7surxz7Ul0ew">this</a> survey when you are finished. Please stay only on this page.</p>
 	<p>If you close this dialog, refresh to get it back</p>
 	</div>
+	<div id="partyContentContainer">
 	<div id="customPackageStart">
 			<div class="partyRow" id="themeRow">
 				<div class="tooltip">?<span class="tooltipContent textTiny">Themes give your party a fun spin. Every plate, cup, and invitation will be designed to adapt to the theme, and you'll even get a special keepsake.</span></div>
@@ -339,6 +350,7 @@
 			<div id="partyPackageDisplay">
 			</div>
 		</div>
+	</div>
 	</div>
 	<div id="footer">
 		<div class="footerSection" id="footerLogo">
