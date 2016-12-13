@@ -10,13 +10,19 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet">
+	<link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">	
 	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript">
+	if (screen.width <= 699) {
+		document.location = "mobile.html";
+	}
+	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 	<script src="js/animations.js"></script>
 </head>
 
-<body>
+<body class="noSelect">
 	<div class="background" style="background-image: url(assets/lights.jpg)">
 	</div>
 
@@ -74,20 +80,29 @@
 		</div>
 		<div class="footerSection" id="footerAbout">
 			<h3>About</h3>
-			<p>Contact Us</p>
+			<a href="contact"><p>Contact Us</p></a>
 			<p>Franchising</p>
 			<p>Terms Of Use</p>
 			<p>FAQ</p>
 		</div>
 		<div class="footerSection" id="footerPartners">
 			<h3>Partners</h3>
-			<p>Partner1</p>
+			<p>Litfor Studios</p>
 			<p>Partner2</p>
 			<p>Partner3</p>
 			<p>Partner4</p>
 		</div>
 		<div class="footerSection" id="footerMedia">
-			© 2016 DemBois, Inc. All Rights Reserved.
+			<div id="footerSocialMedia">
+				<i class="fa fa-facebook"></i>
+				<i class="fa fa-twitter"></i>
+				<i class="fa fa-instagram"></i>
+				<a href="https://github.com/sntgC/Bunn-s" target="_blank"><i class="fa fa-github"></i></a>
+				<i class="fa fa-envelope"></i>
+			</div>
+			<div id="footerDisclaimer">
+				© 2016 DemBois, Inc. All Rights Reserved.
+			</div>
 		</div>
 	</div>
 </body>

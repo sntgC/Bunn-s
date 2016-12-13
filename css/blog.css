@@ -1,0 +1,28 @@
+.background{
+	text-align:center;
+}
+
+.twoThirdDisplay{
+	background:#bebebe;
+	width:66.6%;
+	height:90%;
+	display:inline-flex;
+	position:relative;
+	top:5.21vw;
+}
+
+.blogSidebar{
+	background:#cdcdcd;
+	flex-grow:1;
+	display:flex;
+	flex-direction:column;
+}
+
+.blogSidebar h3{
+	color:#e24226;
+	margin-bottom:0;
+}
+
+.blogSidebar p{
+	margin:0;
+}
