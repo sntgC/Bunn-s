@@ -1,32 +1,25 @@
 <?php
-    header("Access-Control-Allow-Orgin: *");
-    header("Access-Control-Allow-Methods: *");
-    header("Content-Type: application/json");
+    use \Psr\Http\Message\ServerRequestInterface as Request;
+    use \Psr\Http\Message\ResponseInterface as Response;
 
-    include_once("models/UsersModel.php");
+    require '../libs/vendor/autoload.php';
 
-    $request = explode("/",trim($_SERVER['REQUEST_URI'],'/'));
-    unset($request[0], $request[1]);
-    $request = array_values($request);
+    $config['displayErrorDetails'] = true;
+    $config['addContentLengthHeader'] = false;
 
-    $requestString = "";
-    foreach ($request as $i) {
-        $requestString .= $i . "/";
-    }
+    $config['db']['host']   = "localhost";
+    $config['db']['user']   = "root";
+    $config['db']['pass']   = "";
+    $config['db']['dbname'] = "bunns_database";
 
-    $requestVerb = $_SERVER['REQUEST_METHOD'];
-    if(count($request) > 0){
-        switch ($request[0]) {
-            case "users":
-                include_once("controllers/Users.php");
-                $controller = new Users($request, $requestString, $requestVerb);
-                break;
-            default:
-                http_response_code(404);
-                break;
-        }
-    }
-    else {
-        http_response_code(404);
-    }
+    $app = new \Slim\App(["settings" => $config]);
+
+    //Endpoints
+    $app->get('/hello/{name}', function (Request $request, Response $response){
+        $name = $request->getAttribute('name');
+        $response->getBody()->write("Hello, $name");
+        return $response;
+    });
+    
+    $app->run();
 ?>
