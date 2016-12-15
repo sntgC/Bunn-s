@@ -1,0 +1,6 @@
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['footer'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<div class=\"footerSection\" id=\"footerLogo\">\r\n	<p>Bunn's</p>\r\n</div>\r\n<div class=\"footerSection\" id=\"footerSitemap\">\r\n	<h3>Sitemap</h3>\r\n	<p>Parties</p>\r\n	<p>Food</p>\r\n	<p>Promos</p>\r\n	<p>Activities</p>\r\n</div>\r\n<div class=\"footerSection\" id=\"footerAbout\">\r\n	<h3>About</h3>\r\n	<a href=\"contact\"><p>Contact Us</p></a>\r\n	<p>Franchising</p>\r\n	<p>Terms Of Use</p>\r\n	<p>FAQ</p>\r\n</div>\r\n<div class=\"footerSection\" id=\"footerPartners\">\r\n	<h3>Partners</h3>\r\n	<p>Litfor Studios</p>\r\n	<p>Partner2</p>\r\n	<p>Partner3</p>\r\n	<p>Partner4</p>\r\n</div>\r\n<div class=\"footerSection\" id=\"footerMedia\">\r\n	<div id=\"footerSocialMedia\">\r\n		<i class=\"fa fa-facebook\"></i>\r\n		<i class=\"fa fa-twitter\"></i>\r\n		<i class=\"fa fa-instagram\"></i>\r\n		<a href=\"https://github.com/sntgC/Bunn-s\" target=\"_blank\"><i class=\"fa fa-github\"></i></a>\r\n		<i class=\"fa fa-envelope\"></i>\r\n	</div>\r\n	<div id=\"footerDisclaimer\">\r\n		© 2016 DemBois, Inc. All Rights Reserved.\r\n	</div>\r\n</div>";
+},"useData":true});
+})();

@@ -5,6 +5,8 @@ var currentSlideIndex = 0;
 var lastSlideIndex = 1;
 
 $(document).ready(function () {
+	//Template loading
+	document.getElementById("footer").innerHTML=Handlebars.templates.footer();
 	//Animation of the back-to-top button
 	var offset = 300;
 	var duration = 750;

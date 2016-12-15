@@ -470,6 +470,10 @@ input[type=text] {
 	align-items: flex-end;
 }
 
+textarea{
+	resize:none;
+}
+
 .textBold{
 	font-weight:bold;
 }
