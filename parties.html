@@ -10,7 +10,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet">
-	<link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">	
+	<link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/jquery-ui.css">
 	<link rel="stylesheet" href="css/parties.css">
@@ -27,7 +27,7 @@
 			//Variables
 			var slideCnts=[];
 			var nameRoots=["Theme","Food","Cake"];
-		
+
 			//Template loading
 			var source = $("#slideContainer-template").html();
 			slideTemplate = Handlebars.compile(source);
@@ -72,7 +72,7 @@
 				$(event.target.parentNode.firstChild).toggleClass("selected");
 				loadPartyPackage(getPartySelections);
 			});
-		
+
 			//Creates jQuery UI Slider
 			$(function () {
 				$("#slider").slider({
@@ -85,7 +85,7 @@
 					}
 				});
 			});
-			
+
 			//Party Package Div Fixed on scroll
 			function fixPartyPackage() {
 				var currentScroll = $(window).scrollTop();
@@ -111,7 +111,7 @@
 				}
 			}
 			$(window).scroll(fixPartyPackage);
-			
+
 			//Fixes resizing issue for fixed div
 			var fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - $("#headerWhite").height();
 			var footerDivTop=$("#footer").offset().top;
@@ -120,11 +120,11 @@
 				fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - $("#headerWhite").height();
 				footerDivTop=$("#footer").offset().top;
 			});
-			
+
 			loadPartyPackage(getPartySelections);
 			fixPartyPackage();
 		});
-		
+
 		function loadPartyPackage(func){
 			if(typeof func != 'undefined'){
 				document.getElementById("partyPackageDisplay").innerHTML = partyPackageTemplate(func());
@@ -132,7 +132,7 @@
 				document.getElementById("partyPackageDisplay").innerHTML = partyPackageTemplate(getPartySelections());
 			}
 		}
-		
+
 		function getPartySelections(){
 			var GPSSlides=document.getElementsByClassName("slideContainer");
 			var GoodiesBoxes=document.getElementsByClassName("partyBoxTinyGoodies");
@@ -223,8 +223,8 @@
 
 <body class="noSelect">
 	<div id="headerWhite" style="font-size:16px">
-			<div class="headerHalf">	
-				<li class="navTitle colorRed"><a href="promos" class="makeYellow">PROMOS</a></li>
+			<div class="headerHalf">
+				<li class="navTitle colorRed"><a href="rewards" class="makeYellow">REWARDS</a></li>
 				<li class="navTitle colorBlue underline makeYellow">PARTIES</li>
 				<li class="navTitle colorYellow"><a href="menu" class="makeYellow">FOOD</a></li>
 				<li class="navTitle colorPurple"><a href="activities" class="makeYellow">ACTIVITIES</a></li>
@@ -234,7 +234,7 @@
 			</div>
 	</div>
 	<div class="background" style="background-image: url(assets/party.jpg)">
-	
+
 	</div>
 	<div id="focus" style="position:fixed;left:0px;width:20vw;height:20vh;background:white;z-index:200;top:80vh;text-align:center;font-size:2vh;box-shadow: 40px -19px 30px -12px rgba(0,0,0,0.4);visibility:hidden;">
 	<a href="javascript:document.getElementById('focus').remove()"><div style="position:absolute;right:.5vw;top:.5vh;color:black;">X</div></a>

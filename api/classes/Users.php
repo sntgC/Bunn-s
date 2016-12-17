@@ -69,13 +69,14 @@
             $this->password = mysqli_real_escape_string($conn,password_hash($this->password, PASSWORD_BCRYPT));
             $sql = "INSERT INTO users (id, email, password) VALUES ('$this->id', '$this->email', '$this->password')";
             $conn->query($sql);
+            return json_encode("Created");
         }
 
         function retrieve($conn){
             if($this->id === null){
                 $sql = "SELECT * FROM users";
                 $result = $conn->query($sql);
-                $rows = array();
+                $rows = [];
                 while($r = $result->fetch_assoc()) {
                     $rows[] = $r;
                 }
