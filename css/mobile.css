@@ -1,5 +1,5 @@
 .mobileHeader{
-	background:#efd139;
+	background:white;
 	display:flex;
 	height:10vh;
 	flex-flow:row;
@@ -7,7 +7,7 @@
 }
 
 .mobileHeaderSection{
-	color:white;
+	color:#efd139;
 	font-family: 'Skranji', cursive;
 	display:flex;
 	flex-flow:row wrap;
@@ -30,4 +30,30 @@
 
 .iconSection{
 	font-size:6.5vh;
+}
+
+.mobileTextDisplay{
+	background:rgba(0,0,0,.5);
+	color:white;
+	padding:1vw;
+	font-size:200%;
+	flex-grow:1;
+	text-align:center;
+}
+
+.mobileSection{
+	background:#e24226;
+	font-size:200%;
+	color:white;
+}
+
+.background{
+	height:90vh;
+	display:flex;
+	justify-content:center;
+	align-items:flex-end;
+}
+
+.sectionContainer div:nth-of-type(2n){
+	background:#E25339;
 }
