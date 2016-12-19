@@ -59,6 +59,16 @@ h3{
 	align-items:flex-end;
 }
 
-.sectionContainer div:nth-of-type(2n){
-	background:#E25339;
+#footer{
+	font-size:250%;
+	flex-flow:column wrap;
+	align-items:flex-start;
+	padding:2.5%;
+}
+
+#footer i{
+	font-size:90%;
+}
+#footer p{
+	margin:0;
 }
