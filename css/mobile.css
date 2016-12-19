@@ -39,6 +39,11 @@
 	font-size:200%;
 	flex-grow:1;
 	text-align:center;
+	max-height:45vh;
+}
+
+h3{
+	font-family:'Skranji', cursive;
 }
 
 .mobileSection{

@@ -125,6 +125,10 @@ body {
 	width:5vw;
 }
 
+.fontSK{
+	font-family:'Skranji', cursive;
+}
+
 #footer{
     background-color:#878787;
 	height:auto;
