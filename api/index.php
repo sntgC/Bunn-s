@@ -27,6 +27,22 @@
         return $conn;
     };
 
+    //Feedback endpoints
+    //POST
+    $app->post('/feedback',function(Request $request, Response $response){
+        $data = $request->getParsedBody();
+        $feedback = new Feedback();
+        if(!isset($data["name"]) || !isset($data["email"]) || !isset($data["message"])){
+            $response->getBody()->write(json_encode("Name, email, and/or message input missing"));
+            return $response;
+        }
+        $feedback->contact_name = filter_var($data["name"], FILTER_SANITIZE_STRING);
+        $feedback->contact_email = filter_var($data["email"], FILTER_SANITIZE_STRING);
+        $feedback->message = filter_var($data["message"], FILTER_SANITIZE_STRING);
+        $response->getBody()->write($feedback->create($this->db));
+        return $response;
+    });
+
     //Token endpoints
     //POST
     $app->post('/tokens',function(Request $request, Response $response){

@@ -17,6 +17,28 @@
 	<script src="libs/handlebars.runtime-v4.0.5.js"></script>
 	<script src="libs/Handlebars.templates"></script>
 	<script src="js/animations.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#feedbackForm").on("submit",function(){
+				$.ajax({
+					type: "POST",
+					url: "api/feedback",
+					data: $("#feedbackForm :input").serializeArray(),
+					success: function(result){
+						var returned = JSON.parse(result);
+						if(returned == "Created"){
+							$("#response").html("Thank you for your feedback!").css("color","green").show();
+							$("#feedbackForm")[0].reset();
+						}
+						else {
+							$("#response").html(returned).css("color","red").show();
+						}
+					}
+				});
+				return false;
+			});
+		});
+	</script>
 </head>
 
 <body style="width:100%;height:100%;">
@@ -36,10 +58,20 @@
 			<div class="blogBody">
 				<h2>Contact Us</h2>
 				<div class="formInfo">
-					<div>Your Name:<br><input type="text"></div>
-					<div>Your Email:<br><input type="text"></div>
-					<div>Message:<br><textarea rows="7" cols="52" maxlength="52"></textarea></div>
-					<div class="submitButton noSelect"><a href="contact">Submit</a></div>
+					<span id="response" style="display:none;"></span>
+					<br>
+					<form id="feedbackForm" method="post">
+						Your Name:<br>
+						<input type="text" name="name" required>
+						<br>
+						Your Email:<br>
+						<input type="text" name="email" required>
+						<br>
+						Message:<br>
+						<textarea name="message" rows="4" cols="60" maxlength="150" required></textarea>
+						<br>
+						<input class="submitButton" type="submit" name="submit" value="Submit" form="feedbackForm">
+					</form>
 				</div>
 			</div>
 			<div class="blogSidebar">

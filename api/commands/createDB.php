@@ -31,6 +31,13 @@
                 expiration datetime NOT NULL,
                 PRIMARY KEY (id)
             ) CHARACTER SET utf8; ";
+    $sql .="CREATE TABLE IF NOT EXISTS feedback(
+                id varchar(12) CHARACTER SET utf8 NOT NULL,
+                contact_name varchar(50) CHARACTER SET utf8 NOT NULL,
+                contact_email varchar(100) CHARACTER SET utf8 NOT NULL,
+                message varchar(150) CHARACTER SET utf8 NOT NULL,
+                PRIMARY KEY (id)
+            ) CHARACTER SET utf8; ";
 
     $result = mysqli_multi_query($conn,$sql);
     if (!$result){

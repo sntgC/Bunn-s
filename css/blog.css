@@ -37,14 +37,16 @@
 }
 
 .submitButton{
+	border: none;
+	font-size: 14px;
+	font-family: 'Averia Sans Libre', cursive;
 	background:#151d8e;
 	display:inline-block;
 	color:white;
 	padding:1%;
 	border-radius:1vmin;
-	align-self:flex-end;
-	margin-right:10%;
-	margin-top:2.5%;
+	margin-left:34%;
+	margin-top:2%;
 }
 
 .submitButton:hover{
