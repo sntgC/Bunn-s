@@ -11,14 +11,108 @@
 	<link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet">
 	<link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/blog.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="libs/handlebars.runtime-v4.0.5.js"></script>
 	<script src="libs/Handlebars.templates"></script>
 	<script src="js/animations.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#registrationForm").on("submit",function(){
+				$.ajax({
+					type: "POST",
+					url: "api/users",
+					data: $("#registrationForm :input").serializeArray(),
+					success: function(result){
+						var returned = JSON.parse(result);
+						if(returned == "Created"){
+							$("#responseReg").html("");
+							$("#registrationForm")[0].reset();
+							$(".twoThirdDisplay").toggle();
+						}
+						else {
+							$("#responseReg").html(returned).css("color","red").show();
+						}
+					}
+				});
+				return false;
+			});
+			$("#loginForm").on("submit",function(){
+				var dataTmp = $("#loginForm :input").serializeArray();
+				dataTmp.push({name : "duration", value : (document.getElementById('rememberMe').checked ? 1 : 0)});
+				$.ajax({
+					type: "POST",
+					url: "api/tokens",
+					data: dataTmp,
+					success: function(result){
+						var returned = JSON.parse(result);
+						if(typeof returned != "string"){
+							//Finalize return data later
+							$("#responseLog").html("Token created").css("color","green").show();
+							$("#loginForm")[0].reset();
+						}
+						else {
+							$("#responseLog").html(returned).css("color","red").show();
+						}
+					}
+				});
+				return false;
+			});
+		});
+	</script>
 </head>
 
-<body class="noSelect">
-	<div class="background" style="background-color:black;">
+<body class="noSelect" style="width:100%;height:100%;">
+	<div class="background" style="background-color:#b7314e;">
+		<div class="twoThirdDisplay" style="height:85%;">
+			<div class="blogBody">
+				<div style="padding:80px 0;">
+					<h2 style="color:#e24226;font-size:30px;">Bunn's Rewards Program</h2>
+					<div>
+						<p class="information">The Bunn's Rewards Program offers its members exclusive deals on activities and our menu as a reward for customer loyalty and recurrent visits.
+						Upon signing up, you will be able to begin earning points for each visit to a Bunn's location by simply providing your unique account ID. Did we forget to mention that the program is completely <b style="color:#e24226;">FREE</b>!?</p>
+					</div>
+					<h3 style="font-size:22px;margin-bottom:2px;margin-top:50px;">Registration</h3>
+					<div class="formInfo">
+						<span id="responseReg" style="display:none;margin-top:10px;"></span>
+						<br>
+						<form id="registrationForm" method="post">
+							E-Mail:<br>
+							<input type="text" name="email" required>
+							<br>
+							Password:<br>
+							<input type="password" name="password" required>
+							<br>
+							<input class="submitButtonRewards" type="submit" name="submit" value="Submit" form="registrationForm">
+						</form>
+					</div>
+					<p style="display:block;margin-top:50px;">Already have an account? <a href="javascript: $('.twoThirdDisplay').toggle();" style="color:blue;">Login</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="twoThirdDisplay" style="height:85%;display:none;">
+			<div class="blogBody">
+				<div style="padding:80px 0;">
+					<h2 style="color:#e24226;font-size:30px;">Bunn's Rewards Program</h2>
+					<h3 style="font-size:22px;margin-bottom:2px;margin-top:50px;">Login</h3>
+					<div class="formInfo">
+						<span id="responseLog" style="display:none;margin-top:10px;"></span>
+						<br>
+						<form id="loginForm" method="post">
+							E-Mail:<br>
+							<input type="text" name="email" required>
+							<br>
+							Password:<br>
+							<input type="password" name="password" required>
+							<br>
+							Remember Me <input type="checkbox" id="rememberMe" name="remember">
+							<input class="submitButtonRewards" type="submit" name="submit" value="Submit" form="loginForm">
+						</form>
+					</div>
+					<p style="display:block;margin-top:50px;">Don't have an account? <a href="javascript: $('.twoThirdDisplay').toggle();" style="color:blue;">Register</a></p>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div id="headerWhite" style="font-size:16px">
 			<div class="headerHalf">
@@ -31,10 +125,6 @@
 				<li class="navTitle logoClear" style="float:left"  id="headerLogo"><a href="index" class="makeYellow">BUNN'S</a></li>
 			</div>
 	</div>
-	<div class="mainContent">
-	</div>
-	<div id="footer">
-
-	</div>
+	<div id="footer"></div>
 </body>
 </html>

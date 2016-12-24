@@ -37,6 +37,7 @@
 }
 
 .submitButton{
+	cursor: pointer;
 	border: none;
 	font-size: 14px;
 	font-family: 'Averia Sans Libre', cursive;
@@ -52,6 +53,25 @@
 .submitButton:hover{
 	background:#151dab;
 }
+
+.submitButtonRewards{
+	cursor: pointer;
+	border: none;
+	font-size: 14px;
+	font-family: 'Averia Sans Libre', cursive;
+	background:#b7314e;
+	display:inline-block;
+	color:white;
+	padding:1%;
+	border-radius:1vmin;
+	margin-left:34%;
+	margin-top: 5px;
+}
+
+.submitButtonRewards:hover{
+	background: #e82952;
+}
+
  h2{
 	 color:#151dab;
  }
