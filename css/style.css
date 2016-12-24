@@ -19,7 +19,7 @@
 
  .about{
 	 /*background-color:#d44343;*/
-	 background-color:#dfdfdf;
+	 background-color:#84a2e8;
 	 display:inline-block;
 	 width:48%;
 	 padding-bottom:75px;
@@ -331,7 +331,7 @@ input[type=text] {
 	display:inline-block;
 	width:50%;
 	/*background-color:#4bb1df;*/
-	background-color:#efefef;
+	background-color:#f2d74f;
 	padding-bottom:10px;
 	padding-left:10px;
 	flex:1;
