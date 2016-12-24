@@ -12,6 +12,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet">
 	<link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/menu.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="libs/handlebars.min-latest.js"></script>
 	<script src="libs/Handlebars.templates"></script>
@@ -30,12 +31,10 @@
 		}
 	</script>
 	<script id="menu-template" type="text/x-handlebars-template">
-		{{#each choices}}
-		<div id='{{type}}' class="menuContainer noSelect">
-		<p style="font-size:4vh;margin-bottom:0px;font-family:'Skranji',cursive;color:#960000;"><span style="border-bottom:5px solid;">{{type}}</span></p>
-		{{#each row}}
-		<div class="kardRow">
-			{{#each entry}}
+		<div id='{{main.type}}' class="menuContainer noSelect">
+		<p style="font-size:4vh;margin-bottom:0px;font-family:'Skranji',cursive;color:#960000;"><span style="border-bottom:5px solid;">{{main.name}}</span></p>
+			<div class="kardContainer">
+			{{#each main.entry}}
 			<div class="kard">
 			<img src='{{image}}' style="height:90%;width:100%;">
 			<div class="kardBottom">
@@ -44,8 +43,21 @@
 			</div>
 			</div>
 			{{/each}}
+			</div>
 		</div>
-		{{/each}}
+		{{#each choices}}
+		<div id='{{type}}' class="menuContainer noSelect">
+		<p style="font-size:4vh;margin-bottom:0px;font-family:'Skranji',cursive;color:#960000;"><span style="border-bottom:5px solid;">{{type}}</span></p>
+		<div class="columnContainer">
+			{{#each entry}}
+			<div class="menuColumn">
+				{{#each this}}
+				<div class="dishName"><span class="menuName">{{name}}</span><span class="menuPrice">{{price}}</span></div>
+				<p class="menuDesc">{{description}}</p>
+				{{/each}}
+			</div>
+			{{/each}}
+		</div>
 		</div>
 		{{/each}}
 	</script>
@@ -72,6 +84,7 @@
 		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(2)">Desserts</a></li>
 		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(1)">Entrées</a></li>
 		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(0)">Appetizers</a></li>
+		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(0)">Featured</a></li>
 	</ul>
 	</div>
 	<div class="mainContent" id="menuMainContent">

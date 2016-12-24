@@ -338,7 +338,6 @@ input[type=password] {
 }
 
 .mainContent{
-	background:#fffbe8;
 	text-align:center;
 	z-index:1;
 	display:flex;
@@ -365,18 +364,6 @@ input[type=password] {
 #mapFrame{
 	height:90%;
 	width:90%;
-}
-
-.menuContainer{
-	display:flex;
-	flex-direction:column;
-	background:#fefefe;
-}
-
-#menuMainContent{
-	position:relative;
-	display:table;
-	padding-bottom:50px;
 }
 
 .navTitle{

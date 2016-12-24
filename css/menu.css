@@ -1,0 +1,42 @@
+.columnContainer{
+	display:flex;
+}
+
+.dishName{
+	font-family:'Skranji', cursive;
+	color:#960000;
+	align-self:stretch;
+	margin: 2% 0;
+	padding:0% 10%;
+}
+
+.menuColumn{
+	display:flex;
+	flex-flow:column;
+	flex-grow:1;
+}
+
+.menuContainer{
+	display:flex;
+	flex-direction:column;
+}
+
+.menuDesc{
+	padding-left:15%;
+	align-self:flex-start;
+	text-align:left;
+}
+
+.menuName{
+	float:left;
+}
+
+.menuPrice{
+	float:right;
+}
+
+#menuMainContent{
+	position:relative;
+	display:flex;
+	flex-direction:column;
+}
