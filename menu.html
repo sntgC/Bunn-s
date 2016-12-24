@@ -26,7 +26,7 @@
 		};
 		function scroll(menuID) {
 			$('html, body').animate({
-				scrollTop: $("#" + menuObj.choices[menuID].type).offset().top - 90
+				scrollTop: $("#" + (menuID==null? menuObj.main.type:menuObj.choices[menuID].type)).offset().top - 90
 			}, 800 * Math.cbrt(menuID + 1), function () {});
 		}
 	</script>
@@ -84,7 +84,7 @@
 		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(2)">Desserts</a></li>
 		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(1)">Entrées</a></li>
 		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(0)">Appetizers</a></li>
-		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(0)">Featured</a></li>
+		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(null)">Featured</a></li>
 	</ul>
 	</div>
 	<div class="mainContent" id="menuMainContent">
