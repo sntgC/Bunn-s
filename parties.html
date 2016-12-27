@@ -97,6 +97,9 @@
 						width: '23vw',
 						alignSelf:'auto'
 					});
+					$('#partySidebar').css({
+						right: '-' + getScrollBarWidth() + 'px'
+					});
 				} else if(currentScroll+$("#partyPackage").height() >footerDivTop-$("#headerWhite").height()){
 					$('#partyPackage').css({
 						position: 'static',
@@ -360,7 +363,7 @@
 			</div>
 	</div>
 	<div id="partySidebar">
-		<div id="partyPackage">
+		<div id="partyPackage"><div class="tooltip">?<span class="tooltipContent textTiny">This is where you can review your current selections and get a price estimate before requesting a reservation.</span></div>
 			<p class="textEmphasized"><span class="textUnderlined">Your Party</span></p>
 			<div id="partyPackageDisplay">
 			</div>

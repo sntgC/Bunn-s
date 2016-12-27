@@ -516,11 +516,12 @@ textarea{
 	align-items:center;
 	border-radius:50%;
 	font-size:2.5vmin;
-	right:1.5vmin;
-	top:1.5vmin;
+	right:2.2vmin;
+	top:2.2vmin;
 	width:3vmin;
 	height:3vmin;
 	position:absolute;
+	color:white;
 }
 
 .tooltip:hover .tooltipContent{
