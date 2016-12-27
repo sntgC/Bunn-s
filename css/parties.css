@@ -123,9 +123,10 @@ h2.selected{
 	background:#dedede;
 	right:0px;
 	top:5.21vw;
-	z-index:-1;
+	z-index:0;
 	margin:0px;
 	text-align:center;
+	box-shadow: inset 12px 0px 23px -6px rgba(0,0,0,0.44);
 }
 
 .partyPackageColorBlue{
@@ -255,7 +256,7 @@ h2.selected{
 	bottom:0px;
 	position:absolute;
 	height:100%;
-	z-index:-2;
+	z-index:0;
 	padding:0px;
 }
 
