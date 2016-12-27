@@ -90,18 +90,21 @@ var partyObjTheme={name:"Themes",
 									{
 									name:"Pirate",
 									image:"assets/iconPirate.png",
+									price:10,
 									backgroundImage:"assets/iconPirate.png",
 									description:"Avast ye mateys! Sail the high seas as your parents sail these great prices!"
 									},
 									{
 									name:"Mermaid",
 									image:"assets/iconMermaid.png",
+									price:15,
 									backgroundImage:"assets/iconMermaid.png",
 									description:"You'll be the queen of the ocean!"
 									},
 									{
 									name:"Sharks",
 									image:"assets/iconShark.png",
+									price:20,
 									backgroundImage:"assets/backgroundIconShark.png",
 									description:"It's Shark Week every week!"
 									}
@@ -114,22 +117,26 @@ var partyObjLunch={name:"Lunch",
 									{
 									name:"Pirate",
 									image:"assets/lunch1.jpeg",
-									description:"Pizza and Drink"
+									description:"Pizza and Drink",
+									price:5
 									},
 									{
 									name:"Mermaid",
 									image:"assets/lunch2.jpg",
-									description:"Hot Dog and Drink"
+									description:"Hot Dog and Drink",
+									price:6
 									},
 									{
 									name:"Mermaid",
 									image:"assets/lunch3.jpg",
-									description:"Burger and Drink"
+									description:"Burger and Drink",
+									price:4,
 									},
 									{
 									name:"Mermaid",
 									image:"assets/lunch4.jpg",
-									description:"Tacos and Drink"
+									description:"Tacos and Drink",
+									price:5
 									}
 								]};
 var partyObjCake={name:"Cake",
@@ -140,19 +147,35 @@ var partyObjCake={name:"Cake",
 									{
 									name:"Pirate",
 									image:"assets/cake1.jpeg",
-									description:"Specialty Chocolate Cake"
+									description:"Specialty Chocolate Cake",
+									price:10
 									},
 									{
 									name:"Mermaid",
 									image:"assets/cake3.jpg",
-									description:"Blackberry Marble Cake"
+									description:"Blackberry Marble Cake",
+									price:9
 									},
 									{
 									name:"Mermaid",
 									image:"assets/cake4.jpg",
-									description:"Hazelnut Cake"
+									description:"Hazelnut Cake",
+									price:11
 									}
-								]};								
+								]};		
+var partyObjGoodies={
+									options:[
+										{name:"Small",
+										price:5
+										},
+										{name:"Medium",
+										price:10
+										},
+										{name:"Large",
+										price:15
+										}
+									]
+								};					
 var menuObj={main:menuObjFeat,choices:[menuObjApp,menuObjEnt, menuObjDes, menuObjDri]};
 var partyThemeSlides=["assets/iconPirate.png","assets/iconPirate.jpg","assets/iconPirate.png"];
-var partyObj={sections:[partyObjTheme,partyObjLunch,partyObjCake]};
+var partyObj={sections:[partyObjTheme,partyObjLunch,partyObjCake,partyObjGoodies]};

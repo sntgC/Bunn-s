@@ -82,6 +82,7 @@
 					max: 50,
 					slide: function (event, ui) {
 						document.getElementById("partyPackageGoodiesTicket").innerHTML=ui.value;
+						document.getElementById("price").innerHTML=getPartySelections().price;
 					}
 				});
 			});
@@ -138,7 +139,10 @@
 			var GoodiesBoxes=document.getElementsByClassName("partyBoxTinyGoodies");
 			var ActivitiesBoxes=document.getElementsByClassName("partyBoxTiny");
 			var ret={};
+			ret.price=0;
 			ret.theme=partyObj.sections[0].options[getSlideIndex($(GPSSlides[0]).attr("id"))];
+			ret.price+=ret.theme.price;
+			
 			var cakeString=document.getElementById("cakeName").value;
 			var shortCakeString=cakeString.substring(0,cakeString.length<16? cakeString.length:16);
 			if(cakeString.length>16)
@@ -149,18 +153,23 @@
 							cake:partyObj.sections[2].options[getSlideIndex($(GPSSlides[2]).attr("id"))],
 							cakeName:cakeString,
 							cakeNameShort:shortCakeString};
+			ret.price+=ret.food.lunch.price+ret.food.cake.price;
+			
 			ret.activities={rowOne:[],rowTwo:[]};
 			var g="";
 			for(c=0;c<GoodiesBoxes.length;c++){
 				if($(GoodiesBoxes[c]).children().first().hasClass("selected"))
 					g=$(GoodiesBoxes[c]).attr("id").substring(7);
 			}
+			var goodiesIndex=["Small","Medium","Large"];
 			var ticketCount=0;
+			var ticketModifier=2;
 			try{
 				ticketCount=$("#slider").slider("option","value");
 			}catch(e){
 				console.log(e);
 			}
+			ret.price+=ticketCount*ticketModifier+partyObj.sections[3].options[goodiesIndex.indexOf(g)].price;
 			ret.goodies={size:g,tickets:ticketCount};
 			for(c=0;c<ActivitiesBoxes.length;c++){
 				if($(ActivitiesBoxes[c]).children().first().hasClass("selected"))
@@ -169,8 +178,12 @@
 					else
 						ret.activities.rowTwo.push($(ActivitiesBoxes[c]).children().first().attr("src"));
 			}
+			ret.price+=(ret.activities.rowOne.length+ret.activities.rowTwo.length)*5;
+			
 			ret.activities.drawOne=ret.activities.rowOne.length>0;
 			ret.activities.drawTwo=ret.activities.rowTwo.length>0;
+			
+			ret.price=Math.ceil(ret.price/5)*5;
 			return ret;
 		}
 
@@ -215,7 +228,7 @@
 				</div>
 			{{/if}}
 		<div class="flexItem partyPackageFlexRow" id="partyPackageInfo">
-			<div id="price" class="partyPackageInfoItem partyPackageColorBlue center">Price</div>
+			<div id="price" class="partyPackageInfoItem partyPackageColorBlue center">${{price}}</div>
 			<div id="date" class="partyPackageInfoItem partyPackageColorBlue center">Date</div>
 		</div>
 	</script>
