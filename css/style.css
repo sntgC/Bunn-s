@@ -289,14 +289,14 @@ input[type=password] {
 	height:42vh;
 	background: #5bc0be;
 	display:inline-block;
-	margin: 4vh 0px;
+	margin: 4vh 2vw;
 	overflow:hidden;
 	border-radius:1vmin;
 }
 
 .kardBottom{
 	/*background:rgb(68,117,116);*/
-	background-color: #960000;
+	background-color: #E13617;
 	color:white;
 	height:35%;
 	position:relative;
