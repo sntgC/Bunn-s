@@ -202,12 +202,23 @@ h2.selected{
 }
 
 #partyPackageInfo{
-	justify-content:space-around;
+	justify-content:flex-start;
 }
 
 .partyPackageInfoItem{
-	margin:0vw .5vw;
+	margin-right: .25vw;
 	width:25%;
+}
+
+#date{
+	margin-right:0;
+	margin-left:.25vw;
+	width:75%;
+}
+
+#date input[type=text]{
+	width:80%;
+	text-align:center;
 }
 
 #partyContentContainer{
