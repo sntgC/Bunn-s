@@ -16,6 +16,7 @@
 	<script src="libs/handlebars.runtime-v4.0.5.js"></script>
 	<script src="libs/Handlebars.templates"></script>
 	<script src="js/animations.js"></script>
+	<script src="js/cookies.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#registrationForm").on("submit",function(){
@@ -47,8 +48,14 @@
 					success: function(result){
 						var returned = JSON.parse(result);
 						if(typeof returned != "string"){
-							//Finalize return data later
-							$("#responseLog").html("Token created").css("color","green").show();
+							if(returned.duration == "0"){
+								setCookie("token",returned.value,1);
+								setCookie("user_id",returned.user_id,1);
+							}
+							else{
+								setCookie("token",returned.value,365);
+								setCookie("user_id",returned.user_id,365);
+							}
 							$("#loginForm")[0].reset();
 						}
 						else {
@@ -66,7 +73,7 @@
 	<div class="background" style="background-color:#b7314e;">
 		<div class="twoThirdDisplay" style="height:85%;">
 			<div class="blogBody">
-				<div style="padding:80px 0;">
+				<div>
 					<h2 style="color:#e24226;font-size:30px;">Bunn's Rewards Program</h2>
 					<div>
 						<p class="information">The Bunn's Rewards Program offers its members exclusive deals on activities and our menu as a reward for customer loyalty and recurrent visits.
@@ -92,7 +99,7 @@
 		</div>
 		<div class="twoThirdDisplay" style="height:85%;display:none;">
 			<div class="blogBody">
-				<div style="padding:80px 0;">
+				<div>
 					<h2 style="color:#e24226;font-size:30px;">Bunn's Rewards Program</h2>
 					<h3 style="font-size:22px;margin-bottom:2px;margin-top:50px;">Login</h3>
 					<div class="formInfo">

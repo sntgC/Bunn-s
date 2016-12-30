@@ -77,18 +77,6 @@
         $response->getBody()->write($user->create($this->db));
         return $response;
     });
-    //GET
-    $app->get('/users',function(Request $request, Response $response){
-        $user = new Users();
-        $response->getBody()->write($user->retrieve($this->db));
-        return $response;
-    });
-    $app->get('/users/{id}',function(Request $request, Response $response){
-        $user = new Users();
-        $user->id = filter_var($request->getAttribute('id'), FILTER_SANITIZE_STRING);
-        $response->getBody()->write($user->retrieve($this->db));
-        return $response;
-    });
 
     $app->run();
 ?>
