@@ -22,9 +22,13 @@
 		var token = getCookie("token");
 		var user_id = getCookie("user_id");
 		if(token === "" || user_id === ""){
-			setCookie("token","",-1);
-			setCookie("user_id","",-1);
-			window.location.replace("rewards");
+			if(token !== ""){
+				logOut();
+			}
+			else{
+				setCookie("user_id","",-1);
+				window.location.replace("rewards");
+			}
 		}
 
 		function logOut(){
