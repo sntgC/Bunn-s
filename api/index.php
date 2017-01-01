@@ -62,6 +62,14 @@
         $response->getBody()->write($token->create($this->db, $email, $password));
         return $response;
     });
+    //DELETE
+    $app->delete('/tokens/{token_value}',function(Request $request, Response $response, $args){
+        $token_value = $args["token_value"];
+        $token = new Tokens();
+        $token->value = filter_var($token_value, FILTER_SANITIZE_STRING);
+        $response->getBody()->write($token->delete($this->db));
+        return $response;
+    });
 
     //User endpoints
     //POST

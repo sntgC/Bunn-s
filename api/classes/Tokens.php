@@ -80,5 +80,12 @@
                 return json_encode($result->fetch_assoc());
             }
         }
+
+        function delete($conn){
+            $this->removeExpired($conn);
+            $sql = "DELETE FROM tokens WHERE value='$this->value'";
+            $conn->query($sql);
+            return json_encode("Deleted");
+        }
     }
 ?>

@@ -18,7 +18,32 @@
 	<script src="js/animations.js"></script>
 	<script src="js/cookies.js"></script>
 	<script type="text/javascript">
+		if(getCookie("rewardsView") === ""){
+			setCookie("rewardsView","0",365);
+		}
+
+		var token = getCookie("token");
+		var user_id = getCookie("user_id");
+		if(token !== "" && user_id !== ""){
+			window.location.replace("account");
+		}
+
+		function updateView(){
+			var rewardsView = getCookie("rewardsView");
+			switch(rewardsView){
+				case "0":
+					setCookie("rewardsView","1",365);
+					break;
+				case "1":
+					setCookie("rewardsView","0",365);
+					break;
+			}
+		}
+
 		$(document).ready(function(){
+			if(getCookie("rewardsView") === "1"){
+				$('.twoThirdDisplay').toggle();
+			}
 			$("#registrationForm").on("submit",function(){
 				$.ajax({
 					type: "POST",
@@ -57,6 +82,7 @@
 								setCookie("user_id",returned.user_id,365);
 							}
 							$("#loginForm")[0].reset();
+							window.location.replace("account");
 						}
 						else {
 							$("#responseLog").html(returned).css("color","red").show();
@@ -93,7 +119,7 @@
 							<input class="submitButtonRewards" type="submit" name="submit" value="Submit" form="registrationForm">
 						</form>
 					</div>
-					<p style="display:block;margin-top:50px;">Already have an account? <a href="javascript: $('.twoThirdDisplay').toggle();" style="color:blue;">Login</a></p>
+					<p style="display:block;margin-top:50px;">Already have an account? <a href="javascript: $('.twoThirdDisplay').toggle(); updateView();" style="color:blue;">Login</a></p>
 				</div>
 			</div>
 		</div>
@@ -116,7 +142,7 @@
 							<input class="submitButtonRewards" type="submit" name="submit" value="Submit" form="loginForm">
 						</form>
 					</div>
-					<p style="display:block;margin-top:50px;">Don't have an account? <a href="javascript: $('.twoThirdDisplay').toggle();" style="color:blue;">Register</a></p>
+					<p style="display:block;margin-top:50px;">Don't have an account? <a href="javascript: $('.twoThirdDisplay').toggle(); updateView();" style="color:blue;">Register</a></p>
 				</div>
 			</div>
 		</div>
