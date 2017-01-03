@@ -2,7 +2,7 @@ body{
 	background:#dedede;
 }
 
-/*Had to add the following two classes here because of a bug when linking the blog.css stylesheet*/
+/*Had to add the following four classes here because of a bug when linking the blog.css stylesheet*/
 .twoThirdDisplay{
 	background:#bebebe;
 	width:66.6%;
@@ -18,6 +18,24 @@ body{
 	flex-grow:1;
 	display:flex;
 	flex-direction:column;
+}
+
+.submitButton{
+	cursor: pointer;
+	border: none;
+	font-size: 20px;
+	font-family: 'Averia Sans Libre', cursive;
+	background:#151d8e;
+	display:inline-block;
+	color:white;
+	padding:15px;
+	border-radius:1vmin;
+	width: 75%;
+	margin-top:2%;
+}
+
+.submitButton:hover{
+	background:#151dab;
 }
 
 #customPackageStart{

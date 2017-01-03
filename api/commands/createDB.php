@@ -40,6 +40,7 @@
             ) CHARACTER SET utf8; ";
     $sql .="CREATE TABLE IF NOT EXISTS reservations(
                 id varchar(14) CHARACTER SET utf8 NOT NULL,
+                user_id varchar(7) CHARACTER SET utf8 NOT NULL,
                 data text CHARACTER SET utf8 NOT NULL,
                 PRIMARY KEY (id)
             ) CHARACTER SET utf8; ";

@@ -129,5 +129,27 @@
         }
     });
 
+    //Reservation endpoints
+    //POST
+    $app->post('/reservations',function(Request $request, Response $response){
+        if($request->hasHeader("Authorization")){
+            $data = $request->getParsedBody();
+            if(!isset($data["data"]) || !isset($data["user_id"])){
+                $response->getBody()->write(json_encode("Missing party data and/or user id input"));
+                return $response;
+            }
+            $reservation = new Reservations();
+            $reservation->user_id = filter_var($data["user_id"], FILTER_SANITIZE_STRING);
+            $reservation->data = $data["data"];
+            $reservation->auth = filter_var($request->getHeader("Authorization")[0], FILTER_SANITIZE_STRING);
+            $response->getBody()->write($reservation->create($this->db));
+            return $response;
+        }
+        else{
+            $response->getBody()->write(json_encode("Authorization header missing"));
+            return $response;
+        }
+    });
+
     $app->run();
 ?>

@@ -139,6 +139,27 @@
 			fixPartyPackage();
 
 			$('#dateTextField').dateDropper();
+
+			$("#reserveButton").on("click",function(){
+				$.ajax({
+					type: "POST",
+					url: "api/reservations",
+					data: {"data":JSON.stringify(getPartySelections()),"user_id":getCookie("user_id")},
+					beforeSend: function(request){
+					    request.setRequestHeader("Authorization", getCookie("token"));
+					},
+					success: function(result){
+						var returned = JSON.parse(result);
+						if(returned == "Created"){
+							$("#response").html("Party successfully reserved!").css("color","green").show();
+						}
+						else{
+							$("#response").html(returned).css("color","red").show();
+						}
+					}
+				});
+				return false;
+			});
 		});
 
 		function loadPartyPackage(func){
@@ -276,7 +297,7 @@
 					<h2 class="fontSk">Welcome to the BUNN'S Party Creator!</h2>
 						<p>Here at Bunn's, we realize and appreciate the value of memorable events.
 						Birthday parties create lifelong memories and social functions help form significant, strong connections.
-						Using this party creator, you are able to create, design, and reserve the perfect party for a birthday celebration
+						Using this party creator, you are able to create, design, and reserve the perfect party.
 						<br>
 						<p class="textTiny"><span class="fontSK">NOTE:</span> a <span class="fontSK">FREE</span> Bunn's Rewards Account is required in order to reserve your party.<br>
 						Sign up for free <a href="rewards" class="fontSK" style="color:#2694e2">HERE</a>!</p>
@@ -399,6 +420,9 @@
 			<p class="textEmphasized"><span class="textUnderlined">Your Party</span></p>
 			<div id="partyPackageDisplay">
 			</div>
+			<span style="font-size:18px;display:none;" id="response"></span>
+			<br>
+			<button class="submitButton" type="button" name="reserve" id="reserveButton">Reserve</button>
 		</div>
 	</div>
 	</div>
