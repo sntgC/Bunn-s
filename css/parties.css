@@ -223,6 +223,7 @@ h2.selected{
 
 #partyContentContainer{
 	position:relative;
+	display:flex;
 }
 
 .partyRow{
@@ -262,7 +263,7 @@ h2.selected{
 #partySidebar{
 	display:inline-flex;
 	background:#dedede;
-	width:23vw;
+	flex-basis:23vw;
 	font-size:16px;
 	bottom:0px;
 	position:absolute;
