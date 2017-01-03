@@ -22,11 +22,18 @@
 	<script src="js/animations.js"></script>
 	<script src="js/objects.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/cookies.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 	<script src="libs/Handlebars.templates"></script>
 	<script>
 		var partyPackageTemplate;
 		$(document).ready(function () {
+			var token = getCookie("token");
+			var user_id = getCookie("user_id");
+			if(token === "" || user_id === ""){
+				removeSidebar();
+			}
+
 			//Variables
 			var slideCnts=[];
 			var nameRoots=["Theme","Food","Cake"];
@@ -130,7 +137,7 @@
 
 			loadPartyPackage(getPartySelections);
 			fixPartyPackage();
-			
+
 			$('#dateTextField').dateDropper();
 		});
 
@@ -148,7 +155,7 @@
 			sb.style.display="none";
 			cps.style.flexGrow="1";
 		}
-		
+
 		function getPartySelections(){
 			var GPSSlides=document.getElementsByClassName("slideContainer");
 			var GoodiesBoxes=document.getElementsByClassName("partyBoxTinyGoodies");
@@ -157,7 +164,7 @@
 			ret.price=0;
 			ret.theme=partyObj.sections[0].options[getSlideIndex($(GPSSlides[0]).attr("id"))];
 			ret.price+=ret.theme.price;
-			
+
 			var cakeString=document.getElementById("cakeName").value;
 			var shortCakeString=cakeString.substring(0,cakeString.length<16? cakeString.length:16);
 			if(cakeString.length>16)
@@ -169,7 +176,7 @@
 							cakeName:cakeString,
 							cakeNameShort:shortCakeString};
 			ret.price+=ret.food.lunch.price+ret.food.cake.price;
-			
+
 			ret.activities={rowOne:[],rowTwo:[]};
 			var g="";
 			for(c=0;c<GoodiesBoxes.length;c++){
@@ -195,10 +202,10 @@
 						ret.activities.rowTwo.push($(ActivitiesBoxes[c]).children().first().attr("src"));
 			}
 			ret.price+=(ret.activities.rowOne.length+ret.activities.rowTwo.length)*5;
-			
+
 			ret.activities.drawOne=ret.activities.rowOne.length>0;
 			ret.activities.drawTwo=ret.activities.rowTwo.length>0;
-			
+
 			ret.price=Math.ceil(ret.price/5)*5;
 			return ret;
 		}
@@ -264,8 +271,25 @@
 				<li class="navTitle logoClear" style="float:left"  id="headerLogo"><a href="index" class="makeYellow">BUNN'S</a></li>
 			</div>
 	</div>
-	<div class="background" style="background-image: url(assets/party.jpg)">
-
+	<div class="background" style="background-image: url(assets/party.jpg); text-align:center;">
+		<div class="twoThirdDisplay" style="height:85%;background:#efc15d;">
+			<div class="blogBody">
+				<div style="padding:80px 0;">
+					<h2 style="color:#e24226;font-size:42px;">Welcome to the Bunn's Party Creator!</h2>
+					<br>
+					<div>
+						<p class="information" style="font-size:26px;width:65%;">Here at Bunn's, we realize and appreciate the value of memorable events.
+						Birthday parties create lifelong memories and social functions help form significant, strong connections.
+						Using this party creator, you are able to create, design, and reserve the perfect party for a birthday celebration or a social function.
+						As the creator, you are able to select from a variety of themes, foods, cakes, activities, and parting gifts.
+						<br>So reserve your party online today!</p>
+					</div>
+					<br>
+					<p style="font-size:26px;"><b>NOTE:</b> a <b style="color:#e24226;">FREE</b> Bunn's Rewards Account is required in order to reserve your party.<br>
+					Sign up for free <a href="rewards" style="color:blue;">here</a>!</p>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div id="focus" style="position:fixed;left:0px;width:20vw;height:20vh;background:white;z-index:200;top:80vh;text-align:center;font-size:2vh;box-shadow: 40px -19px 30px -12px rgba(0,0,0,0.4);visibility:hidden;">
 	<a href="javascript:document.getElementById('focus').remove()"><div style="position:absolute;right:.5vw;top:.5vh;color:black;">X</div></a>

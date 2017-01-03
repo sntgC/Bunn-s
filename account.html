@@ -134,9 +134,9 @@
 						<p id="id">Unique Account ID: </p>
 						<p id="points">Total Reward Points: </p>
 					</div>
-					<a href="javascript: $('#changeEmail').show(); $('#base').hide();" style="color:blue;">Change E-Mail</a>
+					<a href="#" onclick="$('#changeEmail').show(); $('#base').hide(); return false;" style="color:blue;">Change E-Mail</a>
 					<br><br>
-					<a href="javascript: $('#changePass').show(); $('#base').hide();" style="color:blue;">Change Password</a>
+					<a href="#" onclick="$('#changePass').show(); $('#base').hide(); return false;" style="color:blue;">Change Password</a>
 					<br><br>
 					<a href="javascript: logOut();" style="color:blue;">Log Out</a>
 				</div>
@@ -145,7 +145,7 @@
 				<div>
 					<h2 style="color:#e24226;font-size:32px;">My Account</h2>
 					<h3 style="color:#e24226;">Change E-Mail</h3>
-					<a href="javascript: $('#changeEmail').hide(); $('#base').show();" style="color:blue;">Cancel</a>
+					<a href="#" onclick="$('#changeEmail').hide(); $('#base').show(); return false;" style="color:blue;">Cancel</a>
 					<div class="formInfo">
 						<span id="responseE" style="display:none;margin-top:20px;"></span>
 						<br>
@@ -165,7 +165,7 @@
 				<div>
 					<h2 style="color:#e24226;font-size:32px;">My Account</h2>
 					<h3 style="color:#e24226;">Change Password</h3>
-					<a href="javascript: $('#changePass').hide(); $('#base').show();" style="color:blue;">Cancel</a>
+					<a href="#" onclick="$('#changePass').hide(); $('#base').show(); return false;" style="color:blue;">Cancel</a>
 					<div class="formInfo">
 						<span id="responseP" style="display:none;margin-top:20px;"></span>
 						<br>
