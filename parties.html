@@ -142,6 +142,13 @@
 			}
 		}
 
+		function removeSidebar(){
+			var cps=document.getElementById("customPackageStart");
+			var sb=document.getElementById("partySidebar");
+			sb.style.display="none";
+			cps.style.flexGrow="1";
+		}
+		
 		function getPartySelections(){
 			var GPSSlides=document.getElementsByClassName("slideContainer");
 			var GoodiesBoxes=document.getElementsByClassName("partyBoxTinyGoodies");
