@@ -87,5 +87,17 @@
             $conn->query($sql);
             return json_encode("Deleted");
         }
+
+        function verifyToken($conn){
+            if($this->value !== null && $this->user_id !== null){
+                $result = $conn->query("SELECT * FROM tokens WHERE value='$this->value' AND user_id='$this->user_id'");
+                if($result->num_rows == 1){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+        }
     }
 ?>

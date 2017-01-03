@@ -3,7 +3,6 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-
 	<title>Bunn's: Burgers & Fun - Account</title>
 	<meta name="description" content="Bunn's: Burgers & Fun - Account">
 	<meta name="author" content="DemBois">
@@ -46,6 +45,70 @@
 				}
 			});
 		}
+
+		$(document).ready(function(){
+			var user_id = getCookie("user_id");
+			var token = getCookie("token");
+			$("#id").html($("#id").text() + "<b>"+ user_id +"</b>");
+			$.ajax({
+				type: "GET",
+				url: "api/users/"+user_id,
+				beforeSend: function(request) {
+				    request.setRequestHeader("Authorization", token);
+				},
+				success: function(result){
+					var returned = JSON.parse(result);
+					if(returned.email !== undefined && returned.points !== undefined){
+						$("#welcome").html($("#welcome").text() + returned.email + "!");
+						$("#points").html($("#points").text() + "<b>" + returned.points + "</b>");
+					}
+				}
+			});
+			$("#changeEmailForm").on("submit",function(){
+				$.ajax({
+					type: "PUT",
+					url: "api/users/"+user_id,
+					data: $("#changeEmailForm").serializeArray(),
+					beforeSend: function(request) {
+						request.setRequestHeader("Authorization", token);
+					},
+					success: function(result){
+						var returned = JSON.parse(result);
+						if(returned == "Updated"){
+							$("#responseE").html(returned + ". This page will refresh in 5 seconds.").css("color","green").show();
+							window.setTimeout(function(){window.location.reload();},5000);
+							$("#changeEmailForm")[0].reset();
+						}
+						else{
+							$("#responseE").html(returned).css("color","red").show();
+						}
+					}
+				});
+				return false;
+			});
+			$("#changePassForm").on("submit",function(){
+				$.ajax({
+					type: "PUT",
+					url: "api/users/"+user_id,
+					data: $("#changePassForm").serializeArray(),
+					beforeSend: function(request) {
+					    request.setRequestHeader("Authorization", token);
+					},
+					success: function(result){
+						var returned = JSON.parse(result);
+						if(returned == "Updated"){
+							$("#responseP").html(returned + ". This page will refresh in 5 seconds.").css("color","green").show();
+							window.setTimeout(function(){window.location.reload();},5000);
+							$("#changePassForm")[0].reset();
+						}
+						else{
+							$("#responseP").html(returned).css("color","red").show();
+						}
+					}
+				});
+				return false;
+			});
+		});
 	</script>
 </head>
 
@@ -63,14 +126,63 @@
 	</div>
 	<div class="background" style="background:#b7314e;">
 		<div class="twoThirdDisplay" style="height:85%;">
-			<div class="blogBody">
+			<div class="blogBody" id="base">
 				<div>
 					<h2 style="color:#e24226;font-size:32px;">My Account</h2>
+					<h3 id="welcome">Welcome </h3>
+					<div>
+						<p id="id">Unique Account ID: </p>
+						<p id="points">Total Reward Points: </p>
+					</div>
+					<a href="javascript: $('#changeEmail').show(); $('#base').hide();" style="color:blue;">Change E-Mail</a>
+					<br><br>
+					<a href="javascript: $('#changePass').show(); $('#base').hide();" style="color:blue;">Change Password</a>
+					<br><br>
 					<a href="javascript: logOut();" style="color:blue;">Log Out</a>
+				</div>
+			</div>
+			<div class="blogBody" id="changeEmail" style="display:none;">
+				<div>
+					<h2 style="color:#e24226;font-size:32px;">My Account</h2>
+					<h3 style="color:#e24226;">Change E-Mail</h3>
+					<a href="javascript: $('#changeEmail').hide(); $('#base').show();" style="color:blue;">Cancel</a>
+					<div class="formInfo">
+						<span id="responseE" style="display:none;margin-top:20px;"></span>
+						<br>
+						<form id="changeEmailForm" method="put">
+							New E-Mail:<br>
+							<input type="text" name="emailNew" required>
+							<br>
+							Password:<br>
+							<input type="password" name="password" required>
+							<br>
+							<input class="submitButtonRewards" type="submit" name="submit" value="Submit" form="changeEmailForm">
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="blogBody" id="changePass" style="display:none;">
+				<div>
+					<h2 style="color:#e24226;font-size:32px;">My Account</h2>
+					<h3 style="color:#e24226;">Change Password</h3>
+					<a href="javascript: $('#changePass').hide(); $('#base').show();" style="color:blue;">Cancel</a>
+					<div class="formInfo">
+						<span id="responseP" style="display:none;margin-top:20px;"></span>
+						<br>
+						<form id="changePassForm" method="put">
+							New Password:<br>
+							<input type="password" name="passNew" required>
+							<br>
+							Current Password:<br>
+							<input type="password" name="password" required>
+							<br>
+							<input class="submitButtonRewards" type="submit" name="submit" value="Submit" form="changePassForm">
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="footer"></div>
+	<div class="noSelect" id="footer"></div>
 </body>
 </html>

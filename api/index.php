@@ -85,6 +85,49 @@
         $response->getBody()->write($user->create($this->db));
         return $response;
     });
+    //GET
+    $app->get('/users/{id}', function(Request $request, Response $response, $args){
+        if($request->hasHeader("Authorization")){
+            $auth = $request->getHeader("Authorization")[0];
+            $id = $args["id"];
+            $user = new Users();
+            $user->id = filter_var($id, FILTER_SANITIZE_STRING);
+            $user->auth = filter_var($auth, FILTER_SANITIZE_STRING);
+            $response->getBody()->write($user->retrieve($this->db));
+            return $response;
+        }
+        else{
+            $response->getBody()->write(json_encode("Authorization header missing"));
+            return $response;
+        }
+    });
+    //PUT
+    $app->put('/users/{id}', function(Request $request, Response $response, $args){
+        if($request->hasHeader("Authorization")){
+            $data = $request->getParsedBody();
+            if(!isset($data["emailNew"]) && !isset($data["passNew"])){
+                $response->getBody()->write(json_encode("No input data given"));
+                return $response;
+            }
+            $auth = $request->getHeader("Authorization")[0];
+            $id = $args["id"];
+            $user = new Users();
+            $user->id = filter_var($id, FILTER_SANITIZE_STRING);
+            $user->auth = filter_var($auth, FILTER_SANITIZE_STRING);
+            if(isset($data["emailNew"])){
+                $user->email = filter_var($data["emailNew"], FILTER_SANITIZE_STRING);
+            }
+            else if(isset($data["passNew"])){
+                $user->password = filter_var($data["passNew"], FILTER_SANITIZE_STRING);
+            }
+            $response->getBody()->write($user->update($this->db,$data["password"]));
+            return $response;
+        }
+        else{
+            $response->getBody()->write(json_encode("Authorization header missing"));
+            return $response;
+        }
+    });
 
     $app->run();
 ?>

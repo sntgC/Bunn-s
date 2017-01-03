@@ -16,7 +16,7 @@
                 id varchar(7) CHARACTER SET utf8 NOT NULL,
                 email varchar(100) CHARACTER SET utf8 DEFAULT NULL,
                 password varchar(60) CHARACTER SET utf8 DEFAULT NULL,
-                points int DEFAULT 0 NOT NULL,
+                points int DEFAULT 500 NOT NULL,
                 PRIMARY KEY (id)
             ) CHARACTER SET utf8; ";
     //duration values:
