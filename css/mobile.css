@@ -6,6 +6,10 @@
 	align-items:stretch;
 }
 
+.material-icons{
+	font-size:inherit;
+}
+
 .mobileHeaderSection{
 	color:#efd139;
 	font-family: 'Skranji', cursive;
