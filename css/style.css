@@ -543,6 +543,7 @@ textarea{
 	border-radius:1vmin;
 	text-align:center;
 	padding:1vmin;
+	z-index:10;
 }
 
 .contentBackground{

@@ -116,7 +116,7 @@ var partyObjLunch={name:"Lunch",
 								options:[
 									{
 									name:"Pirate",
-									image:"assets/lunch1.jpeg",
+									image:"assets/lunch1.jpg",
 									description:"Pizza and Drink",
 									price:5
 									},
@@ -146,21 +146,33 @@ var partyObjCake={name:"Cake",
 								options:[
 									{
 									name:"Pirate",
-									image:"assets/cake1.jpeg",
-									description:"Specialty Chocolate Cake",
+									image:"assets/cake0.jpg",
+									description:"Classic Birthday Cake",
+									price:9
+									},
+									{
+									name:"Pirate",
+									image:"assets/cake1.jpg",
+									description:"Blackberry Marble Cake",
 									price:10
 									},
 									{
 									name:"Mermaid",
-									image:"assets/cake3.jpg",
-									description:"Blackberry Marble Cake",
+									image:"assets/cake2.jpg",
+									description:"Strawberry Shortcake",
 									price:9
 									},
 									{
 									name:"Mermaid",
-									image:"assets/cake4.jpg",
-									description:"Hazelnut Cake",
+									image:"assets/cake3.jpg",
+									description:"Crème Brûlée",
 									price:11
+									},
+									{
+									name:"Mermaid",
+									image:"assets/cake4.jpg",
+									description:"Fruit Tart",
+									price:13
 									}
 								]};		
 var partyObjGoodies={
