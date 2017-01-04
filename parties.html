@@ -163,12 +163,18 @@
 		});
 
 		function loadPartyPackage(func){
+			try{
+			var date=document.getElementById("dateTextField").value;
+			}catch(e){
+			}
 			if(typeof func != 'undefined'){
 				document.getElementById("partyPackageDisplay").innerHTML = partyPackageTemplate(func());
 			}else{
 				document.getElementById("partyPackageDisplay").innerHTML = partyPackageTemplate(getPartySelections());
 			}
 			$('#dateTextField').dateDropper();
+			if(date!=null)
+				document.getElementById("dateTextField").value=date;
 		}
 
 		function removeSidebar(){
