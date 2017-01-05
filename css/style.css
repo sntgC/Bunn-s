@@ -71,14 +71,12 @@ body {
     position: fixed;
     bottom: 15px;
     right: 10px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     z-index: 100;
     display: none;
     text-decoration: none;
-    color: white;
-    background-color: #efd139;
-    border-radius: 70px;
+    color: #efd139;
 }
 
 .back-to-top:hover{
@@ -86,7 +84,7 @@ body {
 }
 
 .back-to-top i{
-    font-size: 35px;
+    font-size: 50px;
 }
 
 .colorBlue:hover{

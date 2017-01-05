@@ -11,7 +11,7 @@ $(document).ready(function () {
 	var offset = 300;
 	var duration = 750;
 	$(window).on('scroll', function () {
-		if ($(this).scrollTop() > offset) {
+		if ($(this).scrollTop() > offset){
 			$('.back-to-top').fadeIn(duration);
 		} else {
 			$('.back-to-top').fadeOut(250);
@@ -147,7 +147,7 @@ function slideTo(containerID, slideIndex, buttoned, callback){
 			$('#'+containerID).animate({
 								left: ""+(slideIndex*-100)+"%"
 								}, 800, function(){
-									
+
 			});
 		}
 	}else{
