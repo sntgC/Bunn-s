@@ -15,10 +15,10 @@
 var menuObjFeat={type:"feat",
 							name:"Featured Platters",
 							entry:[
-								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
-								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
-								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$", description:""},
-								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
+								{name:"Calamari", image:"assets/calamari.jpg", price:"$8.99", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
+								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$9.99", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
+								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$6.99", description:"Grilled shrimp served over a bed of greens and hit with a dash of lime."},
+								{name:"Pepperoni Pizza", image:"assets/pizzaMenu.jpg", price:"$7.99", description:"Our thin crust classic pepperoni pizza baked in a brick oven."},
 								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
 								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$", description:""},
 								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
@@ -174,7 +174,7 @@ var partyObjCake={name:"Cake",
 									description:"Fruit Tart",
 									price:13
 									}
-								]};		
+								]};
 var partyObjGoodies={
 									options:[
 										{name:"Small",
@@ -187,7 +187,7 @@ var partyObjGoodies={
 										price:15
 										}
 									]
-								};					
+								};
 var menuObj={main:menuObjFeat,choices:[menuObjApp,menuObjEnt, menuObjDes, menuObjDri]};
 var partyThemeSlides=["assets/iconPirate.png","assets/iconPirate.jpg","assets/iconPirate.png"];
 var partyObj={sections:[partyObjTheme,partyObjLunch,partyObjCake,partyObjGoodies]};
