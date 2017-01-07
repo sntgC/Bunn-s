@@ -38,50 +38,48 @@ var menuObjApp={type:"Appetizers",
 								{name:"Nachos", image:"", price:"$4.49", description:"Tortilla chips smothered in a cheddar cheese melt and topped with tomatoes and jalapenos."},
 								{name:"Caesar Salad", image:"", price:"$2.49", description:"Iceburg lettuce, parmesan cheese, crispy croutons and a tangy caesar dressing."},
 								{name:"Garden Salad", image:"", price:"$2.99", description:"Iceburg lettuce, grape tomatoes, grated cheddar cheese, sliced carrots, croutons topped with ranch dressing."},
-								{name:"Cobb Salad", image:"", price:"$3.49", description:"Iceburg lettuce, grape tomatoes, shrimp, sliced boiled eggs, sliced carrots, topped with a balsamic vinaigrette dressing."}]
+								{name:"Cobb Salad", image:"", price:"$3.49", description:"Iceburg lettuce, grape tomatoes, shrimp, sliced boiled eggs, sliced carrots, topped with a balsamic vinaigrette dressing."}
+								]
 							]};
 var menuObjEnt={type:"Entrées",
 							entry:[
 								[
 								{name:"Chicken Strip Basket", image:"", price:"$6.49", description:"Six lightly breaded chicken strips served with your choice of BBQ sauce, spicy BBQ sauce, or honey mustard."},
-								{name:"Captain Bunn's Oysters", image:"", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
-								{name:"Commodore Shrimp", image:"", price:"$", description:""},
-								{name:"Calamari", image:"", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."}
+								{name:"Pepperoni Pizza", image:"", price:"$7.99", description:"Our thin crust classic pepperoni pizza baked in a brick oven."},
+								{name:"Classic Turkey Sandwich", image:"", price:"$4.99", description:"Turkey, mayonnaise, lettuce, cheddar cheese, and tomatoes between two toasted pieces of Italian Ciabatta bread."},
+								{name:"The Bunn's Dog", image:"", price:"$5.49", description:"Beef hot dog topped with melted cheese, bacon, onion crisps, and pickles."},
+								{name:"Seafood Paella", image:"", price:"Inquire waiter", description:"Traditional Spanish dish served with Spanish rice, lobster, shrimp, clams, and oysters."}
 								],
 								[
-								{name:"Commodore Shrimp", image:"", price:"$", description:""},
-								{name:"Calamari", image:"", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
-								{name:"Captain Bunn's Oysters", image:"", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
-								{name:"Commodore Shrimp", image:"", price:"$", description:""}
+								{name:"Classic Ham Sandwich", image:"", price:"$4.99", description:"Smoked ham, mayonnaise, lettuce, swiss cheese, and tomatoes served on pita bread."},
+								{name:"Classic Bacon Cheeseburger", image:"", price:"$7.49", description:"A swiss cheese topped beef patty with bacon, tomatoes, pickles, lettuce, red onion, ketchup and mayo between two sesame seed buns."},
+								{name:"Swiss Mushroom Burger", image:"", price:"$6.99", description:"A swiss cheese topped beef patty with mushrooms, honey mustard, and onions between two golden buns."},
+								{name:"Chipotle BLT Sandwich", image:"", price:"$5.99", description:"Crispy bacon, fresh lettuce, tomato, and chipotle ranch between toasted white bread."}
 								]
 							]};
 var menuObjDes={type:"Desserts",
 							entry:[
 								[
-								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
-								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
-								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$", description:""},
-								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
-								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."}],
+								{name:"Chocolate Lava Cake", image:"", price:"$5.99", description:"A fully chocolate cake filled with molten chocolate served with a scoop of vanilla ice cream."},
+								{name:"New York Cheesecake", image:"", price:"$2.99", description:"A slice of cheesecake with a graham cracker crust and a decadent raspberry sauce."},
+								{name:"Chocolate Churro", image:"", price:"$1.99", description:"Fried dough shaped into a rigid strip with cinnamon and dipped into chocolate."}
+								],
 								[
-								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$", description:""},
-								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
-								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
-								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$", description:""}]
+								{name:"Flan", image:"", price:"$2.99", description:"A traditional Hispanic spongy, light custard dessert with caramel."},
+								{name:"Chocolate Chip Cookie", image:"", price:"$0.75", description:"The king of cookies. A classic cookie with chocolate chips."},
+								{name:"Ice Cream Sundae", image:"", price:"$4.99", description:"A scoop of vanilla, chocolate, and strawberry ice cream with a banana and chocolate syrup."}
+								]
 							]};
 var menuObjDri={type:"Drinks",
 							entry:[
 								[
-								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
-								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
-								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$", description:""},
-								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
-								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."}],
+								{name:"Soft Drinks", image:"", price:"$2.00", description:""},
+								{name:"Sweetened Iced Tea", image:"", price:"$2.00", description:""},
+								{name:"Unsweetened Iced Tea", image:"", price:"$2.00", description:""}
+								],
 								[
-								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$", description:""},
-								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
-								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
-								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$", description:""}]
+								{name:"Wines", image:"", price:"Inquire waiter", description:""}
+								]
 							]};
 var partyObjTheme={name:"Themes",
 								displayType:"sliderSelec",
