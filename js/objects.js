@@ -8,7 +8,7 @@
 	foodObj format:
 	String name - The name of this meal
 	String image - The relative location of the image file
-	String price - A string composed of '$' characters denoting the price range. Goes from $-$$$$
+	String price - Price of item.
 	String description - A 140 character description of the course
 */
 
@@ -19,40 +19,41 @@ var menuObjFeat={type:"feat",
 								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$9.99", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
 								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$6.99", description:"Grilled shrimp served over a bed of greens and hit with a dash of lime."},
 								{name:"Pepperoni Pizza", image:"assets/pizzaMenu.jpg", price:"$7.99", description:"Our thin crust classic pepperoni pizza baked in a brick oven."},
-								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
-								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$", description:""},
-								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
-								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
-								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$", description:""}
+								{name:"Sweet & Spicy Wings", image:"assets/wingsMenu.jpg", price:"$6.99", description:"Chicken wings marinated in a soy sauce mixed with honey and finished with a sweet and spicy sauce."},
+								{name:"Classic Turkey Sandwich", image:"assets/sandwichMenu.jpg", price:"$4.99", description:"Turkey, mayonnaise, lettuce, cheddar cheese, and tomatoes between two toasted pieces of Italian Ciabatta bread."},
+								{name:"The Bunn's Dog", image:"assets/hotdogMenu.jpg", price:"$5.49", description:"Beef hot dog topped with melted cheese, bacon, onion crisps, and pickles."},
+								{name:"Classic Ham Sandwich", image:"assets/hamSandwichMenu.jpg", price:"$4.99", description:"Smoked ham, mayonnaise, lettuce, swiss cheese, and tomatoes served on pita bread."},
+								{name:"Classic Bacon Cheeseburger", image:"assets/burgerMenu.jpg", price:"$7.49", description:"A swiss cheese topped beef patty with bacon, tomatoes, pickles, lettuce, red onion, ketchup and mayo between two sesame seed buns."}
 							]};
 
 var menuObjApp={type:"Appetizers",
 							entry:[
 								[
-								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
-								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
-								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$", description:""},
-								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
-								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."}],
+								{name:"Calamari", image:"", price:"$8.99", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
+								{name:"Captain Bunn's Oysters", image:"", price:"$9.99", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
+								{name:"Commodore Shrimp", image:"", price:"$6.99", description:"Grilled shrimp served over a bed of greens and hit with a dash of lime."},
+								{name:"Sweet & Spicy Wings", image:"", price:"$6.99", description:"Chicken wings marinated in a soy sauce mixed with honey and finished with a sweet and spicy sauce."}
+								],
 								[
-								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$", description:""},
-								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
-								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
-								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$", description:""}]
+								{name:"Nachos", image:"", price:"$4.49", description:"Tortilla chips smothered in a cheddar cheese melt and topped with tomatoes and jalapenos."},
+								{name:"Caesar Salad", image:"", price:"$2.49", description:"Iceburg lettuce, parmesan cheese, crispy croutons and a tangy caesar dressing."},
+								{name:"Garden Salad", image:"", price:"$2.99", description:"Iceburg lettuce, grape tomatoes, grated cheddar cheese, sliced carrots, croutons topped with ranch dressing."},
+								{name:"Cobb Salad", image:"", price:"$3.49", description:"Iceburg lettuce, grape tomatoes, shrimp, sliced boiled eggs, sliced carrots, topped with a balsamic vinaigrette dressing."}]
 							]};
 var menuObjEnt={type:"Entrées",
 							entry:[
 								[
-								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
-								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
-								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$", description:""},
-								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
-								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."}],
+								{name:"Chicken Strip Basket", image:"", price:"$6.49", description:"Six lightly breaded chicken strips served with your choice of BBQ sauce, spicy BBQ sauce, or honey mustard."},
+								{name:"Captain Bunn's Oysters", image:"", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
+								{name:"Commodore Shrimp", image:"", price:"$", description:""},
+								{name:"Calamari", image:"", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."}
+								],
 								[
-								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$", description:""},
-								{name:"Calamari", image:"assets/calamari.jpg", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
-								{name:"Captain Bunn's Oysters", image:"assets/oysters.jpg", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
-								{name:"Commodore Shrimp", image:"assets/shrimp.jpg", price:"$", description:""}]
+								{name:"Commodore Shrimp", image:"", price:"$", description:""},
+								{name:"Calamari", image:"", price:"$$", description:"Freshly caught calamari served with a buttery white sauce and a savory red sauce."},
+								{name:"Captain Bunn's Oysters", image:"", price:"$$", description:"Wild caught, fresh off the boat oysters from the San Francisco Bay."},
+								{name:"Commodore Shrimp", image:"", price:"$", description:""}
+								]
 							]};
 var menuObjDes={type:"Desserts",
 							entry:[
