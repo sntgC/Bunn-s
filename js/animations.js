@@ -10,9 +10,15 @@ $(document).ready(function () {
 	//Animation of the back-to-top button
 	var offset = 300;
 	var duration = 750;
+	var timeouts = [];
 	$(window).on('scroll', function () {
 		if ($(this).scrollTop() > offset){
 			$('.back-to-top').fadeIn(duration);
+			var hide = setTimeout(function(){$('.back-to-top').fadeOut(350);},4000);
+			for(var i = 0; i < timeouts.length; i++){
+				clearTimeout(timeouts[i]);
+			}
+			timeouts.push(hide);
 		} else {
 			$('.back-to-top').fadeOut(250);
 		}

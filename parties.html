@@ -144,10 +144,7 @@
 				$.ajax({
 					type: "POST",
 					url: "api/reservations",
-					data: {"data":JSON.stringify(getPartySelections()),"user_id":getCookie("user_id")},
-					beforeSend: function(request){
-					    request.setRequestHeader("Authorization", getCookie("token"));
-					},
+					data: {"data":JSON.stringify(getPartySelections()),"user_id":getCookie("user_id"),"token":getCookie("token")},
 					success: function(result){
 						var returned = JSON.parse(result);
 						if(returned == "Created"){

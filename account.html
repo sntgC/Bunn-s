@@ -53,11 +53,10 @@
 			$.ajax({
 				type: "GET",
 				url: "api/users/"+user_id,
-				beforeSend: function(request) {
-				    request.setRequestHeader("Authorization", token);
-				},
+				data: {"token":token},
 				success: function(result){
 					var returned = JSON.parse(result);
+					console.log(returned);
 					if(returned.email !== undefined && returned.points !== undefined){
 						$("#welcome").html($("#welcome").text() + returned.email + "!");
 						$("#points").html($("#points").text() + "<b>" + returned.points + "</b>");
@@ -65,13 +64,12 @@
 				}
 			});
 			$("#changeEmailForm").on("submit",function(){
+				var data = $("#changeEmailForm").serializeArray();
+				data.push({name:"token",value:token});
 				$.ajax({
 					type: "PUT",
 					url: "api/users/"+user_id,
-					data: $("#changeEmailForm").serializeArray(),
-					beforeSend: function(request) {
-						request.setRequestHeader("Authorization", token);
-					},
+					data: data,
 					success: function(result){
 						var returned = JSON.parse(result);
 						if(returned == "Updated"){
@@ -87,13 +85,12 @@
 				return false;
 			});
 			$("#changePassForm").on("submit",function(){
+				var data = $("#changePassForm").serializeArray();
+				data.push({name:"token",value:token});
 				$.ajax({
 					type: "PUT",
 					url: "api/users/"+user_id,
-					data: $("#changePassForm").serializeArray(),
-					beforeSend: function(request) {
-					    request.setRequestHeader("Authorization", token);
-					},
+					data: data,
 					success: function(result){
 						var returned = JSON.parse(result);
 						if(returned == "Updated"){
