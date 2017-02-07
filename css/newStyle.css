@@ -51,7 +51,7 @@ html,body{
 }
 
 .extraMenu{
-	background:#0e9dc9;
+	background:#2871a6;
 	height:30%;
 	width:100%;
 	display:flex;
@@ -131,6 +131,48 @@ html,body{
 	background-position:center;
 	background-size:cover;
 	background-repeat:no-repeat;
+	backface-visibility:hidden;
+	position:absolute;
+}
+
+.token:hover .tokenArrow{
+	visibility:visible;
+}
+
+.tokenArrow{
+	visibility:hidden;
+	position:relative;
+	background:#efd139;
+	color:white;
+	display:inline-flex;
+	justify-content:center;
+	align-items:center;
+	border-radius:50%;
+}
+
+.tokenArrowColumn{
+	height:100%;
+	display:inline-flex;
+	align-items:center;
+	margin-left:2%;
+}
+
+.tokenArrowColumnRight{
+	height:100%;
+	display:inline-flex;
+	position:absolute;
+	margin-right:2%;
+	right:0px;
+	align-items:center;
+	margin-left:2%;
+}
+
+.tokenArrow i{
+	font-size:2vw;
+}
+
+.tokenArrow:hover{
+	cursor:pointer;
 }
 
 .locationCard .token{
@@ -138,7 +180,21 @@ html,body{
 	width:20vw;
 }
 
-.token:hover{
+.spinningToken:first-child{
+	transform:rotateY(180deg);
+}
+
+.spinningToken:last-child{
+	transform:rotateY(0deg);
+}
+
+.flip{
+	transition:0.6s;
+	transform-style: preserve-3d;
+
+}
+
+.circularSlide:hover .flip{
 	transform: rotateY(0);
 }
 
