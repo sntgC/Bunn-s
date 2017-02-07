@@ -5,7 +5,7 @@ window.onload=function(){
 	shuffle(colors);
 	for(k=0;k<fun.length;k++)
 		fun[k].style.color=colors[k%colors.length];
-	
+
 	var arrows=document.getElementsByClassName("tokenArrow");
 	for(i=0;i<arrows.length;i++){
 		$(arrows[i]).on("click",getArrowFunction(i,arrows[i]));
@@ -27,3 +27,7 @@ function shuffle(arr){
 		arr[index]=temp;
 	}
 }
+
+$(document).ready(function(){
+	document.getElementById("footer").innerHTML=Handlebars.templates.footer();
+});

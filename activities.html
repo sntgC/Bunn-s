@@ -10,34 +10,57 @@
 	<link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet">
 	<link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<link rel="stylesheet" href="css/activities.css">
 	<link rel="icon" href="assets/icon.png">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="libs/handlebars.runtime-v4.0.5.js"></script>
 	<script src="libs/Handlebars.templates"></script>
-	<script src="js/animations.js"></script>
+	<script src="js/style.js"></script>
+	<link rel="stylesheet" href="css/newStyle.css">
 </head>
 
 <body style="width:100%;height:100%">
-	<div id="headerWhite" style="font-size:16px">
-			<div class="headerHalf">
-				<li class="navTitle colorRed"><a href="rewards" class="makeYellow">REWARDS</a></li>
-				<li class="navTitle noSelect colorBlue"><a href="parties" class="makeYellow">PARTIES</a></li>
-				<li class="navTitle colorYellow"><a href="menu" class="makeYellow">FOOD</a></li>
-				<li class="navTitle colorPurple noSelect underline">ACTIVITIES</li>
-			</div>
-			<div class="headerHalf"  id="headerHalfFirst">
-				<li class="navTitle logoClear" style="float:left"  id="headerLogo"><a href="index" class="makeYellow">BUNN'S</a></li>
-			</div>
+	<div id="header">
+		<div class="headerTab"><a>ACTIVITIES</a></div>
+		<div class="headerTab"><a>FOOD</a></div>
+		<div id="headerFocus"></div>
+		<div class="headerTab"><a>PARTIES</a></div>
+		<div class="headerTab"><a>REWARDS</a></div>
 	</div>
-	<div class="background activityBackground" style="background-image: url(assets/poolBackground.jpg)">
-		<div class="activityTextDisplay">
+	<div class="infoRow" style="margin-top: 100px">
+		<div class="circularSlide">
+			<div class="token" style="background-image: url(assets/poolBackground.jpg)">
+			</div>
+		</div>
+		<div class="infoText">
 			<h2>Pool</h2>
 			<p style="font-size:20px;">The pool table offers a diverse array of games such as eight ball, one pocket, bank pool, and more.
 			Relax and play a casual game at one of the pool tables or get competitive with your friends and find out who is the most skilled!</p>
 		</div>
-		<div class="crossMargin"></div>
+	</div>
+	<div class="infoRow">
+		<div class="infoText">
+			<h2>Bowling</h2>
+			<p style="font-size:20px;">Engage yourself and your friends and family in a great game of bowling!
+			Bunn's offers multiple bowling lanes at all times of the day, so there is never a time when you can't bowl at Bunn's.
+			Bunn's even offers rails for those who may not be as experienced in the game.</p>
+		</div>
+		<div class="circularSlide">
+			<div class="token" style="background-image: url(assets/bowlingBackground.jpg)">
+			</div>
+		</div>
+	</div>
+	<div class="infoRow">
+		<div class="circularSlide">
+			<div class="token" style="background-image: url(assets/pingpongBackground.jpg)">
+			</div>
+		</div>
+		<div class="infoText">
+			<h2>Ping Pong</h2>
+			<p style="font-size:20px;">The pool table offers a diverse array of games such as eight ball, one pocket, bank pool, and more.
+			Relax and play a casual game at one of the pool tables or get competitive with your friends and find out who is the most skilled!</p>
+		</div>
 	</div>
 	<div class="background activityBackground" style="background-image: url(assets/bowlingBackground.jpg)">
 		<div class="activityTextDisplay">

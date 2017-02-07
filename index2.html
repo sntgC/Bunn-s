@@ -14,9 +14,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<link rel="icon" href="assets/icon.png">
 	<audio src="https://www.jewelbeat.com/free/free-music/JewelBeat%20-%20Clubbing%20Mood.wav" autoplay loop>
-	<p>If you are reading this, it is because your browser does not support the audio element.     </p>
+	<p>If you are reading this, it is because your browser does not support the audio element.</p>
 	</audio>
 	<script src="js/style.js"></script>
+	<script src="libs/handlebars.runtime-v4.0.5.js"></script>
+	<script src="libs/Handlebars.templates"></script>
 	<link rel="stylesheet" href="css/newStyle.css">
 </head>
 
@@ -119,40 +121,6 @@
 			</div>
 		</div>
 	</div>
-	<div id="footer">
-		<div class="footerSection" id="footerLogo">
-			<p>Bunn's</p>
-		</div>
-		<div class="footerSection" id="footerSitemap">
-			<h3>Sitemap</h3>
-			<p>Parties</p>
-			<p>Food</p>
-			<p>Promos</p>
-			<p>Activities</p>
-		</div>
-		<div class="footerSection" id="footerAbout">
-			<h3>About</h3>
-			<a href="contact"><p>Contact Us</p></a>
-			<p>Franchising</p>
-			<p>Terms Of Use</p>
-			<p>FAQ</p>
-		</div>
-		<div class="footerSection" id="footerPartners">
-			<h3>Partners</h3>
-			<p>Litfor Studios</p>
-		</div>
-		<div class="footerSection" id="footerMedia">
-			<div id="footerSocialMedia">
-				<i class="fa fa-facebook"></i>
-				<i class="fa fa-twitter"></i>
-				<i class="fa fa-instagram"></i>
-				<a href="https://github.com/sntgC/Bunn-s" target="_blank"><i class="fa fa-github"></i></a>
-				<i class="fa fa-envelope"></i>
-			</div>
-			<div id="footerDisclaimer">
-				© 2016 DemBois, Inc. All Rights Reserved.
-			</div>
-		</div>
-	</div>
+	<div class="noSelect" id="footer"></div>
 </body>
 </html>
