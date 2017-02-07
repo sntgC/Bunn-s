@@ -161,7 +161,7 @@ html,body{
 }
 
 .tokenArrow{
-	visibility:hidden;
+	visibility:visible;
 	position:relative;
 	background:#efd139;
 	color:white;
@@ -169,6 +169,7 @@ html,body{
 	justify-content:center;
 	align-items:center;
 	border-radius:50%;
+	box-shadow:0 10px 8px 0 rgba(0,0,0,.21);
 }
 
 .tokenArrowColumn{
