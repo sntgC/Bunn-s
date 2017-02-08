@@ -10,6 +10,10 @@ window.onload=function(){
 	for(i=0;i<arrows.length;i++){
 		$(arrows[i]).on("click",getArrowFunction(i,arrows[i]));
 	}
+	
+	$("#headerShell").on('click',function() {
+		window.location.href="index2";
+	});
 }
 
 function getArrowFunction(x, element){

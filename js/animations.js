@@ -47,7 +47,7 @@ $(document).ready(function () {
 	slideInterval = window.setInterval(nextSlide, 8000);
 });
 
-window.onscroll = function() {navBarScroll();};
+//window.onscroll = function() {navBarScroll();};
 
 document.addEventListener('keydown', function(event) {
     if(event.keyCode == 37) {

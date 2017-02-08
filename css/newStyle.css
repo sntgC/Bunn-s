@@ -133,6 +133,7 @@ html,body{
 	display:flex;
 	justify-content:space-around;
 	align-items:center;
+	margin-top:2%;
 }
 
 .circularSlide{
@@ -266,11 +267,26 @@ html,body{
 	max-width:40%;
 	font-size:110%;
 }
+
+#headerShell{
+	width:10vw;
+	height:10vw;
+	background:black;
+	position:relative;
+	left: calc(50% - 5vw);
+	z-index:20;
+	border-radius:50%;
+	top:calc(100% - 5vw);
+	opacity:0;
+	cursor:pointer;
+}
+
 #header:after{
 	content:"";
 	position:absolute;
+	cursor:pointer;
 	top:calc(15% - 5vw);
-	left:45vw;
+	left:44.5vw;
 	width:10vw;
 	height:10vw;
 	border-radius:50%;
@@ -284,7 +300,7 @@ html,body{
 #header:hover:after{
 	width:10.01vw;
 	height:10.01vw;
-	left:44.995vw;
+	left:44.495vw;
 }
 
 #footer{

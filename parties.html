@@ -14,12 +14,14 @@
 	<link href="libs/bunns.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/newStyle.css">
 	<link rel="stylesheet" href="css/parties.css">
 	<link rel="icon" href="assets/icon.png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="libs/handlebars.min-latest.js"></script>
 	<script src="libs/datedropper.min.js"></script>
 	<script src="js/animations.js"></script>
+	<script src="js/style.js"></script>
 	<script src="js/objects.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="js/cookies.js"></script>
@@ -83,24 +85,11 @@
 				loadPartyPackage(getPartySelections);
 			});
 
-			//Creates jQuery UI Slider
-			$(function () {
-				$("#slider").slider({
-					range: "min",
-					value: 0,
-					min: 0,
-					max: 50,
-					slide: function (event, ui) {
-						document.getElementById("partyPackageGoodiesTicket").innerHTML=ui.value;
-						document.getElementById("price").innerHTML=getPartySelections().price;
-					}
-				});
-			});
 
 			//Party Package Div Fixed on scroll
 			function fixPartyPackage() {
 				var currentScroll = $(window).scrollTop();
-				if (currentScroll >= fixedPartyDisplayDivTop&&currentScroll+$("#partyPackage").height()<=footerDivTop-$("#headerWhite").height()) {
+				if (currentScroll >= fixedPartyDisplayDivTop&&currentScroll+$("#partyPackage").height()<=footerDivTop-0) {
 					$('#partyPackage').css({
 						position: 'fixed',
 						right: '-' + getScrollBarWidth() + 'px',
@@ -110,7 +99,7 @@
 					$('#partySidebar').css({
 						right: '-' + getScrollBarWidth() + 'px'
 					});
-				} else if(currentScroll+$("#partyPackage").height() >footerDivTop-$("#headerWhite").height()){
+				} else if(currentScroll+$("#partyPackage").height() >footerDivTop-0){
 					$('#partyPackage').css({
 						position: 'static',
 						right: '0px',
@@ -127,11 +116,11 @@
 			$(window).scroll(fixPartyPackage);
 
 			//Fixes resizing issue for fixed div
-			var fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - $("#headerWhite").height();
+			var fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - 0;
 			var footerDivTop=$("#footer").offset().top;
 
 			$(window).resize(function () {
-				fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - $("#headerWhite").height();
+				fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - 0;
 				footerDivTop=$("#footer").offset().top;
 			});
 
@@ -285,18 +274,14 @@
 </head>
 
 <body class="noSelect">
-	<div id="headerWhite" style="font-size:16px">
-			<div class="headerHalf">
-				<li class="navTitle colorRed"><a href="rewards" class="makeYellow">REWARDS</a></li>
-				<li class="navTitle colorBlue underline makeYellow">PARTIES</li>
-				<li class="navTitle colorYellow"><a href="menu" class="makeYellow">FOOD</a></li>
-				<li class="navTitle colorPurple"><a href="activities" class="makeYellow">ACTIVITIES</a></li>
-			</div>
-			<div class="headerHalf"  id="headerHalfFirst">
-				<li class="navTitle logoClear" style="float:left"  id="headerLogo"><a href="index" class="makeYellow">BUNN'S</a></li>
-			</div>
+	<div id="header">
+		<div class="headerTab"><a href="activities">ACTIVITIES</a></div>
+		<div class="headerTab"><a href="menu">FOOD</a></div>
+		<div id="headerFocus"><div id="headerShell"></div></div>
+		<div class="headerTab"><a href="parties">PARTIES</a></div>
+		<div class="headerTab"><a href="rewards">REWARDS</a></div>
 	</div>
-	<div class="background contentBackground" style="background-image: url(assets/party.jpg); text-align:center;">
+	<div class="background contentBackground" style=" text-align:center;height:85vh;">
 		<div class="textDisplay textSmall" >
 					<h2 class="fontSk">Welcome to the BUNN'S Party Creator!</h2>
 						<p>Here at Bunn's, we realize and appreciate the value of memorable events.
@@ -392,12 +377,6 @@
 					<div class="partyBoxTinyGoodies" id="goodiesSmall"><img draggable=false src="assets/bag1.jpg"><h2 class="noSelect">Small</h2></div>
 					<div class="partyBoxTinyGoodies" id="goodiesMedium"><img draggable=false src="assets/bag2.jpg" class="selected"><h2 class="noSelect">Medium</h2></div>
 					<div class="partyBoxTinyGoodies" id="goodiesLarge"><img draggable=false src="assets/bag3.jpg"><h2 class="noSelect">Large</h2></div>
-					</div>
-					<div id="sliderContainer">
-					<p  class="textSmall">Move the slider to change the amount of tokens received per child.</p>
-					<div>
-					<div id="slider"></div>
-					</div>
 					</div>
 				</div>
 			</div>
