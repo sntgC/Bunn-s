@@ -18,9 +18,19 @@
 	<script src="libs/Handlebars.templates"></script>
 	<script src="js/style.js"></script>
 	<link rel="stylesheet" href="css/newStyle.css">
+	<style>
+		html, body{
+			background:
+		linear-gradient(63deg, #e7403b 23%, transparent 23%) 7px 0,
+		linear-gradient(63deg, transparent 74%, #e7403b 78%),
+		linear-gradient(63deg, transparent 34%, #e7403b 38%, #e7403b 58%, transparent 62%),
+		#c91c18;
+		background-size: 16px 48px;
+		}
+	</style>
 </head>
 
-<body style="width:100%;height:100%">
+<body style="width:100%;height:100%" id="actBody">
 	<div id="header">
 		<div class="headerTab"><a href="activities">ACTIVITIES</a></div>
 		<div class="headerTab"><a href="menu">FOOD</a></div>
@@ -62,7 +72,7 @@
 			However, that doesn't mean the game is out of style! Enjoy a casual quick game with a friend or climb the ranks on our leaderboard by playing on tournament days.</p>
 		</div>
 	</div>
-	<div class="infoRow">
+	<div class="infoRow" style="margin-bottom:3%;">
 		<div class="infoText">
 			<h2>And More!</h2>
 			<p style="font-size:20px;">We don't just stop at pool, bowling, and ping pong! Want something a bit more
