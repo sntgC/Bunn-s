@@ -9,14 +9,25 @@
 	<link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet">
 	<link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/blog.css">
-	<link rel="icon" href="assets/icon.png">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css">
+	<link rel="icon" href="assets/icon.png">
 	<script src="libs/handlebars.runtime-v4.0.5.js"></script>
 	<script src="libs/Handlebars.templates"></script>
-	<script src="js/animations.js"></script>
+	<script src="js/style.js"></script>
 	<script src="js/cookies.js"></script>
+	<link rel="stylesheet" href="css/newStyle.css">
+	<style>
+		html, body{
+			background:
+		linear-gradient(63deg, #e7403b 23%, transparent 23%) 7px 0,
+		linear-gradient(63deg, transparent 74%, #e7403b 78%),
+		linear-gradient(63deg, transparent 34%, #e7403b 38%, #e7403b 58%, transparent 62%),
+		#c91c18;
+		background-size: 16px 48px;
+		}
+	</style>
 	<script type="text/javascript">
 		if(getCookie("rewardsView") === ""){
 			setCookie("rewardsView","0",365);
@@ -42,7 +53,7 @@
 
 		$(document).ready(function(){
 			if(getCookie("rewardsView") === "1"){
-				$('.twoThirdDisplay').toggle();
+				$('.formDiv').toggle();
 			}
 			$("#registrationForm").on("submit",function(){
 				$.ajax({
@@ -96,71 +107,57 @@
 	</script>
 </head>
 
-<body class="noSelect" style="width:100%;height:100%;">
-	<div class="background" style="background-color:#b7314e;">
-		<div class="twoThirdDisplay" style="height:85%;">
-			<div class="blogBody">
-				<div>
-					<h2 style="color:#e24226;font-size:30px;">Bunn's Rewards Program</h2>
-					<div>
-						<p class="information">The Bunn's Rewards Program offers its members exclusive deals on activities and our menu as a reward for customer loyalty and recurrent visits.
-						Upon signing up, you will be able to begin earning points for each visit to a Bunn's location by simply providing your unique account ID. Did we forget to mention that the program is completely <b style="color:#e24226;">FREE</b>!?</p>
-					</div>
-					<h3 style="font-size:22px;margin-bottom:2px;margin-top:50px;">Registration</h3>
-					<div class="formInfo">
-						<span id="responseReg" style="display:none;margin-top:10px;"></span>
-						<br>
-						<form id="registrationForm" method="post">
-							E-Mail:<br>
-							<input type="text" name="email" required>
-							<br>
-							Password:<br>
-							<input type="password" name="password" required>
-							<br>
-							<input class="submitButtonRewards" type="submit" name="submit" value="Submit" form="registrationForm">
-						</form>
-					</div>
-					<p style="display:block;margin-top:50px;">Already have an account? <a href="#" onclick="$('.twoThirdDisplay').toggle(); updateView(); return false;" style="color:blue;">Login</a></p>
-				</div>
+<body style="width:100%;height:100%;">
+	<div id="header">
+		<div class="headerTab"><a href="activities">ACTIVITIES</a></div>
+		<div class="headerTab"><a href="menu">FOOD</a></div>
+		<div id="headerFocus"><div id="headerShell"></div></div>
+		<div class="headerTab"><a href="parties">PARTIES</a></div>
+		<div class="headerTab"><a href="rewards">REWARDS</a></div>
+	</div>
+	<div>
+		<div class="formDiv" style="width:50%;margin:auto;margin-top:100px;text-align:center;">
+			<h2 style="color:#e24226;font-size:30px;">Bunn's Rewards Program</h2>
+			<div>
+				<p style="width:50%;margin:auto;">The Bunn's Rewards Program offers its members exclusive deals on activities and our menu as a reward for customer loyalty and recurrent visits.
+				Upon signing up, you will be able to begin earning points for each visit to a Bunn's location by simply providing your unique account ID. Did we forget to mention that the program is completely <b style="color:#e24226;">FREE</b>!?</p>
 			</div>
+			<h3 style="font-size:22px;margin-bottom:2px;margin-top:50px;">Registration</h3>
+			<div class="formInfo">
+				<span id="responseReg" style="display:none;margin-top:10px;"></span>
+				<br>
+				<form class="pure-form" id="registrationForm" method="post">
+					E-Mail:<br>
+					<input class="pure-input-1-2" type="text" name="email" required>
+					<br>
+					Password:<br>
+					<input class="pure-input-1-2" type="password" name="password" required>
+					<br>
+					<input class="pure-button pure-button-primary pure-input-1-2" type="submit" name="submit" value="Submit" form="registrationForm" style="margin-top:10px;">
+				</form>
+			</div>
+			<p style="display:block;margin-top:50px;">Already have an account? <a href="#" onclick="$('.formDiv').toggle(); updateView(); return false;" style="color:blue;">Login</a></p>
 		</div>
-		<div class="twoThirdDisplay" style="height:85%;display:none;">
-			<div class="blogBody">
-				<div>
-					<h2 style="color:#e24226;font-size:30px;">Bunn's Rewards Program</h2>
-					<h3 style="font-size:22px;margin-bottom:2px;margin-top:50px;">Login</h3>
-					<div class="formInfo">
-						<span id="responseLog" style="display:none;margin-top:10px;"></span>
-						<br>
-						<form id="loginForm" method="post">
-							E-Mail:<br>
-							<input type="text" name="email" required>
-							<br>
-							Password:<br>
-							<input type="password" name="password" required>
-							<br>
-							Remember Me <input type="checkbox" id="rememberMe" name="remember">
-							<input class="submitButtonRewards" type="submit" name="submit" value="Submit" form="loginForm">
-						</form>
-					</div>
-					<p style="display:block;margin-top:50px;">Don't have an account? <a href="#" onclick="$('.twoThirdDisplay').toggle(); updateView(); return false;" style="color:blue;">Register</a></p>
-				</div>
+		<div class="formDiv" style="display:none;">
+			<h2 style="color:#e24226;font-size:30px;">Bunn's Rewards Program</h2>
+			<h3 style="font-size:22px;margin-bottom:2px;margin-top:50px;">Login</h3>
+			<div class="formInfo">
+				<span id="responseLog" style="display:none;margin-top:10px;"></span>
+				<br>
+				<form id="loginForm" method="post">
+					E-Mail:<br>
+					<input type="text" name="email" required>
+					<br>
+					Password:<br>
+					<input type="password" name="password" required>
+					<br>
+					Remember Me <input type="checkbox" id="rememberMe" name="remember">
+					<input class="submitButtonRewards" type="submit" name="submit" value="Submit" form="loginForm">
+				</form>
 			</div>
+			<p style="display:block;margin-top:50px;">Don't have an account? <a href="#" onclick="$('.formDiv').toggle(); updateView(); return false;" style="color:blue;">Register</a></p>
 		</div>
 	</div>
-	<div id="headerWhite" style="font-size:16px">
-			<div class="headerHalf">
-				<li class="navTitle colorRed underline">REWARDS</li>
-				<li class="navTitle noSelect colorBlue"><a href="parties" class="makeYellow">PARTIES</a></li>
-				<li class="navTitle colorYellow"><a href="menu" class="makeYellow">FOOD</a></li>
-				<li class="navTitle colorPurple"><a href="activities" class="makeYellow">ACTIVITIES</a></li>
-			</div>
-			<div class="headerHalf"  id="headerHalfFirst">
-				<li class="navTitle logoClear" style="float:left"  id="headerLogo"><a href="index" class="makeYellow">BUNN'S</a></li>
-			</div>
-	</div>
-	<div id="footer">
-
-	</div>
+	<div id="footer"></div>
 </body>
 </html>
