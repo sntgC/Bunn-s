@@ -21,10 +21,10 @@
 	<style>
 		html, body{
 			background:
-		linear-gradient(63deg, #e7403b 23%, transparent 23%) 7px 0,
-		linear-gradient(63deg, transparent 74%, #e7403b 78%),
-		linear-gradient(63deg, transparent 34%, #e7403b 38%, #e7403b 58%, transparent 62%),
-		#c91c18;
+		linear-gradient(63deg, #EBAF17 23%, transparent 23%) 7px 0,
+		linear-gradient(63deg, transparent 74%, #EBAF17 78%),
+		linear-gradient(63deg, transparent 34%, #EBAF17 38%, #EBAF17 58%, transparent 62%),
+		#F5C447;
 		background-size: 16px 48px;
 		}
 	</style>
@@ -116,27 +116,31 @@
 		<div class="headerTab"><a href="rewards">REWARDS</a></div>
 	</div>
 	<div>
-		<div class="formDiv" style="width:50%;margin:auto;margin-top:100px;text-align:center;">
+		<div class="formDiv" style="margin-top:100px;text-align:center;">
 			<h2 style="color:#e24226;font-size:30px;">Bunn's Rewards Program</h2>
-			<div>
-				<p style="width:50%;margin:auto;">The Bunn's Rewards Program offers its members exclusive deals on activities and our menu as a reward for customer loyalty and recurrent visits.
-				Upon signing up, you will be able to begin earning points for each visit to a Bunn's location by simply providing your unique account ID. Did we forget to mention that the program is completely <b style="color:#e24226;">FREE</b>!?</p>
+			<div class="pure-u-1">
+				<div class="pure-u-1-2">
+					<p style="width:50%;margin:auto;">The Bunn's Rewards Program offers its members exclusive deals on activities and our menu as a reward for customer loyalty and recurrent visits.
+					Upon signing up, you will be able to begin earning points for each visit to a Bunn's location by simply providing your unique account ID. Did we forget to mention that the program is completely <b style="color:#e24226;">FREE</b>!?</p>
+				</div>
+				<div class="pure-u-1-2">
+					<h3 style="font-size:22px;margin-bottom:2px;margin-top:50px;">Registration</h3>
+					<div class="formInfo">
+						<span id="responseReg" style="display:none;margin-top:10px;"></span>
+						<br>
+						<form class="pure-form" id="registrationForm" method="post">
+							E-Mail:<br>
+							<input class="pure-input-1-2" type="text" name="email" required>
+							<br>
+							Password:<br>
+							<input class="pure-input-1-2" type="password" name="password" required>
+							<br>
+							<input class="pure-button pure-button-primary pure-input-1-2" type="submit" name="submit" value="Submit" form="registrationForm" style="margin-top:10px;">
+						</form>
+					</div>
+					<p style="display:block;margin-top:50px;">Already have an account? <a href="#" onclick="$('.formDiv').toggle(); updateView(); return false;" style="color:blue;">Login</a></p>
+				</div>
 			</div>
-			<h3 style="font-size:22px;margin-bottom:2px;margin-top:50px;">Registration</h3>
-			<div class="formInfo">
-				<span id="responseReg" style="display:none;margin-top:10px;"></span>
-				<br>
-				<form class="pure-form" id="registrationForm" method="post">
-					E-Mail:<br>
-					<input class="pure-input-1-2" type="text" name="email" required>
-					<br>
-					Password:<br>
-					<input class="pure-input-1-2" type="password" name="password" required>
-					<br>
-					<input class="pure-button pure-button-primary pure-input-1-2" type="submit" name="submit" value="Submit" form="registrationForm" style="margin-top:10px;">
-				</form>
-			</div>
-			<p style="display:block;margin-top:50px;">Already have an account? <a href="#" onclick="$('.formDiv').toggle(); updateView(); return false;" style="color:blue;">Login</a></p>
 		</div>
 		<div class="formDiv" style="display:none;">
 			<h2 style="color:#e24226;font-size:30px;">Bunn's Rewards Program</h2>
