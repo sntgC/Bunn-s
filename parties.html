@@ -43,7 +43,7 @@
 			var token = getCookie("token");
 			var user_id = getCookie("user_id");
 			if(token === "" || user_id === ""){
-				removeSidebar();
+				//removeSidebar();
 			}
 
 			//Variables
@@ -96,7 +96,7 @@
 			});
 
 
-			//Party Package Div Fixed on scroll
+			/*//Party Package Div Fixed on scroll
 			function fixPartyPackage() {
 				var currentScroll = $(window).scrollTop();
 				if (currentScroll >= fixedPartyDisplayDivTop&&currentScroll+$("#partyPackage").height()<=footerDivTop-0) {
@@ -123,19 +123,17 @@
 					});
 				}
 			}
-			$(window).scroll(fixPartyPackage);
+			$(window).scroll(fixPartyPackage);*/
 
-			//Fixes resizing issue for fixed div
+			/*//Fixes resizing issue for fixed div
 			var fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - 0;
 			var footerDivTop=$("#footer").offset().top;
 
 			$(window).resize(function () {
 				fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - 0;
 				footerDivTop=$("#footer").offset().top;
-			});
-
+			});*/
 			loadPartyPackage(getPartySelections);
-			fixPartyPackage();
 
 			$('#dateTextField').dateDropper();
 
@@ -173,12 +171,12 @@
 				document.getElementById("dateTextField").value=date;
 		}
 
-		function removeSidebar(){
+		/*function removeSidebar(){
 			var cps=document.getElementById("customPackageStart");
 			var sb=document.getElementById("partySidebar");
 			sb.style.display="none";
 			cps.style.flexGrow="1";
-		}
+		}*/
 
 		function getPartySelections(){
 			var GPSSlides=document.getElementsByClassName("slideContainer");
@@ -406,6 +404,16 @@
 					<div class="partyBoxTiny"><img draggable=false src="assets/playgroundActivityIcon.jpg"><h2 class="noSelect">Jungle Gym</h2></div>
 					</div>
 				</div>
+			</div>
+			<div class="partyRow" id="partySidebar">
+				<div id="partyPackage"><div class="tooltip">?<span class="tooltipContent textTiny">This is where you can review your current selections and get a price estimate before requesting a reservation.</span></div>
+			<p class="textEmphasized"><span class="textUnderlined">Your Party</span></p>
+			<div id="partyPackageDisplay">
+			</div>
+			<span style="font-size:18px;display:none;" id="response"></span>
+			<br>
+			<button class="submitButton" type="button" name="reserve" id="reserveButton">Reserve</button>
+		</div>
 			</div>
 	</div>
 	<!--
