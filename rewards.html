@@ -30,12 +30,12 @@
 		h3{
 			font-family: 'Skranji', cursive;
 		}
-		
+
 		form p{
 			margin:0;
 			font-family:'Skranji', cursive;
 		}
-		
+
 		.redButton{
 			margin-top:10px;
 			background:#e24226;
@@ -84,7 +84,7 @@
 						if(returned == "Created"){
 							$("#responseReg").html("");
 							$("#registrationForm")[0].reset();
-							$(".twoThirdDisplay").toggle();
+							$(".formDiv").toggle();
 							updateView();
 						}
 						else {
@@ -165,24 +165,32 @@
 				</div>
 			</div>
 		</div>
-		<div class="formDiv" style="display:none;">
-			<h2 style="color:#e24226;font-size:30px;">Bunn's Rewards Program</h2>
-			<h3 style="font-size:22px;margin-bottom:2px;margin-top:50px;">Login</h3>
-			<div class="formInfo">
-				<span id="responseLog" style="display:none;margin-top:10px;"></span>
-				<br>
-				<form id="loginForm" method="post">
-					E-Mail:<br>
-					<input type="text" name="email" required>
-					<br>
-					Password:<br>
-					<input type="password" name="password" required>
-					<br>
-					Remember Me <input type="checkbox" id="rememberMe" name="remember">
-					<input class="submitButtonRewards" type="submit" name="submit" value="Submit" form="loginForm">
-				</form>
+		<div class="formDiv" style="margin-top:150px;text-align:center;display:none;">
+			<h1 style="color:#e24226;font-size:40px;margin-bottom:0;">Bunn's Rewards Program</h1>
+			<div class="pure-g" style="min-height:60vh;">
+				<div class="pure-u-1" style="display:flex;align-items:center;justify-content:center;">
+					<div class="cont" style="width:100%;font-size:160%;">
+						<h3 style="font-size:28px;margin-bottom:2px;">LOGIN</h3>
+						<div class="formInfo" style="width:100%;">
+							<span id="responseLog" style="display:none;margin-top:10px;"></span>
+							<br>
+							<form class="pure-form" id="loginForm" method="post">
+								<p>E-Mail:</p>
+								<input class="pure-input-1-4" type="text" name="email" required>
+								<br>
+								<p>Password:</p>
+								<input class="pure-input-1-4" type="password" name="password" required>
+								<br>
+								<label for="rememberMe" class="pure-checkbox">
+						            <span style="font-family:'Skranji',cursive;">Remember me</span> <input id="rememberMe" type="checkbox" name="remember" style="width:18px;height:18px;">
+						        </label>
+								<input class="pure-button pure-button pure-input-1-4 redButton" type="submit" name="submit" value="SUBMIT" form="loginForm">
+							</form>
+						</div>
+						<p style="display:block;margin-top:50px;">Don't have an account? <a href="#" onclick="$('.formDiv').toggle(); updateView(); return false;" style="color:#2871a6;font-family:'Skranji', cursive">REGISTER</a></p>
+					</div>
+				</div>
 			</div>
-			<p style="display:block;margin-top:50px;">Don't have an account? <a href="#" onclick="$('.formDiv').toggle(); updateView(); return false;" style="color:blue;">Register</a></p>
 		</div>
 	</div>
 	<div class="noSelect" id="footer"></div>

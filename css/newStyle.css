@@ -28,6 +28,11 @@ html,body{
 	 text-decoration:none;
  }
 
+div.headerTab a{
+	width: auto;
+	height: auto;
+}
+
 .background{
 	margin:0px;
 	overflow-x:hidden;

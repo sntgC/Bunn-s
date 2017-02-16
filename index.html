@@ -9,68 +9,118 @@
 	<meta name="author" content="DemBois">
 	<link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet">
-	<link rel="icon" href="assets/icon.png">
 	<link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<script type="text/javascript">
-	if (screen.width <= 699) {
-		document.location = "mobile.html";
-	}
-	</script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+	<link rel="icon" href="assets/icon.png">
+	<!--<audio src="https://www.jewelbeat.com/free/free-music/JewelBeat%20-%20Clubbing%20Mood.wav" autoplay loop>
+		<p>If you are reading this, it is because your browser does not support the audio element.</p>
+	</audio>-->
+	<script src="js/style.js"></script>
 	<script src="libs/handlebars.runtime-v4.0.5.js"></script>
 	<script src="libs/Handlebars.templates"></script>
-	<script src="js/animations.js"></script>
+	<link rel="stylesheet" href="css/newStyle.css">
 </head>
 
 <body class="noSelect">
-	<div class="background" style="background-image: url(assets/lights.jpg)">
+	<div id="header">
+		<div class="headerTab"><a href="activities">ACTIVITIES</a></div>
+		<div class="headerTab"><a href="menu">FOOD</a></div>
+		<div id="headerFocus"><div id="headerShell"></div></div>
+		<div class="headerTab"><a href="parties">PARTIES</a></div>
+		<div class="headerTab"><a href="rewards">REWARDS</a></div>
 	</div>
-
-	<div class="board">
-		<div class="slideContainer" id="homePageContainer">
-			<div class="slide">
-				<img src="assets/Logo.png" style="height:100%;width:100%;">
+	<div class="sliderContainer">
+		<div class="circularSlide">
+			<div class="flip">
+			<div class="token spinningToken" style="background-image:url('assets/arcade.jpg')">
+				<div class="tokenArrowColumn"><div class="tokenArrow"><i class="material-icons">keyboard_arrow_left</i></div></div>
 			</div>
-			<div class="slide" style="background:white">
-				<a href="menu"><img src="assets/menu.png" style="height:100%;width:100%;"></a>
+			<div class="token spinningToken" style="background-image:url('assets/basketball.jpg')">
+				<div class="tokenArrowColumnRight"><div class="tokenArrow"><i class="material-icons">keyboard_arrow_right</i></div></div>
+			</div>
 			</div>
 		</div>
-		<div class="slideButtonContainer">
-			<a href="javascript:slideTo('homePageContainer',0,true)"><div class="slideButton sBActive"></div></a>
-			<a href="javascript:slideTo('homePageContainer',1,true)"><div class="slideButton sBInactive"></div></a>
-		</div>
-	</div>
-	<div id="headerWhite">
-			<div class="headerHalf">
-				<li class="navTitle colorRed"><a href="rewards" class="makeYellow">REWARDS</a></li>
-				<li class="navTitle colorBlue"><a href="parties" class="makeYellow">PARTIES</a></li>
-				<li class="navTitle colorYellow"><a href="menu" class="makeYellow">FOOD</a></li>
-				<li class="navTitle colorPurple"><a href="activities" class="makeYellow">ACTIVITIES</a></li>
-				<li class="navTitle" style="opacity:0;border-bottom:5px solid red;"><a>A</a></li>
+		<div class="circularSlide">
+			<div class="token" style="background-image:url('assets/arcade.jpg')">
 			</div>
-			<div class="headerHalf"  id="headerHalfFirst">
-				<li class="navTitle logoClear" style="float:left;opacity:0"  id="headerLogo"><a href="index" class="makeYellow">BUNN'S</a></li>
+		</div>
+		<div class="circularSlide" >
+			<div class="token" style="background-image:url('assets/lunch1.jpg')">
 			</div>
-	</div>
-	<div class="mainContent">
-		<div class="about noSelect">
-			<h2>About Us</h2>
-			<p>A family entertainment center based in Santa Cruz, CA.<br><br>
-			Here at Bunn's, we strive to combine entertainment for all ages at a modest price.
-			Featuring immersive virtual reality, action-packed laser tag, multi-lane bowling alleys, and hundreds of arcade games, you'll never run out of things to do.
-			We serve a mix of American fare influenced by Caribbean and Hispanic dishes and local cuisine, and offer a beverage station with thousands of possibilities.
-			Whether you are eight or eighty, Bunn's has something for everyone.
-			</p>
-		</div>
-		<div class="map">
-			<h2>Location</h2>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.9716592443747!2d-122.02450009908029!3d36.96273369289906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e6a9a68dbddb5%3A0xb2b67c8ab699aba9!2s106+Beach+St%2C+Santa+Cruz%2C+CA+95060!5e0!3m2!1sen!2sus!4v1482544978034" id="mapFrame" frameborder="0" style="border:0"></iframe>
 		</div>
 	</div>
-	<div id="footer">
-
+	<div class="extraMenu">
+		<div class="extraMenuTab">
+			<p>PLAY <span class="fun">ALL</span> DAY</p>
+		</div>
+		<div class="extraMenuTab">
+			<p>ENJOY <span class="fun">FUN</span> FOOD</p>
+		</div>
+		<div class="extraMenuTab">
+			<p>HOST YOUR <span class="fun">PARTY</span></p>
+		</div>
+		<div class="extraMenuTab">
+			<p>EARN <span class="fun">REWARDS</span></p>
+		</div>
 	</div>
+	<div id="about">
+		<div class="infoRow">
+			<div class="circularSlide">
+				<div class="token" style="background-image:url('assets/mobileAbout.jpg')">
+				</div>
+			</div>
+			<div class="infoText">
+				<h1>About Bunn's</h1>
+				<p>Here at Bunn's, we strive to combine entertainment for all ages at a modest price.Featuring immersive virtual reality, action-packed laser tag, multi-lane bowling alleys, and hundreds of arcade games, you'll never run out of things to do. We serve a mix of American fare influenced by Caribbean and Hispanic dishes and local cuisine, and offer a beverage station with thousands of possibilities. Whether you are eight or eighty, Bunn's has something for everyone.</p>
+			</div>
+		</div>
+		<div class="infoRow">
+			<div class="infoText">
+				<h1>A Dream</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vestibulum sodales ligula a mattis. Etiam lacus sem, pharetra id facilisis sit amet, imperdiet at augue. Mauris eget gravida eros. Ut aliquam nisi sed orci mollis, a vehicula quam euismod. Nam gravida mauris a quam volutpat dictum. Suspendisse purus erat, gravida ut molestie ut, fringilla vel ligula. Integer congue auctor fringilla. Nulla lectus metus, porta sit amet tortor non, luctus dictum justo.</p>
+			</div>
+			<div class="circularSlide">
+				<div class="token" style="background-image:url('assets/mobile.jpg')">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="extraMenu">
+		<div class="extraMenuTab ">
+			<p>"Sweet parties"</p>
+			<p class="quoteAuthor">-<span class="fun">Tim</span>, 8</p>
+		</div>
+		<div class="extraMenuTab">
+			<p>"Surprisingly good"</p>
+			<p class="quoteAuthor">-<span class="fun">April</span>, 24</p>
+		</div>
+		<div class="extraMenuTab">
+			<p>"I don't regret it"</p>
+			<p class="quoteAuthor">-<span class="fun">Sully</span>, 13</p>
+		</div>
+		<div class="extraMenuTab">
+			<p>"My go-to place"</p>
+			<p class="quoteAuthor">-<span class="fun">Arman F.</span>, 17</p>
+		</div>
+	</div>
+	<div id="locations">
+		<h1>LOCATIONS</h1>
+		<div class="locationContainer">
+			<div class="circularSlide locationCard">
+				<div class="token" style="background-image:url('assets/city1.jpg')">
+				</div>
+			</div>
+			<div class="circularSlide locationCard">
+				<div class="token" style="background-image:url('assets/city3.jpg')">
+				</div>
+			</div>
+			<div class="circularSlide locationCard">
+				<div class="token" style="background-image:url('assets/city4.jpg')">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="noSelect" id="footer"></div>
 </body>
 </html>

@@ -10,22 +10,22 @@ window.onload=function(){
 	for(i=0;i<arrows.length;i++){
 		$(arrows[i]).on("click",getArrowFunction(i,arrows[i]));
 	}
-	
-	
+
+
 	var tabs=document.getElementsByClassName("headerTab");
 	for(i=0;i<tabs.length;i++){
 		var href=$(tabs[i]).children().attr("href");
 		$(tabs[i]).on("click",getHrefFunction(href));
 	}
 	$("#headerShell").on('click',function() {
-		window.location.href="index2";
+		window.location.href="index";
 	});
-}
+};
 
 function getHrefFunction(href){
 	return function(){
 		window.location.href=href;
-	}
+	};
 }
 
 function getArrowFunction(x, element){
