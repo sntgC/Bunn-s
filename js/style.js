@@ -11,9 +11,21 @@ window.onload=function(){
 		$(arrows[i]).on("click",getArrowFunction(i,arrows[i]));
 	}
 	
+	
+	var tabs=document.getElementsByClassName("headerTab");
+	for(i=0;i<tabs.length;i++){
+		var href=$(tabs[i]).children().attr("href");
+		$(tabs[i]).on("click",getHrefFunction(href));
+	}
 	$("#headerShell").on('click',function() {
 		window.location.href="index2";
 	});
+}
+
+function getHrefFunction(href){
+	return function(){
+		window.location.href=href;
+	}
 }
 
 function getArrowFunction(x, element){

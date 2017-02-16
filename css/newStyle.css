@@ -75,6 +75,7 @@ html,body{
 	background:#2871a6;
 	height:30%;
 	width:100%;
+	padding:.25% 0;
 	display:flex;
 	justify-content:center;
 	align-items:center;
