@@ -18,6 +18,7 @@
 	<script src="js/style.js"></script>
 	<script src="js/cookies.js"></script>
 	<link rel="stylesheet" href="css/newStyle.css">
+<<<<<<< HEAD
 	<style>
 		html, body{
 			background:
@@ -47,6 +48,9 @@
 			left:-3px;
 		}
 	</style>
+=======
+	<link rel="stylesheet" href="css/form.css">
+>>>>>>> 2188bba5a3653077c53cebaa727975d898020cc6
 	<script type="text/javascript">
 		if(getCookie("rewardsView") === ""){
 			setCookie("rewardsView","0",365);
@@ -135,14 +139,14 @@
 		<div class="headerTab"><a href="rewards">REWARDS</a></div>
 	</div>
 	<div class="background">
-		<div class="formDiv" style="margin-top:150px;text-align:center;">
-			<h1 style="color:#e24226;font-size:40px;margin-bottom:0;">Bunn's Rewards Program</h1>
-			<div class="pure-g" style="min-height:60vh;">
+		<div class="formDiv">
+			<h1 >Bunn's Rewards Program</h1>
+			<div class="pure-g">
 				<div class="pure-u-1-12">
 				</div>
-				<div class="pure-u-5-12"  style="display:flex;align-items:center;justify-content:center;border-right:2px solid #926900;">
-					<div class="cont" style="width:100%;font-size:120%;">
-					<h3 style="font-size:28px;margin-bottom:2px;margin-top:50px;">REGISTRATION</h3>
+				<div class="pure-u-5-12 centeredBox"  style="border-right:2px solid #926900;">
+					<div class="cont">
+					<h3>REGISTRATION</h3>
 					<div class="formInfo" style="width:100%;">
 						<span id="responseReg" style="display:none;margin-top:10px;"></span>
 						<br>
@@ -156,15 +160,16 @@
 							<input class="pure-button pure-button pure-input-1-2 redButton" type="submit" name="submit" value="SUBMIT" form="registrationForm" >
 						</form>
 					</div>
-					<p style="display:block;margin-top:50px;">Already have an account? <a href="#" onclick="$('.formDiv').toggle(); updateView(); return false;" style="color:#2871a6;font-family:'Skranji', cursive" >LOGIN</a></p>
+					<p class="formInfoText">Already have an account? <a href="#" onclick="$('.formDiv').toggle(); updateView(); return false;" class="emphasis">LOGIN</a></p>
 					</div>
 				</div>
-				<div class="pure-u-5-12" style="display:flex;align-items:center;justify-content:center;">
-					<p style="width:61.8%;font-size:120%;">The Bunn's Rewards Program offers its members exclusive deals on activities and our menu as a reward for customer loyalty and recurrent visits.
-					Upon signing up, you will be able to begin earning points for each visit to a Bunn's location by simply providing your unique account ID. Did we forget to mention that the program is completely <b style="color:#e24226;font-family:'Skranji', cursive">FREE</b>!?</p>
+				<div class="pure-u-5-12 centeredBox">
+					<p class="formDesc">The Bunn's Rewards Program offers its members exclusive deals on activities and our menu as a reward for customer loyalty and recurrent visits.
+					Upon signing up, you will be able to begin earning points for each visit to a Bunn's location by simply providing your unique account ID. Did we forget to mention that the program is completely <b class="emphasis">FREE</b>!?</p>
 				</div>
 			</div>
 		</div>
+<<<<<<< HEAD
 		<div class="formDiv" style="margin-top:150px;text-align:center;display:none;">
 			<h1 style="color:#e24226;font-size:40px;margin-bottom:0;">Bunn's Rewards Program</h1>
 			<div class="pure-g" style="min-height:60vh;">
@@ -188,6 +193,31 @@
 							</form>
 						</div>
 						<p style="display:block;margin-top:50px;">Don't have an account? <a href="#" onclick="$('.formDiv').toggle(); updateView(); return false;" style="color:#2871a6;font-family:'Skranji', cursive">REGISTER</a></p>
+=======
+		<div class="formDiv" style="display:none;">
+			<h1>Bunn's Rewards Program</h1>
+			<div class="pure-g">
+				<div class="pure-u-7-24"></div>
+				<div class="pure-u-5-12 centeredBox">
+					<div class="cont">
+						<h3>LOGIN</h3>
+							<div class="formInfo">
+								<span id="responseLog" style="display:none;margin-top:10px;"></span>
+								<br>
+								<form class="pure-form" id="loginForm" method="post">
+									<p>E-Mail:</p>
+									<input class="pure-input-1-2" type="text" name="email" required>
+									<br>
+									<p>Password:</p>
+									<input class="pure-input-1-2" type="password" name="password" required>
+									<br>
+									<input class="submitButtonRewards pure-button pure-button pure-input-1-2 redButton" type="submit" name="submit" value="SUBMIT" form="loginForm">
+									<br>
+									<p style="margin-top:10px;">Remember Me <input type="checkbox" id="rememberMe" name="remember"></p>
+								</form>
+							</div>
+							<p class="formInfoText">Don't have an account? <a href="#" onclick="$('.formDiv').toggle(); updateView(); return false;" class="emphasis">REGISTER</a></p>
+>>>>>>> 2188bba5a3653077c53cebaa727975d898020cc6
 					</div>
 				</div>
 			</div>

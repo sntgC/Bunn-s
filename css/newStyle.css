@@ -72,8 +72,20 @@ div.headerTab a{
    cursor: default;
 }
 
+.centeredBox{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
 .headerTab a{
 	color:#efd139;
+}
+
+.emphasis{
+	color:#2871a6;
+	font-family:'Skranji', cursive;
+	font-weight:bold;
 }
 
 .extraMenu{
