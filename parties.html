@@ -17,16 +17,6 @@
 	<link rel="stylesheet" href="css/newStyle.css">
 	<link rel="stylesheet" href="css/parties.css">
 	<link rel="icon" href="assets/icon.png">
-	<style>
-		html, body{
-			background:
-				linear-gradient(63deg, #782C9F 23%, transparent 23%) 7px 0,
-				linear-gradient(63deg, transparent 74%, #782C9F 78%),
-				linear-gradient(63deg, transparent 34%, #782C9F 38%, #782C9F 58%, transparent 62%),
-				#8C47AF;
-		background-size: 16px 48px;
-		}
-	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="libs/handlebars.min-latest.js"></script>
 	<script src="libs/datedropper.min.js"></script>
@@ -165,7 +155,7 @@
 				console.log(e);
 			}
 			ret.price+=ticketCount*ticketModifier+partyObj.sections[3].options[goodiesIndex.indexOf(g)].price;
-			ret.goodies={size:g,tickets:ticketCount};
+			ret.goodies={size:g,tickets:ticketCount,image:"assets/bag"+(goodiesIndex.indexOf(g)+1)+".jpg"};
 			for(c=0;c<ActivitiesBoxes.length;c++){
 				if($(ActivitiesBoxes[c]).children().first().hasClass("selected"))
 					if(ret.activities.rowOne.length<=ret.activities.rowTwo.length)
@@ -197,7 +187,7 @@
 			<div class="token spinningToken" style="background:#19b5e5">
 			<p>{{theme.name}}</p>
 			</div>
-			<div class="token spinningToken" style="background-image:url('{{theme.image}}')">
+			<div class="token spinningToken" style="background-color:#0e9dc9;background-image:url('{{theme.image}}');">
 			</div>
 			</div>
 			</div>
@@ -205,14 +195,13 @@
 		</div>
 		<div class="flexItem partyPackageFlexRow" id="partyPackageFood">
 			<div class="circularSlide">
-			<div class="flip hoverFlip">
-			<div class="token spinningToken" style="background:#E25339">
-			<p>{{food.cakeNameShort}}</p>
-			</div>
-			<div class="token spinningToken" style="background-image:url('{{food.lunch.image}}')">
-			</div>
-			</div>
-			</div>
+				<div class="flip hoverFlip">
+					<div class="token spinningToken" style="background:#E25339">
+						<p>{{food.cakeNameShort}}</p>
+					</div>
+					<div class="token spinningToken" style="background-image:url('{{food.cake.image}}');"></div>
+					<div class="token spinningToken" style="background-image:url('{{food.lunch.image}}');clip-path:  polygon(0 0, 100% 0, 100% 0%, 0 100%)"></div>
+				</div>
 			</div>
 		</div>
 		<div class="flexItem partyPackageFlexRow" id="partyPackageGoodies">
@@ -221,28 +210,24 @@
 			<div class="token spinningToken" style="background:#27ba3d">
 			<p>{{goodies.size}}</p>
 			</div>
+			<div class="token spinningToken" style="background-image:url('{{goodies.image}}')">
+			</div>
+			</div>
+			</div>
+			</div>
+		</div>
+		<div class="flexItem partyPackageFlexRow" id="partyPackageActivities">
+			<div class="circularSlide">
+			<div class="flip hoverFlip">
+			<div class="token spinningToken" style="background:#8C47AF">
+			<p>{{goodies.size}}</p>
+			</div>
 			<div class="token spinningToken" style="background-image:url('{{theme.image}}')">
 			</div>
 			</div>
 			</div>
 			</div>
 		</div>
-			{{#if activities.drawOne}}
-				<div class="flexItem" id="partyPackageActivities">
-					<div class="partyPackageActRow growOne center">
-					{{#each activities.rowOne}}
-					<div class="partyPackageActItem growOne center partyPackageImage" style="background-image: url({{this}})"></div>
-					{{/each}}
-					</div>
-					{{#if activities.drawTwo}}
-					<div class="partyPackageActRow growOne center">
-					{{#each activities.rowTwo}}
-					<div class="partyPackageActItem growOne center partyPackageImage" style="background-image: url({{this}})"></div>
-					{{/each}}
-					</div>
-					{{/if}}
-				</div>
-			{{/if}}
 		<!--<div class="flexItem partyPackageFlexRow" id="partyPackageInfo">
 			<div id="price" class="partyPackageInfoItem partyPackageColorBlue center">${{price}}</div>
 			<div id="date" class="partyPackageInfoItem partyPackageColorBlue center">
@@ -383,7 +368,10 @@
 			</div>
 			<span style="font-size:18px;display:none;" id="response"></span>
 			<br>
-			<button class="submitButton" type="button" name="reserve" id="reserveButton">Reserve</button>
+			<div class="dateContainer">
+				<input type="text" id="dateTextField" value="Choose your date" data-modal="true" data-large-mode="true" data-large-default="true" data-theme="bunns" data-lock="from"> 
+			</div>
+			<button class="submitButton" type="button" name="reserve" id="reserveButton">RESERVE</button>
 		</div>
 			</div>
 	</div>

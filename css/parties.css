@@ -1,39 +1,30 @@
+html, body{
+			background:
+				linear-gradient(63deg, #782C9F 23%, transparent 23%) 7px 0,
+				linear-gradient(63deg, transparent 74%, #782C9F 78%),
+				linear-gradient(63deg, transparent 34%, #782C9F 38%, #782C9F 58%, transparent 62%),
+				#8C47AF;
+		background-size: 16px 48px;
+		}
 
-
-/*Had to add the following four classes here because of a bug when linking the blog.css stylesheet*/
-.twoThirdDisplay{
-	background:#bebebe;
-	width:66.6%;
-	height:90%;
-	display:inline-flex;
-	position:relative;
-	top:5.21vw;
-	border-radius:1vmin;
-}
-
-.blogBody{
-	flex-basis:66%;
-	flex-grow:1;
-	display:flex;
-	flex-direction:column;
-}
 
 .submitButton{
 	cursor: pointer;
 	border: none;
-	font-size: 20px;
-	font-family: 'Averia Sans Libre', cursive;
-	background:#151d8e;
+	font-size: 24px;
+	font-family: 'Skranji', cursive;
+	background:#27ba3d;
 	display:inline-block;
 	color:white;
+	box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .3), 0 2px 3px 0 rgba(0, 0, 0, .12);
 	padding:15px;
-	border-radius:1vmin;
-	width: 75%;
+	border-radius:2px;
 	margin-top:2%;
+	width:20%;
 }
 
 .submitButton:hover{
-	background:#151dab;
+	background-image: linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
 }
 
 #customPackageStart{
@@ -69,6 +60,24 @@
 	border-radius:50%;
 	box-shadow: 0 10px 8px 0 rgba(0,0,0,.21);
     border: 15px solid white;
+}
+
+.dateContainer{
+	display:flex;
+	justify-content:center;
+}
+
+.dateContainer input[type = text]{
+	width:20%;
+	border-radius:4px;
+	color:black;
+	border: 1px solid #ccc;
+	font-size:24px;
+	text-align:center;
+	font-family:'Skranji', cursive;
+	padding:15px;
+	box-shadow: inset 0 1px 3px #ddd;
+	background:white;
 }
 
 .partyBoxContainer{
@@ -157,7 +166,12 @@ h2.selected{
 }
 
 #partyPackage{
-	background:#dedede;
+	background:
+		linear-gradient(45deg, #FF7E14 45px, transparent 45px)64px 64px,
+		linear-gradient(45deg, #FF7E14 45px, transparent 45px,transparent 91px, #F16D00 91px, #F16D00 135px, transparent 135px),
+		linear-gradient(-45deg, #FF7E14 23px, transparent 23px, transparent 68px,#FF7E14 68px,#FF7E14 113px,transparent 113px,transparent 158px,#FF7E14 158px);
+	background-color:#F16D00;
+	background-size: 128px 128px;
 	padding-bottom:2%;
 	right:0px;
 	top:0;
@@ -228,9 +242,6 @@ h2.selected{
 }
 
 #partyPackageActivities{
-	flex-grow:3;
-	display:flex;
-	flex-flow:column wrap;
 }
 
 .partyPackageActItem{
@@ -377,13 +388,13 @@ h2.selected{
 }
 
 .circularSlide{
-	height:20vw;
-	width:20vw;
+	height:19vw;
+	width:19vw;
 }
 
 .token{
-	height:20vw;
-	width:20vw;
+	height:19vw;
+	width:19vw;
 }
 
 #themeRow{
