@@ -65,7 +65,7 @@
 				$("#" + root.toLowerCase() + "Arrow" + direction).on('click', function () {
 					slideToDir("party" + root + "Container", direction.toLowerCase(), 400, loadPartyPackage);
 					var slideIndex = (getSlideIndex("party" + root + "Container") + slideCount + add) % slideCount;
-					func(slideIndex);
+					//func(slideIndex);
 					setParagraphText(root.toLowerCase() + "DescriptionDisplay", partyObj.sections[index].options[slideIndex].description);
 				});
 			}
@@ -73,12 +73,7 @@
 				for(l=0;l<2;l++){
 					var dir= (l==0? "Right":"Left");
 					var add= (l==0? 1:-1);
-					var themeBackgroundChange=function(sIndex){$('#themeRow').css({
-						'background-image':"url("+partyObj.sections[0].options[sIndex].backgroundImage+")"
-					});};
-					if(t!=0)
-						themeBackgroundChange=function(sIndex){};
-					arrowHandler(nameRoots[t],dir,add,slideCnts[t],themeBackgroundChange, t);
+					arrowHandler(nameRoots[t],dir,add,slideCnts[t],null, t);
 				}
 			}
 			$(".partyBoxTiny").on('click',function (event) {
@@ -95,44 +90,6 @@
 				loadPartyPackage(getPartySelections);
 			});
 
-
-			/*//Party Package Div Fixed on scroll
-			function fixPartyPackage() {
-				var currentScroll = $(window).scrollTop();
-				if (currentScroll >= fixedPartyDisplayDivTop&&currentScroll+$("#partyPackage").height()<=footerDivTop-0) {
-					$('#partyPackage').css({
-						position: 'fixed',
-						right: '-' + getScrollBarWidth() + 'px',
-						width: '23vw',
-						alignSelf:'auto'
-					});
-					$('#partySidebar').css({
-						right: '-' + getScrollBarWidth() + 'px'
-					});
-				} else if(currentScroll+$("#partyPackage").height() >footerDivTop-0){
-					$('#partyPackage').css({
-						position: 'static',
-						right: '0px',
-						alignSelf:'flex-end'
-					});
-				}else {
-					$('#partyPackage').css({
-						position: 'static',
-						right: '0px',
-						alignSelf:'flex-start'
-					});
-				}
-			}
-			$(window).scroll(fixPartyPackage);*/
-
-			/*//Fixes resizing issue for fixed div
-			var fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - 0;
-			var footerDivTop=$("#footer").offset().top;
-
-			$(window).resize(function () {
-				fixedPartyDisplayDivTop = $('#customPackageStart').offset().top - 0;
-				footerDivTop=$("#footer").offset().top;
-			});*/
 			loadPartyPackage(getPartySelections);
 
 			$('#dateTextField').dateDropper();
@@ -170,13 +127,6 @@
 			if(date!=null)
 				document.getElementById("dateTextField").value=date;
 		}
-
-		/*function removeSidebar(){
-			var cps=document.getElementById("customPackageStart");
-			var sb=document.getElementById("partySidebar");
-			sb.style.display="none";
-			cps.style.flexGrow="1";
-		}*/
 
 		function getPartySelections(){
 			var GPSSlides=document.getElementsByClassName("slideContainer");
@@ -242,19 +192,40 @@
 	</script>
 	<script id="partyPackage-template" type="text/x-handlebars-template">
 		<div class="flexItem partyPackageFlexRow" id="partyPackageTheme">
-		<div id="partyPackageThemeName" class="partyPackageColorBlue center">{{theme.name}}</div>
-		<div id="partyPackageThemePic" class="growOne partyPackageColorBlue partyPackageImage" style="background-image: url({{theme.image}})"></div>
+			<div class="circularSlide">
+			<div class="flip hoverFlip">
+			<div class="token spinningToken" style="background:#19b5e5">
+			<p>{{theme.name}}</p>
+			</div>
+			<div class="token spinningToken" style="background-image:url('{{theme.image}}')">
+			</div>
+			</div>
+			</div>
+			</div>
 		</div>
 		<div class="flexItem partyPackageFlexRow" id="partyPackageFood">
-			<div id="partyPackageLunch" class="growOne partyPackageColorBlue partyPackageImage" style="background-image: url({{food.lunch.image}})"></div>
-			<div id="partyPackageCake" class="growOne">
-				<div id="partyPackageCakePic" class="partyPackageColorBlue partyPackageImage" style="background-image: url({{food.cake.image}})"></div>
-				<div id="partyPackageCakeInsc" class="growOne partyPackageColorBlue center">{{food.cakeNameShort}}</div>
+			<div class="circularSlide">
+			<div class="flip hoverFlip">
+			<div class="token spinningToken" style="background:#E25339">
+			<p>{{food.cakeNameShort}}</p>
+			</div>
+			<div class="token spinningToken" style="background-image:url('{{food.lunch.image}}')">
+			</div>
+			</div>
+			</div>
 			</div>
 		</div>
 		<div class="flexItem partyPackageFlexRow" id="partyPackageGoodies">
-			<div id="partyPackageGoodiesTicket" class="growOne partyPackageColorBlue center">{{goodies.tickets}}</div>
-			<div id="partyPackageGoodiesDesc" class="partyPackageColorBlue center">{{goodies.size}}</div>
+			<div class="circularSlide">
+			<div class="flip hoverFlip">
+			<div class="token spinningToken" style="background:#27ba3d">
+			<p>{{goodies.size}}</p>
+			</div>
+			<div class="token spinningToken" style="background-image:url('{{theme.image}}')">
+			</div>
+			</div>
+			</div>
+			</div>
 		</div>
 			{{#if activities.drawOne}}
 				<div class="flexItem" id="partyPackageActivities">
@@ -272,12 +243,12 @@
 					{{/if}}
 				</div>
 			{{/if}}
-		<div class="flexItem partyPackageFlexRow" id="partyPackageInfo">
+		<!--<div class="flexItem partyPackageFlexRow" id="partyPackageInfo">
 			<div id="price" class="partyPackageInfoItem partyPackageColorBlue center">${{price}}</div>
 			<div id="date" class="partyPackageInfoItem partyPackageColorBlue center">
 			<input type="text" id="dateTextField" data-modal="true" data-large-mode="true" data-large-default="true" data-theme="bunns" data-lock="from">
 			</div>
-		</div>
+		</div>-->
 	</script>
 </head>
 

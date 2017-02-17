@@ -161,7 +161,7 @@ h2.selected{
 	padding-bottom:2%;
 	right:0px;
 	top:0;
-	
+	width:100%;
 	z-index:0;
 	margin:0px;
 	text-align:center;
@@ -175,10 +175,10 @@ h2.selected{
 
 #partyPackageDisplay{
 	margin-top:2.5vh;
-	height:calc(75vh - 5.21vw);
+	padding:2% 0;
 	width:100%;
 	display:flex;
-	flex-flow: column wrap;
+	flex-flow: row wrap;
 	align-items:stretch;
 	justify-content:space-around;
 	font-size:3vmin;
@@ -186,6 +186,7 @@ h2.selected{
 
 .partyPackageFlexRow{
 	display:flex;
+	justify-content:center;
 	flex-flow:row nowrap;
 }
 
@@ -196,7 +197,7 @@ h2.selected{
 }
 
 #partyPackageFood{
-	flex-grow:5;
+	flex-grow:1;
 }
 
 #partyPackageLunch{
@@ -209,6 +210,7 @@ h2.selected{
 #partyPackageCake{
 	margin-left:.25vw;
 	display:flex;
+	justify-content:center;
 	flex-flow:column nowrap;
 }
 
@@ -310,7 +312,7 @@ h2.selected{
 }
 
 #activitiesRow{
-	 background:#7D049F;
+	
 }
 
 #activityContainer{
@@ -322,25 +324,42 @@ h2.selected{
 }
 
 #foodRow{
-	background:#2694e2;
+	
+	background-color: #E25339;
+	background-size: 58px 58px;
+	background-position: 0px 2px, 4px 35px, 29px 31px, 33px 6px,
+		0px 36px, 4px 2px, 29px 6px, 33px 30px;
+	background-image:
+		linear-gradient(335deg, #E13617 23px, transparent 23px),
+		linear-gradient(155deg, #E13617 23px, transparent 23px),
+		linear-gradient(335deg, #E13617 23px, transparent 23px),
+		linear-gradient(155deg, #E13617 23px, transparent 23px),
+
+		linear-gradient(335deg, #E13617 10px, transparent 10px),
+		linear-gradient(155deg, #E13617 10px, transparent 10px),
+		linear-gradient(335deg, #E13617 10px, transparent 10px),
+		linear-gradient(155deg, #E13617 10px, transparent 10px);
 }
 
 .foodContainer{
 	flex-grow:1;
 	flex-basis:50%;
 	position:relative;
-	background:#E25339;
 	/*background:#E25339*/
 	box-shadow: inset 0px -21px 50px -10px rgba(18,18,18,0.35);
 }
 
 #lunchContainer{
-	background:#E13617;
-	/*background:#E13617;*/
+
 }
 
 #goodiesRow{
 	background:#27ba3d;
+	background:
+		linear-gradient(135deg, #27ba3d 22px, #018017 22px, #018017 24px, transparent 24px, transparent 67px, #018017 67px, #018017 69px, transparent 69px),
+		linear-gradient(225deg, #27ba3d 22px, #018017 22px, #018017 24px, transparent 24px, transparent 67px, #018017 67px, #018017 69px, transparent 69px)0 64px;
+	background-color:#27ba3d;
+	background-size: 64px 128px;
 	padding-bottom:2%;
 }
 
@@ -357,10 +376,22 @@ h2.selected{
 	 padding-bottom:5vmin;
 }
 
+.circularSlide{
+	height:20vw;
+	width:20vw;
+}
+
+.token{
+	height:20vw;
+	width:20vw;
+}
+
 #themeRow{
 	background:#2694e2;
-	background-image: url(../assets/iconPirate.png);
-	background-repeat:no-repeat;
-	background-position:left bottom;
-	background-size: contain;
+	background:
+		linear-gradient(45deg, #0e9dc9 45px, transparent 45px)64px 64px,
+		linear-gradient(45deg, #0e9dc9 45px, transparent 45px,transparent 91px, #19b5e5 91px, #19b5e5 135px, transparent 135px),
+		linear-gradient(-45deg, #0e9dc9 23px, transparent 23px, transparent 68px,#0e9dc9 68px,#0e9dc9 113px,transparent 113px,transparent 158px,#0e9dc9 158px);
+	background-color:#19b5e5;
+	background-size: 128px 128px;
 }
