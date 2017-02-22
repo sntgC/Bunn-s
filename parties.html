@@ -79,7 +79,7 @@
 				$(event.target.parentNode.firstChild).toggleClass("selected");
 				loadPartyPackage(getPartySelections);
 			});
-
+			
 			loadPartyPackage(getPartySelections);
 
 			$('#dateTextField').dateDropper();
@@ -103,6 +103,13 @@
 			});
 		});
 
+		function loadActIconBinder(){
+			$(".minyActIcon").on('mouseenter',function(event){
+				document.getElementById("actImageToken").style.backgroundImage=this.style.backgroundImage;
+				document.getElementById("actNameToken").innerHTML=$(this).attr("name");
+			});
+		}
+		
 		function loadPartyPackage(func){
 			try{
 			var date=document.getElementById("dateTextField").value;
@@ -116,6 +123,7 @@
 			$('#dateTextField').dateDropper();
 			if(date!=null)
 				document.getElementById("dateTextField").value=date;
+			loadActIconBinder();	
 		}
 
 		function getPartySelections(){
@@ -157,20 +165,22 @@
 			ret.price+=ticketCount*ticketModifier+partyObj.sections[3].options[goodiesIndex.indexOf(g)].price;
 			ret.goodies={size:g,tickets:ticketCount,image:"assets/bag"+(goodiesIndex.indexOf(g)+1)+".jpg"};
 			for(c=0;c<ActivitiesBoxes.length;c++){
-				if($(ActivitiesBoxes[c]).children().first().hasClass("selected"))
-					if(ret.activities.rowOne.length<=ret.activities.rowTwo.length)
-						ret.activities.imgs.push($(ActivitiesBoxes[c]).children().first().attr("src"));
-					else
-						ret.activities.imgs.push($(ActivitiesBoxes[c]).children().first().attr("src"));
+				if($(ActivitiesBoxes[c]).children().first().hasClass("selected")){
+						ret.activities.imgs.push({image:$(ActivitiesBoxes[c]).children().first().attr("src"),name:ret.activities.name=$(ActivitiesBoxes[c]).children().last().html()});
+				}
 			}
 			ret.price+=(ret.activities.rowOne.length+ret.activities.rowTwo.length)*5;
 
 			ret.activities.drawOne=ret.activities.rowOne.length>0;
 			ret.activities.drawTwo=ret.activities.rowTwo.length>0;
-			if(ret.activities.imgs.length>0)
-				ret.activities.draw=ret.activities.imgs[Math.floor(Math.random()*ret.activities.imgs.length)];
-			else
-				ret.activities.draw="#fff";
+			if(ret.activities.imgs.length>0){
+				ret.activities.draw=ret.activities.imgs[0];
+			}else{
+				ret.activities.draw={image:"assets/icon.png",name:"No Activities"};
+			}
+			
+			ret.activities.drawPlus=ret.activities.imgs.length>1;
+			ret.activities.plusValue=ret.activities.imgs.length-1;
 			ret.price=Math.ceil(ret.price/5)*5;
 			return ret;
 		}
@@ -223,13 +233,26 @@
 		<div class="flexItem partyPackageFlexRow" id="partyPackageActivities">
 			<div class="circularSlide">
 			<div class="flip hoverFlip">
-			<div class="token spinningToken" style="background:#8C47AF">
-			<p>{{goodies.size}}</p>
+			<div class="token spinningToken" id="actNameToken" style="background:#8C47AF">
+			<p>{{activities.draw.name}}</p>
 			</div>
-			<div class="token spinningToken" style="background-image:url('{{activities.draw}}')">
+			<div class="token spinningToken" id="actImageToken" style="background-image:url('{{activities.draw.image}}')">
 			</div>
 			</div>
 			</div>
+			{{#if activities.drawPlus}}
+			<div id="moreAct" class="actCircleTiny">
+				+{{activities.plusValue}}
+				<div class="tooltipContent">
+				<div class="innerTooltipContent">
+				{{#each activities.imgs}}
+				<div class="actCircleTiny minyActIcon" name="{{this.name}}" style="background-image:url('{{this.image}}')">
+				</div>
+				{{/each}}
+				</div>
+				</div>
+			</div>
+			{{/if}}
 			</div>
 		</div>
 	</script>

@@ -201,6 +201,7 @@ h2.selected{
 .partyPackageFlexRow{
 	display:flex;
 	justify-content:center;
+	position:relative;
 	flex-flow:row nowrap;
 }
 
@@ -372,6 +373,74 @@ h2.selected{
 	background-color:#27ba3d;
 	background-size: 64px 128px;
 	padding-bottom:2%;
+}
+
+.actCircleTiny{
+	border-radius:50%;
+	height: 2.5vw;
+	width:2.5vw;
+	border: .25vw solid white;
+	box-shadow:0 10px 8px 0 rgba(0,0,0,.21);
+	background-position:center;
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+#moreAct{
+	background:#8C47AF ;
+	font-size:1vw;
+	position:absolute;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	right:0;
+	bottom:0;
+}
+
+.tooltipContent{
+	transition:0.6s;
+}
+
+#moreAct .tooltipContent{
+	width:0;
+	height:0;
+	top:1.25vw;
+	right:1.25vw;
+	background:#8C47AF;
+	border:.25vw solid white;
+}
+
+.innerTooltipContent{
+}
+
+#moreAct .tooltipContent .innerTooltipContent{
+	opacity:0;
+	display:flex;
+	flex-flow:row wrap;
+	justify-content:space-around;
+	align-items:center;
+	height:100%;
+	width:100%;
+	transition:visibility 0s;
+}
+
+#moreAct:hover .tooltipContent .innerTooltipContent{
+	opacity:1;
+	transition-delay:2s;
+	transition:opacity 0s;
+}
+
+#moreAct:hover .tooltipContent{
+	visibility:visible;
+	top:3vw;
+	width:12vw;
+	height:8vw;
+	right:0;
+	box-shadow:0 10px 8px 0 rgba(0,0,0,.21);
+}
+
+.tooltipContent .actCircleTiny{
+	margin:.25vw 0;
 }
 
 #sliderContainer{
