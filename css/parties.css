@@ -155,11 +155,11 @@ h2.selected{
 }
 
 .partyBoxThin{
-	height:17.3vw;
+	height:calc(20vw + 30px);
 	display:inline-flex;
 	flex-flow: column nowrap;
 	justify-content:center;
-	opacity:0.25;
+	opacity:0.5;
 	margin-left:2vmin;
 	margin-right:2vmin;
 }
