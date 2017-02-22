@@ -121,6 +121,11 @@ html, body{
 	font-size:1.5vw;
 }
 
+.actBlackBar{
+	background:rgba(0,0,0,.75);
+	width:100%;
+}
+
 .partyBoxTinyGoodies img{
 	height:100%;
 	width:100%;
@@ -421,13 +426,10 @@ h2.selected{
 	align-items:center;
 	height:100%;
 	width:100%;
-	transition:visibility 0s;
 }
 
 #moreAct:hover .tooltipContent .innerTooltipContent{
 	opacity:1;
-	transition-delay:2s;
-	transition:opacity 0s;
 }
 
 #moreAct:hover .tooltipContent{
@@ -441,6 +443,8 @@ h2.selected{
 
 .tooltipContent .actCircleTiny{
 	margin:.25vw 0;
+	height:31.25%;
+	width:20.83%;
 }
 
 #sliderContainer{

@@ -107,6 +107,7 @@
 			$(".minyActIcon").on('mouseenter',function(event){
 				document.getElementById("actImageToken").style.backgroundImage=this.style.backgroundImage;
 				document.getElementById("actNameToken").innerHTML=$(this).attr("name");
+				$("#actImageToken").children().first().html($(this).attr("name"));
 			});
 		}
 		
@@ -178,7 +179,7 @@
 			}else{
 				ret.activities.draw={image:"assets/icon.png",name:"No Activities"};
 			}
-			
+			ret.activities.drawAct=ret.activities.imgs.length>0;
 			ret.activities.drawPlus=ret.activities.imgs.length>1;
 			ret.activities.plusValue=ret.activities.imgs.length-1;
 			ret.price=Math.ceil(ret.price/5)*5;
@@ -230,13 +231,15 @@
 			</div>
 			</div>
 		</div>
+		{{#if activities.drawAct}}
 		<div class="flexItem partyPackageFlexRow" id="partyPackageActivities">
 			<div class="circularSlide">
-			<div class="flip hoverFlip">
+			<div class="">
 			<div class="token spinningToken" id="actNameToken" style="background:#8C47AF">
 			<p>{{activities.draw.name}}</p>
 			</div>
 			<div class="token spinningToken" id="actImageToken" style="background-image:url('{{activities.draw.image}}')">
+			<p class="actBlackBar">{{activities.draw.name}}</p>
 			</div>
 			</div>
 			</div>
@@ -255,6 +258,7 @@
 			{{/if}}
 			</div>
 		</div>
+		{{/if}}
 	</script>
 </head>
 
