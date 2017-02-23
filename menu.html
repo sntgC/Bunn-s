@@ -41,14 +41,15 @@
 	</script>
 	<script id="menu-template" type="text/x-handlebars-template">
 		<div id='{{main.type}}' class="menuContainer noSelect">
-		<p style="font-size:4vh;margin-bottom:0px;font-family:'Skranji',cursive;color:#E13617;"><span style="border-bottom:5px solid;">{{main.name}}</span></p>
+		<p style="font-size:4vh;margin-bottom:0px;font-family:'Skranji',cursive;color:#fff;"><span style="border-bottom:5px solid;">{{main.name}}</span></p>
 			<div class="kardContainer">
 			{{#each main.entry}}
-			<div class="kard">
-			<img src='{{image}}' style="height:90%;width:100%;">
+			<div class="kard" style="background-image:url('{{image}}')">
+			
 			<div class="kardBottom">
-			<p class="kardText textBold" style="text-align:left;font-size:2.5vh;">{{name}}<span style="float:right;">{{price}}</span></p>
+			<p class="kardText textBold kardTitle" style="font-size:1.5vw;">{{name}}</p>
 			<p class="kardText" style="text-align:left;font-size:2vh;">{{description}}</p>
+			<p>{{price}}</p>
 			</div>
 			</div>
 			{{/each}}
@@ -56,7 +57,7 @@
 		</div>
 		{{#each choices}}
 		<div id='{{type}}' class="menuContainer noSelect">
-		<p style="font-size:4vh;margin-bottom:0px;font-family:'Skranji',cursive;color:#E13617;"><span style="border-bottom:5px solid;">{{type}}</span></p>
+		<p style="font-size:4vh;margin-bottom:0px;font-family:'Skranji',cursive;color:#fff;"><span style="border-bottom:5px solid;">{{type}}</span></p>
 		<div class="columnContainer">
 			{{#each entry}}
 			<div class="menuColumn">
@@ -82,16 +83,22 @@
 		<div class="headerTab"><a href="parties">PARTIES</a></div>
 		<div class="headerTab"><a href="rewards">REWARDS</a></div>
 	</div>
-	<div class="circularSlide">
-			<div class="flip hoverFlip">
-			<div class="token spinningToken" style="background:#9E354A">
-			<p>Food.</p>
-			</div>
-			<div class="token spinningToken" style="background-image:url('assets/burger.jpg')">
-			</div>
-			</div>
-			</div>
-			</div>
+	<div class="infoRow">
+		<div class="circularSlide">
+				<div class="flip hoverFlip">
+				<div class="token spinningToken" style="background:#9E354A">
+				<p>Food.</p>
+				</div>
+				<div class="token spinningToken" style="background-image:url('assets/burger.jpg')">
+				</div>
+				</div>
+		</div>
+		<div class="infoText">
+			<h2>We put the Nut in Nutrition</h2>
+			<p>This isn't the intro its the entrée. Bunn's not only gives you a place to play, it provides you with a vast selection of meals and snacks for you to feast on while you take a break from all the action.</p>
+			<p>Enjoy local cuisine, from fresh caught seafood for the grown-ups, to classic, made-from-scratch signatur Bunn's Burgers for the littluns. Whether you are watching your weight or watching a game, Bunn's is sure to fulfill the needs of your stomach.</p>
+		</div>
+	</div>
 	</div>
 	<div class="tabContainer">
 	<ul style="vertical-align:bottom;margin-bottom:0px;">

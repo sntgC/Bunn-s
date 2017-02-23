@@ -1,9 +1,9 @@
 body, html{
 	background:
-		linear-gradient(63deg, #211d19 23%, transparent 23%) 7px 0,
-		linear-gradient(63deg, transparent 74%, #211d19 78%),
-		linear-gradient(63deg, transparent 34%, #211d19 38%, #211d19 58%, transparent 62%),
-		#826347;
+		linear-gradient(63deg, #771427 23%, transparent 23%) 7px 0,
+		linear-gradient(63deg, transparent 74%, #771427 78%),
+		linear-gradient(63deg, transparent 34%, #771427 38%, #771427 58%, transparent 62%),
+		#9E354A;
 	background-size: 16px 48px;
 	color:white;
 }
@@ -16,6 +16,11 @@ body, html{
 		#9E354A;
 	background-size: 16px 48px;
 	color:white;
+}
+
+.infoRow{
+	margin-top:80px;
+	font-size:100%;
 }
 
 .columnContainer{
