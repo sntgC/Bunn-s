@@ -293,7 +293,7 @@ input[type=password] {
 
 .kardBottom{
 	/*background:rgb(68,117,116);*/
-	background-color: #E13617;
+	background-color: #f70025;
 	color:white;
 	height:100%;
 	display:flex;
@@ -383,28 +383,7 @@ input[type=password] {
 	font-size:2.5vw;
 }
 
-.navTitleMenu{
-	background-color:#efefef;
-	padding-left:10px;
-	padding-right:10px;
-	font-size:4vh;
-	position:relative;
-	margin-bottom:0px;
-	padding-bottom:5px;
-}
 
-.navTitleMenu a{
-	color:#E13617;
-}
-
-.navTitleMenu a:hover{
-	background-color:white;
-	color:#E13617;
-}
-
-.navTitleMenu:hover{
-	background-color:white;
-}
 .noSelect{
    -moz-user-select: none;
    -khtml-user-select: none;
@@ -477,16 +456,6 @@ input[type=password] {
 	 position:relative;
 	 font-size:0px;
 	 left:0%;
-}
-
-.tabContainer{
-	position:absolute;
-	height:10vh;
-	bottom:0px;
-	width:100%;
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
 }
 
 textarea{

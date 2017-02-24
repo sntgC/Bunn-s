@@ -32,10 +32,11 @@
 			$("#headerShell").on('click', function () {
 				window.location.href = "index";
 			});
+			$(".navTitleMenu").on("click",function(){scroll($(this).attr("ind"))});
 		};
 		function scroll(menuID) {
 			$('html, body').animate({
-				scrollTop: $("#" + (menuID==null? menuObj.main.type:menuObj.choices[menuID].type)).offset().top - 90
+				scrollTop: $("#" + (menuID==0? menuObj.main.type:menuObj.choices[menuID-1].type)).offset().top 
 			}, 800 * Math.cbrt(menuID + 1), function () {});
 		}
 	</script>
@@ -48,7 +49,7 @@
 			
 			<div class="kardBottom">
 			<p class="kardText textBold kardTitle" style="font-size:1.5vw;">{{name}}</p>
-			<p class="kardText" style="text-align:left;font-size:2vh;">{{description}}</p>
+			<p class="kardText" style="text-align:center;font-size:2vh;">{{description}}</p>
 			<p>{{price}}</p>
 			</div>
 			</div>
@@ -56,8 +57,8 @@
 			</div>
 		</div>
 		{{#each choices}}
-		<div id='{{type}}' class="menuContainer noSelect">
-		<p style="font-size:4vh;margin-bottom:0px;font-family:'Skranji',cursive;color:#fff;"><span style="border-bottom:5px solid;">{{type}}</span></p>
+		<div id='{{type}}' class="menuContainer">
+		<p style="font-size:4vh;margin-bottom:0px;font-family:'Skranji',cursive;color:#E50024;"><span style="border-bottom:5px solid;">{{type}}</span></p>
 		<div class="columnContainer">
 			{{#each entry}}
 			<div class="menuColumn">
@@ -96,17 +97,17 @@
 		<div class="infoText">
 			<h2>We put the Nut in Nutrition</h2>
 			<p>This isn't the intro its the entrée. Bunn's not only gives you a place to play, it provides you with a vast selection of meals and snacks for you to feast on while you take a break from all the action.</p>
-			<p>Enjoy local cuisine, from fresh caught seafood for the grown-ups, to classic, made-from-scratch signatur Bunn's Burgers for the littluns. Whether you are watching your weight or watching a game, Bunn's is sure to fulfill the needs of your stomach.</p>
+			<p>Enjoy local cuisine, from fresh caught seafood for the grown-ups, to classic, made-from-scratch signature Bunn's Burgers for the littluns. Whether you are watching your weight or watching a game, Bunn's is sure to fulfill the needs of your stomach.</p>
 		</div>
 	</div>
 	</div>
 	<div class="tabContainer">
 	<ul style="vertical-align:bottom;margin-bottom:0px;">
-		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(3)">Drinks</a></li>
-		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(2)">Desserts</a></li>
-		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(1)">Entrées</a></li>
-		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(0)">Appetizers</a></li>
-		<li class="navTitle navTitleMenu noSelect"><a href="javascript:scroll(null)">Featured</a></li>
+		<li class="navTitle navTitleMenu noSelect" ind=4><a>Drinks</a></li>
+		<li class="navTitle navTitleMenu noSelect" ind=3><a>Desserts</a></li>
+		<li class="navTitle navTitleMenu noSelect" ind=2><a>Entrées</a></li>
+		<li class="navTitle navTitleMenu noSelect" ind=1><a>Appetizers</a></li>
+		<li class="navTitle navTitleMenu noSelect" ind=0><a>Featured</a></li>
 	</ul>
 	</div>
 	<div class="mainContent" id="menuMainContent">

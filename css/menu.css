@@ -1,25 +1,70 @@
 body, html{
 	background:
-		linear-gradient(63deg, #771427 23%, transparent 23%) 7px 0,
-		linear-gradient(63deg, transparent 74%, #771427 78%),
-		linear-gradient(63deg, transparent 34%, #771427 38%, #771427 58%, transparent 62%),
-		#9E354A;
+		linear-gradient(63deg, #f9a603 23%, transparent 23%) 7px 0,
+		linear-gradient(63deg, transparent 74%, #f9a603 78%),
+		linear-gradient(63deg, transparent 34%, #f9a603 38%, #f9a603 58%, transparent 62%),
+		#F9AE03;
 	background-size: 16px 48px;
 	color:white;
+}
+
+#feat{
+	background:
+		linear-gradient(63deg, #FF6302 23%, transparent 23%) 7px 0,
+		linear-gradient(63deg, transparent 74%, #FF6302 78%),
+		linear-gradient(63deg, transparent 34%, #FF6302 38%, #FF6302 58%, transparent 62%),
+		#f25c00;
+	background-size: 16px 48px;
 }
 
 .background{
 	background:
-		linear-gradient(63deg, #771427 23%, transparent 23%) 7px 0,
-		linear-gradient(63deg, transparent 74%, #771427 78%),
-		linear-gradient(63deg, transparent 34%, #771427 38%, #771427 58%, transparent 62%),
-		#9E354A;
+		linear-gradient(63deg, #f9a603 23%, transparent 23%) 7px 0,
+		linear-gradient(63deg, transparent 74%, #f9a603 78%),
+		linear-gradient(63deg, transparent 34%, #f9a603 38%, #f9a603 58%, transparent 62%),
+		#F9AE03;
 	background-size: 16px 48px;
 	color:white;
 }
 
+.navTitleMenu{
+	background-color:#E13617;
+	padding-left:10px;
+	padding-right:10px;
+	font-size:4vh;
+	position:relative;
+	margin-bottom:0px;
+	border: 5px solid white;
+	border-bottom:none;
+	border-top-left-radius:20%;
+	border-top-right-radius:20%;
+	vertical-align:bottom;
+}
+
+.navTitleMenu a{
+	color:#efefef;
+}
+
+.navTitleMenu a:hover{
+}
+
+.navTitleMenu:hover{
+	background-color:#f25c00;
+	cursor:pointer;
+}
+
+.tabContainer{
+	position:absolute;
+	height:10vh;
+	bottom:0px;
+	width:100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
 .infoRow{
-	margin-top:80px;
+	margin-top:7.5%;
 	font-size:100%;
 }
 
@@ -29,7 +74,7 @@ body, html{
 
 .dishName{
 	font-family:'Skranji', cursive;
-	color:#E13617;
+	color:#f25c00;
 	align-self:stretch;
 	margin: 2% 0;
 	padding:0% 10%;
@@ -48,7 +93,7 @@ body, html{
 }
 
 .menuDesc{
-	padding-left:15%;
+	padding:0% 10%;
 	align-self:flex-start;
 	text-align:left;
 }
