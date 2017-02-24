@@ -33,6 +33,33 @@
 				window.location.href = "index";
 			});
 			$(".navTitleMenu").on("click",function(){scroll($(this).attr("ind"))});
+			//Animation of the back-to-top button
+			var offset = $(window).height();
+			var duration = 750;
+			var timeouts = [];
+			$(window).on('scroll', function () {
+				if ($(this).scrollTop() > offset/*&&$("#menuBackToTop").offset().top < $("#footer").offset().top*/) {
+					//console.log($("#menuBackToTop").offset().top+" "+($("#footer").offset().top-$("#footer").height()));
+					$('.back-to-top').fadeIn(duration);
+					var hide = setTimeout(function () {
+							$('.back-to-top').fadeOut(0);
+						}, 4000);
+					for (var i = 0; i < timeouts.length; i++) {
+						clearTimeout(timeouts[i]);
+					}
+					timeouts.push(hide);
+				} else {
+					$('.back-to-top').fadeOut(0);
+				}
+			});
+			//back-to-top Event Binding
+			$(".back-to-top").on('click', function (event) {
+				event.preventDefault();
+				$('html, body').animate({
+					scrollTop: 0
+				}, duration);
+				return false;
+			});
 		};
 		function scroll(menuID) {
 			$('html, body').animate({
@@ -87,7 +114,7 @@
 	<div class="infoRow">
 		<div class="circularSlide">
 				<div class="flip hoverFlip">
-				<div class="token spinningToken" style="background:#9E354A">
+				<div class="token spinningToken" style="background:#f70025">
 				<p>Food.</p>
 				</div>
 				<div class="token spinningToken" style="background-image:url('assets/burger.jpg')">
@@ -113,7 +140,7 @@
 	<div class="mainContent" id="menuMainContent">
 
 	</div>
-	<a href="#" class="back-to-top" style="display:none;">
+	<a href="#" class="back-to-top" id="menuBackToTop" style="display:none;">
 		<i class="fa fa-arrow-circle-up"></i>
 	</a>
 	<div class="noSelect" id="footer"></div>
