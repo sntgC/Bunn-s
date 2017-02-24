@@ -187,6 +187,21 @@ h2.selected{
 	box-shadow: inset 12px 0px 23px -6px rgba(0,0,0,0.44);
 }
 
+.partySelectionsBack{
+	display:flex;
+	flex-flow:column nowrap;
+	justify-content:space-between;
+}
+
+.partySelectionsBack p{
+	margin:0;
+}
+
+.partySelectionsBack i{
+	font-size:150%;
+	cursor:pointer;
+}
+
 .partyPackageColorBlue{
 	background:#efd139;
 	color:white;

@@ -23,18 +23,6 @@ $(document).ready(function () {
 			$('.back-to-top').fadeOut(250);
 		}
 	});
-	//Adds swipe capability to front page
-	var slideContainers=document.getElementsByClassName("slideContainer");
-	for (i = 0; i < slideContainers.length; i++) {
-		var mc = new Hammer(slideContainers[i]);
-		// listen to events...
-		mc.on("swipeleft", function (ev) {
-			nextSlide(true);
-		});
-		mc.on("swiperight", function (ev) {
-			previousSlide(true);
-		});
-	}
 	$(".back-to-top").on('click', function (event) {
 			event.preventDefault();
 			$('html, body').animate({

@@ -22,10 +22,10 @@
 	<script src="libs/datedropper.min.js"></script>
 	<script src="js/animations.js"></script>
 	<script src="js/style.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="js/objects.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="js/cookies.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 	<script src="libs/Handlebars.templates"></script>
 	<script>
 		var partyPackageTemplate;
@@ -111,6 +111,16 @@
 			});
 		}
 		
+		function loadReceiptIconBinder(){
+			$(".partyUpArrow").on("click",function(){scroll($(this).attr("linkedId"))});
+		}
+		
+		function scroll(id) {
+			$('html, body').animate({
+				scrollTop: $("#"+id).offset().top 
+			}, 800, function () {});
+		}
+		
 		function loadPartyPackage(func){
 			try{
 			var date=document.getElementById("dateTextField").value;
@@ -125,6 +135,7 @@
 			if(date!=null)
 				document.getElementById("dateTextField").value=date;
 			loadActIconBinder();	
+			loadReceiptIconBinder();
 		}
 
 		function getPartySelections(){
@@ -198,8 +209,10 @@
 		<div class="flexItem partyPackageFlexRow" id="partyPackageTheme">
 			<div class="circularSlide">
 			<div class="flip hoverFlip">
-			<div class="token spinningToken" style="background:#19b5e5">
-			<p>{{theme.name}}</p>
+			<div class="token spinningToken partySelectionsBack" style="background:#19b5e5">
+				<p><i class="material-icons partyUpArrow" linkedId="themeRow">keyboard_arrow_up</i></p>
+				<p>{{theme.name}}</p>
+				<p>&nbsp</p>
 			</div>
 			<div class="token spinningToken" style="background-color:#0e9dc9;background-image:url('{{theme.image}}');">
 			</div>
@@ -210,8 +223,10 @@
 		<div class="flexItem partyPackageFlexRow" id="partyPackageFood">
 			<div class="circularSlide">
 				<div class="flip hoverFlip">
-					<div class="token spinningToken" style="background:#E25339">
+					<div class="token spinningToken partySelectionsBack" style="background:#E25339">
+						<p><i class="material-icons partyUpArrow" linkedId="foodRow">keyboard_arrow_up</i></p>
 						<p>{{food.cakeNameShort}}</p>
+						<p>&nbsp</p>
 					</div>
 					<div class="token spinningToken" style="background-image:url('{{food.cake.image}}');"></div>
 					<div class="token spinningToken" style="background-image:url('{{food.lunch.image}}');clip-path:  polygon(0 0, 100% 0, 100% 50%, 0 50%)"></div>
@@ -222,8 +237,10 @@
 		<div class="flexItem partyPackageFlexRow" id="partyPackageGoodies">
 			<div class="circularSlide">
 			<div class="flip hoverFlip">
-			<div class="token spinningToken" style="background:#27ba3d">
-			<p>{{goodies.size}}</p>
+			<div class="token spinningToken partySelectionsBack" style="background:#27ba3d">
+				<p><i class="material-icons partyUpArrow" linkedId="goodiesRow">keyboard_arrow_up</i></p>
+				<p>{{goodies.size}}</p>
+				<p>&nbsp</p>
 			</div>
 			<div class="token spinningToken" style="background-image:url('{{goodies.image}}')">
 			</div>
