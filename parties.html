@@ -79,7 +79,7 @@
 				$(event.target.parentNode.firstChild).toggleClass("selected");
 				loadPartyPackage(getPartySelections);
 			});
-			
+
 			loadPartyPackage(getPartySelections);
 
 			$('#dateTextField').dateDropper();
@@ -91,8 +91,12 @@
 					data: {"data":JSON.stringify(getPartySelections()),"user_id":getCookie("user_id"),"token":getCookie("token")},
 					success: function(result){
 						var returned = JSON.parse(result);
+						$("#response").css("background","rgba(0,0,0,.5)").css("padding","2px");
 						if(returned == "Created"){
-							$("#response").html("Party successfully reserved!").css("color","green").show();
+							$("#response").html("Party successfully reserved!").css("color","#0AD52D").show();
+						}
+						else if(returned == "Unauthorized"){
+							$("#response").html("Please create a FREE Bunn's Rewards account <a href='rewards'>here</a> in order to reserve your party.").css("color","#25A5FF").show();
 						}
 						else{
 							$("#response").html(returned).css("color","red").show();
@@ -110,17 +114,17 @@
 				$("#actImageToken").children().first().html($(this).attr("name"));
 			});
 		}
-		
+
 		function loadReceiptIconBinder(){
 			$(".partyUpArrow").on("click",function(){scroll($(this).attr("linkedId"))});
 		}
-		
+
 		function scroll(id) {
 			$('html, body').animate({
-				scrollTop: $("#"+id).offset().top 
+				scrollTop: $("#"+id).offset().top
 			}, 800, function () {});
 		}
-		
+
 		function loadPartyPackage(func){
 			try{
 			var date=document.getElementById("dateTextField").value;
@@ -134,7 +138,7 @@
 			$('#dateTextField').dateDropper();
 			if(date!=null)
 				document.getElementById("dateTextField").value=date;
-			loadActIconBinder();	
+			loadActIconBinder();
 			loadReceiptIconBinder();
 		}
 
@@ -289,15 +293,12 @@
 	</div>
 	<div class="background contentBackground" style=" text-align:center;height:85vh;">
 		<div class="textDisplay textSmall" >
-					<h2 class="fontSk">Welcome to the BUNN'S Party Creator!</h2>
+					<h2 class="fontSk">Welcome to the <span style="color:#A948DE;">Bunn's Party Creator!</span></h2>
 						<p>Here at Bunn's, we realize and appreciate the value of memorable events.
 						Birthday parties create lifelong memories and social functions help form significant, strong connections.
-						Using this party creator, you are able to create, design, and reserve the perfect party.
-						<br>
-						<p class="textTiny"><span class="fontSK">NOTE:</span> a <span class="fontSK">FREE</span> Bunn's Rewards Account is required in order to reserve your party.<br>
+						Using this party creator, you are able to create, design, and reserve the perfect party.</p>
+						<p class="textTiny"><span class="fontSK" style="color:red;">NOTE:</span> a <span class="fontSK">FREE</span> Bunn's Rewards account is required in order to reserve your party.
 						Sign up for free <a href="rewards" class="fontSK" style="color:#2694e2">HERE</a>!</p>
-						Scroll down to reserve your party online today!</p>
-						<i class="fa fa-arrow-down textLarge"></i>
 		</div>
 	</div>
 	<div id="focus" style="position:fixed;left:0px;width:20vw;height:20vh;background:white;z-index:200;top:80vh;text-align:center;font-size:2vh;box-shadow: 40px -19px 30px -12px rgba(0,0,0,0.4);visibility:hidden;">
@@ -411,7 +412,7 @@
 			<span style="font-size:18px;display:none;" id="response"></span>
 			<br>
 			<div class="dateContainer">
-				<input type="text" id="dateTextField" value="Choose your date" data-modal="true" data-large-mode="true" data-large-default="true" data-theme="bunns" data-lock="from"> 
+				<input type="text" id="dateTextField" value="Choose your date" data-modal="true" data-large-mode="true" data-large-default="true" data-theme="bunns" data-lock="from">
 			</div>
 			<button class="submitButton" type="button" name="reserve" id="reserveButton">RESERVE</button>
 		</div>

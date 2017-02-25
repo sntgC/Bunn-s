@@ -9,18 +9,35 @@
 	<link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet">
 	<link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/blog.css">
+	<link rel="stylesheet" href="css/newStyle.css">
 	<link rel="icon" href="assets/icon.png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="libs/handlebars.runtime-v4.0.5.js"></script>
 	<script src="libs/Handlebars.templates"></script>
-	<script src="js/animations.js"></script>
+	<script src="js/style.js"></script>
+	<script src="js/cookies.js"></script>
+	<style>
+		html, body{
+				background:
+				linear-gradient(63deg, #5E5E5E 23%, transparent 23%) 7px 0,
+				linear-gradient(63deg, transparent 74%, #5E5E5E 78%),
+				linear-gradient(63deg, transparent 34%, #5E5E5E 38%, #5E5E5E 58%, transparent 62%),
+				#3F3F3F;
+				background-size: 16px 48px;
+		}
+	</style>
 </head>
 
-<body class="noSelect">
-	<div class="background" style="background-color:#1e0b44;">
-        <div class="twoThirdDisplay" style="width:80%;padding:10px;height:85%;">
+<body>
+	<div id="header">
+		<div class="headerTab"><a href="activities">ACTIVITIES</a></div>
+		<div class="headerTab"><a href="menu">FOOD</a></div>
+		<div id="headerFocus"><div id="headerShell"></div></div>
+		<div class="headerTab"><a href="parties">PARTIES</a></div>
+		<div class="headerTab"><a href="rewards">REWARDS</a></div>
+	</div>
+	<div class="background">
+        <div class="termsOfUse">
 			<div style="overflow-y:scroll;font-family:Georgia,Times,Times New Roman,serif;text-align:left">
 			<h2 style="text-align:center">
 				Website Terms and Conditions of Use
@@ -134,17 +151,6 @@
 			</div>
 		</div>
 	</div>
-	<div id="headerWhite" style="font-size:16px">
-			<div class="headerHalf">
-				<li class="navTitle colorRed"><a href="rewards" class="makeYellow">REWARDS</a></li>
-				<li class="navTitle colorBlue"><a href="parties" class="makeYellow">PARTIES</a></li>
-				<li class="navTitle colorYellow"><a href="menu" class="makeYellow">FOOD</a></li>
-				<li class="navTitle colorPurple"><a href="activities" class="makeYellow">ACTIVITIES</a></li>
-			</div>
-			<div class="headerHalf"  id="headerHalfFirst">
-				<li class="navTitle logoClear" style="float:left"  id="headerLogo"><a href="index" class="makeYellow">BUNN'S</a></li>
-			</div>
-	</div>
-	<div id="footer"></div>
+	<div class="noSelect" id="footer"></div>
 </body>
 </html>

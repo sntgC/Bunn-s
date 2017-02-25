@@ -60,7 +60,7 @@
 							updateView();
 						}
 						else {
-							$("#responseReg").html(returned).css("color","red").show();
+							$("#responseReg").html(returned).css("color","red").css("background","rgba(0,0,0,.5)").css("padding","2px").show();
 						}
 					}
 				});
@@ -88,7 +88,7 @@
 							window.location.replace("account");
 						}
 						else {
-							$("#responseLog").html(returned).css("color","red").show();
+							$("#responseLog").html(returned).css("color","red").css("background","rgba(0,0,0,.5)").css("padding","2px").show();
 						}
 					}
 				});
@@ -108,24 +108,24 @@
 	</div>
 	<div class="background">
 		<div class="formDiv">
-			<h1 >Bunn's Rewards Program</h1>
+			<h1>Bunn's Rewards Program</h1>
 			<div class="pure-g">
 				<div class="pure-u-1-12">
 				</div>
 				<div class="pure-u-5-12 centeredBox"  style="border-right:2px solid #ffffff;">
 					<div class="cont">
 					<h3>REGISTRATION</h3>
-					<div class="formInfo" style="width:100%;">
+					<div style="width:100%;">
 						<span id="responseReg" style="display:none;margin-top:10px;"></span>
 						<br>
 						<form class="pure-form" id="registrationForm" method="post">
 							<p>E-Mail:</p>
-							<input class="pure-input-1-2" type="text" name="email" required>
+							<input class="pure-input-1-2" type="text" name="email" placeholder="E-Mail Address" required>
 							<br>
 							<p>Password:</p>
-							<input class="pure-input-1-2" type="password" name="password" required>
+							<input class="pure-input-1-2" type="password" name="password" placeholder="Password" required>
 							<br>
-							<input class="pure-button pure-button pure-input-1-2 redButton" type="submit" name="submit" value="SUBMIT" form="registrationForm" >
+							<input class="pure-button pure-input-1-2 redButton" type="submit" name="submit" value="SUBMIT" form="registrationForm" >
 						</form>
 					</div>
 					<p class="formInfoText">Already have an account? <a href="#" onclick="$('.formDiv').toggle(); updateView(); return false;" class="emphasis">LOGIN</a></p>
@@ -143,15 +143,15 @@
 				<div class="pure-u-1 centeredBox">
 					<div class="cont">
 						<h3>LOGIN</h3>
-						<div class="formInfo" style="width:100%;">
+						<div style="width:100%;">
 							<span id="responseLog" style="display:none;margin-top:10px;"></span>
 							<br>
 							<form class="pure-form" id="loginForm" method="post">
 								<p>E-Mail:</p>
-								<input class="pure-input-1-4" type="text" name="email" required>
+								<input class="pure-input-1-4" type="text" name="email" placeholder="E-Mail Address" required>
 								<br>
 								<p>Password:</p>
-								<input class="pure-input-1-4" type="password" name="password" required>
+								<input class="pure-input-1-4" type="password" name="password" placeholder="Password" required>
 								<br>
 								<label for="rememberMe" class="pure-checkbox">
 						            <span style="font-family:'Skranji',cursive;">Remember me</span> <input id="rememberMe" type="checkbox" name="remember" style="width:18px;height:18px;">
@@ -159,7 +159,7 @@
 								<input class="pure-button pure-button pure-input-1-4 redButton" type="submit" name="submit" value="SUBMIT" form="loginForm">
 							</form>
 						</div>
-						<p style="display:block;margin-top:50px;">Don't have an account? <a href="#" onclick="$('.formDiv').toggle(); updateView(); return false;" style="color:#2871a6;font-family:'Skranji', cursive">REGISTER</a></p>
+						<p style="display:block;margin-top:50px;">Don't have an account? <a href="#" onclick="$('.formDiv').toggle(); updateView(); return false;" class="emphasis">REGISTER</a></p>
 					</div>
 				</div>
 			</div>

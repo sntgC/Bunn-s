@@ -11,12 +11,14 @@
 	<link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css">
 	<link rel="icon" href="assets/icon.png">
 	<script src="libs/handlebars.runtime-v4.0.5.js"></script>
 	<script src="libs/Handlebars.templates"></script>
 	<script src="js/style.js"></script>
 	<script src="js/cookies.js"></script>
 	<link rel="stylesheet" href="css/newStyle.css">
+	<link rel="stylesheet" href="css/form.css">
 	<script type="text/javascript">
 		var token = getCookie("token");
 		var user_id = getCookie("user_id");
@@ -72,8 +74,9 @@
 					data: data,
 					success: function(result){
 						var returned = JSON.parse(result);
+						$("#responseE").css("background","rgba(0,0,0,.5)").css("padding","2px");
 						if(returned == "Updated"){
-							$("#responseE").html(returned + ". This page will refresh in 5 seconds.").css("color","green").show();
+							$("#responseE").html(returned + ". This page will refresh in 5 seconds.").css("color","#0AD52D").show();
 							window.setTimeout(function(){window.location.reload();},5000);
 							$("#changeEmailForm")[0].reset();
 						}
@@ -93,8 +96,9 @@
 					data: data,
 					success: function(result){
 						var returned = JSON.parse(result);
+						$("#responseP").css("background","rgba(0,0,0,.5)").css("padding","2px");
 						if(returned == "Updated"){
-							$("#responseP").html(returned + ". This page will refresh in 5 seconds.").css("color","green").show();
+							$("#responseP").html(returned + ". This page will refresh in 5 seconds.").css("color","#0AD52D").show();
 							window.setTimeout(function(){window.location.reload();},5000);
 							$("#changePassForm")[0].reset();
 						}
@@ -117,59 +121,65 @@
 		<div class="headerTab"><a href="parties">PARTIES</a></div>
 		<div class="headerTab"><a href="rewards">REWARDS</a></div>
 	</div>
-	<div class="background" style="background:#b7314e;">
-		<div>
+	<div class="background">
+		<div style="margin-top:150px;text-align:center;font-size:20px;">
 			<div id="base">
 				<div>
-					<h2 style="color:#e24226;font-size:32px;">My Account</h2>
+					<h1>My Account</h1>
 					<h3 id="welcome">Welcome </h3>
 					<div>
-						<p id="id">Unique Account ID: </p>
-						<p id="points">Total Reward Points: </p>
+						<p id="id" class="emphasis">Unique Account ID: </p>
+						<p id="points" class="emphasis">Total Reward Points: </p>
 					</div>
-					<a href="#" onclick="$('#changeEmail').show(); $('#base').hide(); return false;" style="color:blue;">Change E-Mail</a>
-					<br><br>
-					<a href="#" onclick="$('#changePass').show(); $('#base').hide(); return false;" style="color:blue;">Change Password</a>
-					<br><br>
-					<a href="javascript: logOut();" style="color:blue;">Log Out</a>
+					<div style="margin-bottom:10px;">
+						<a href="#" onclick="$('#changeEmail').show(); $('#base').hide(); return false;" class="pure-button redButton">Change E-Mail</a>
+					</div>
+					<div style="margin-bottom:10px;">
+						<a href="#" onclick="$('#changePass').show(); $('#base').hide(); return false;" class="pure-button redButton">Change Password</a>
+					</div>
+					<div style="margin-bottom:10px;">
+						<a href="javascript: logOut();" class="pure-button redButton">Log Out</a>
+					</div>
 				</div>
 			</div>
 			<div id="changeEmail" style="display:none;">
 				<div>
-					<h2 style="color:#e24226;font-size:32px;">My Account</h2>
-					<h3 style="color:#e24226;">Change E-Mail</h3>
-					<a href="#" onclick="$('#changeEmail').hide(); $('#base').show(); return false;" style="color:blue;">Cancel</a>
-					<div class="formInfo">
-						<span id="responseE" style="display:none;margin-top:20px;"></span>
-						<br>
-						<form id="changeEmailForm" method="put">
-							New E-Mail:<br>
-							<input type="text" name="emailNew" required>
+					<h1>My Account</h1>
+					<h3>Change E-Mail Address</h3>
+					<a href="#" onclick="$('#changeEmail').hide(); $('#base').show(); return false;" class="pure-button redButton" style="background:red;padding:7px;">Cancel</a>
+					<div style="margin-top:30px;">
+						<div>
+							<span id="responseE" style="display:none;"></span>
+						</div>
+						<form class="pure-form" id="changeEmailForm" method="put">
+							<p>New E-Mail:</p>
+							<input class="pure-input-1-4" style="font-family:sans-serif;" type="text" name="emailNew" placeholder="New E-Mail Address" required>
 							<br>
-							Password:<br>
-							<input type="password" name="password" required>
+							<p>Password:</p>
+							<input class="pure-input-1-4" style="font-family:sans-serif;" type="password" name="password" placeholder="Password" required>
 							<br>
-							<input class="submitButtonRewards" type="submit" name="submit" value="Submit" form="changeEmailForm">
+							<input class="pure-button pure-input-1-4 redButton" type="submit" name="submit" value="Submit" form="changeEmailForm">
 						</form>
 					</div>
 				</div>
 			</div>
 			<div id="changePass" style="display:none;">
 				<div>
-					<h2 style="color:#e24226;font-size:32px;">My Account</h2>
-					<h3 style="color:#e24226;">Change Password</h3>
-					<a href="#" onclick="$('#changePass').hide(); $('#base').show(); return false;" style="color:blue;">Cancel</a>
-					<div class="formInfo">
-						<span id="responseP" style="display:none;margin-top:20px;"></span>
-						<br>
-						<form id="changePassForm" method="put">
-							New Password:<br>
-							<input type="password" name="passNew" required>
+					<h1>My Account</h1>
+					<h3>Change Password</h3>
+					<a href="#" onclick="$('#changePass').hide(); $('#base').show(); return false;" class="pure-button redButton" style="background:red;padding:7px;">Cancel</a>
+					<div style="margin-top:30px;">
+						<div>
+							<span id="responseP" style="display:none;"></span>
+						</div>
+						<form class="pure-form" id="changePassForm" method="put">
+							<p>New Password:</p>
+							<input class="pure-input-1-4" style="font-family:sans-serif;" type="password" name="passNew" placeholder="New Password" required>
 							<br>
-							Current Password:<br>
-							<input type="password" name="password" required>
+							<p>Current Password:</p>
+							<input class="pure-input-1-4" style="font-family:sans-serif;" type="password" name="password" placeholder="Current Password" required>
 							<br>
-							<input class="submitButtonRewards" type="submit" name="submit" value="Submit" form="changePassForm">
+							<input class="pure-button pure-input-1-4 redButton" type="submit" name="submit" value="Submit" form="changePassForm">
 						</form>
 					</div>
 				</div>

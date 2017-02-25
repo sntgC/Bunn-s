@@ -36,9 +36,9 @@ var menuObjApp={type:"Appetizers",
 								],
 								[
 								{name:"Nachos", image:"", price:"$4.49", description:"Tortilla chips smothered in a cheddar cheese melt and topped with tomatoes and jalapenos."},
-								{name:"Caesar Salad", image:"", price:"$2.49", description:"Iceburg lettuce, parmesan cheese, crispy croutons and a tangy caesar dressing."},
-								{name:"Garden Salad", image:"", price:"$2.99", description:"Iceburg lettuce, grape tomatoes, grated cheddar cheese, sliced carrots, croutons topped with ranch dressing."},
-								{name:"Cobb Salad", image:"", price:"$3.49", description:"Iceburg lettuce, grape tomatoes, shrimp, sliced boiled eggs, sliced carrots, topped with a balsamic vinaigrette dressing."}
+								{name:"Caesar Salad", image:"", price:"$2.49", description:"Iceberg lettuce, parmesan cheese, crispy croutons and a tangy caesar dressing."},
+								{name:"Garden Salad", image:"", price:"$2.99", description:"Iceberg lettuce, grape tomatoes, grated cheddar cheese, sliced carrots, croutons topped with ranch dressing."},
+								{name:"Cobb Salad", image:"", price:"$3.49", description:"Iceberg lettuce, grape tomatoes, shrimp, sliced boiled eggs, sliced carrots, topped with a balsamic vinaigrette dressing."}
 								]
 							]};
 var menuObjEnt={type:"Entrées",

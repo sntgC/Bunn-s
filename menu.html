@@ -63,7 +63,7 @@
 		};
 		function scroll(menuID) {
 			$('html, body').animate({
-				scrollTop: $("#" + (menuID==0? menuObj.main.type:menuObj.choices[menuID-1].type)).offset().top 
+				scrollTop: $("#" + (menuID==0? menuObj.main.type:menuObj.choices[menuID-1].type)).offset().top
 			}, 800 * Math.cbrt(menuID + 1), function () {});
 		}
 	</script>
@@ -73,7 +73,7 @@
 			<div class="kardContainer">
 			{{#each main.entry}}
 			<div class="kard" style="background-image:url('{{image}}')">
-			
+
 			<div class="kardBottom">
 			<p class="kardText textBold kardTitle" style="font-size:1.5vw;">{{name}}</p>
 			<p class="kardText" style="text-align:center;font-size:2vh;">{{description}}</p>
@@ -122,8 +122,10 @@
 				</div>
 		</div>
 		<div class="infoText">
+			<!--Uncomment below for production-->
+			<!--<h2>The Bunn's Menu</h2>-->
 			<h2>We put the Nut in Nutrition</h2>
-			<p>This isn't the intro its the entrée. Bunn's not only gives you a place to play, it provides you with a vast selection of meals and snacks for you to feast on while you take a break from all the action.</p>
+			<p>This isn't the intro it's the entrée. Bunn's not only gives you a place to play, it also provides you with a vast selection of meals and snacks for you to feast on while you take a break from all the action.</p>
 			<p>Enjoy local cuisine, from fresh caught seafood for the grown-ups, to classic, made-from-scratch signature Bunn's Burgers for the littluns. Whether you are watching your weight or watching a game, Bunn's is sure to fulfill the needs of your stomach.</p>
 		</div>
 	</div>
