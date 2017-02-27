@@ -174,8 +174,17 @@ div.headerTab a{
 	backface-visibility:hidden;
 	position:absolute;
 	display:flex;
+	flex-direction:column;
 	justify-content:center;
 	align-items:center;
+}
+
+.token h2{
+	color:white;
+}
+
+.token p{
+	color:white;	
 }
 
 .token:hover .tokenArrow{
