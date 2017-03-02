@@ -272,7 +272,7 @@ input[type=password] {
 .kard{
 	width: 25vw;
 	height:25vw;
-	border: 15px solid white;
+	border: 0.69vw solid white;
 	background: #5bc0be;
 	background-size: cover;
 	background-repeat:no-repeat;
