@@ -494,7 +494,7 @@ textarea{
 	background:black;
 	display:inline-flex;
 	justify-content:center;
-	align-items:center;
+	align-items:flex-start;
 	border-radius:50%;
 	font-size:2.5vmin;
 	right:2.2vmin;
