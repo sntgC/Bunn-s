@@ -186,7 +186,7 @@ div.headerTab a{
 }
 
 .token p{
-	color:white;	
+	color:white;
 	width:80%;
 	font-size:1.11vw;
 	text-align:center;
@@ -422,4 +422,8 @@ div.headerTab a{
 	border-radius:1vmin;
 	display:flex;
 	flex-flow:row nowrap;
+}
+
+a h2:hover{
+	color: #FF4040;
 }
