@@ -423,7 +423,3 @@ div.headerTab a{
 	display:flex;
 	flex-flow:row nowrap;
 }
-
-a h2:hover{
-	color: #FF4040;
-}
